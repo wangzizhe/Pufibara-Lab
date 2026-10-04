@@ -30,7 +30,8 @@
     "Entire current readable tree made English: script prompts/UI/report labels translated; historical non-English JSON fields replaced with explicitly marked editorial summaries and per-field/file original provenance. Primary English demo and all deterministic modeling artifacts unchanged; originals retained locally and in earlier Git commit. No history rewrite or new experiment.",
     "Final delivery audit: 36 no-model unit tests passed; Coordinator output language corrected to English, unavailable seed/temperature controls clarified, and live-run documentation separated fresh research budgeting from initialization task settings and archived journal requirements. New-clone live execution remains operator-configured and was not run.",
     "Added self-contained saved-run HTML, actual page screenshots encoded as a six-frame timing-compressed GIF, and README top anchor/bottom inline walkthrough. Sources/hashes and saved-not-live labeling included. No new model calls or changes to original primary evidence.",
-    "User-authorized GitHub Pages publication: docs entry redirects to the existing self-contained saved-evidence page; .nojekyll added; README and submission map link the public walkthrough. No model service or new experiment added."
+    "User-authorized GitHub Pages publication: docs entry redirects to the existing self-contained saved-evidence page; .nojekyll added; README and submission map link the public walkthrough. No model service or new experiment added.",
+    "Removed the redundant README GIF and its preview/provenance assets; prominent Live Demo heading and standalone URL identify the interactive saved-run replay. Primary run evidence unchanged."
   ],
   "files": [
     {
@@ -45,8 +46,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 9109,
-      "sha256": "9228fbbef8418d02f98a6fb728fae7ca3e78956493688d0127d25917d54aded3"
+      "bytes": 8614,
+      "sha256": "fc1a5a3a28da1777bd8ce366791f73628e318cb568725e19f5dbf4bd06b483fa"
     },
     {
       "path": "SUBMISSION.md",
@@ -247,21 +248,6 @@
       "path": "docs/SOURCES.md",
       "bytes": 2535,
       "sha256": "0245a04968335237ba10b3c80c80bdb2319da178524fc9f1f609aa87096a3ebc"
-    },
-    {
-      "path": "docs/assets/recorded-workflow-preview.png",
-      "bytes": 389523,
-      "sha256": "aa790ca4896b2a31900444e48999811404bc1284ee5bda4d43f05075b5f98ba2"
-    },
-    {
-      "path": "docs/assets/recorded-workflow-provenance.json",
-      "bytes": 746,
-      "sha256": "7e9457df7032371910cdbce161cfe214e4cebe5941e917f67c85e7f91e86f8ff"
-    },
-    {
-      "path": "docs/assets/recorded-workflow.gif",
-      "bytes": 1334197,
-      "sha256": "6164b686e6f6fbf9e248a5f9157b6122b14cc2a77830c10c995c395e2c8c3765"
     },
     {
       "path": "docs/assets/research-loop.svg",
