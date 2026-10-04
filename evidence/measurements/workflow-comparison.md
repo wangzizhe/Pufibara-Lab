@@ -1,12 +1,9 @@
-# 科研流程瓶颈实测
+# Historical workflow measurement
 
-自动路径（Codex 操作）从已记录初始控制输入到报告保存：2293.8 秒；记录到 10 次原生控制输入。
-该时间包含排错与恢复。终端操作、代码修改和可复用准备未完整计时，人工总动作数未知；不能把原生消息数当成总人工步骤。
+Automatic path, operated by Codex: **2293.8 seconds** from recorded initial control input to report save, with **10 recorded native control inputs**. This includes engineering debugging and recovery. Shell/edit actions and reusable setup were not fully timed; total operator work is unknown.
 
-真人手工路径：814.0 秒，6 次界面动作（含错误／恢复），环境准备 38.94773316383362 秒（Codex 操作，另列）。
+Human manual path: **814.0 seconds**, **six UI actions**. Codex preparation was **38.947733 seconds**, recorded separately. One additional Codex UI-maintenance action during the manual run is also recorded separately, not counted as a human click. The user's time/request extensions retained original consumption and were not new scientific measurements.
 
-手工路径期间另有 1 次已记录 Codex 界面维护动作，单独列出，不冒充真人点击。用户明确延长共享阶段时长20分钟；该次时间修改未增请求。另在后续验证结算后把总请求上限提升到500，未重置已用199次。
+**No workflow speedup is established.** Operators, execution order and infrastructure maturity differed. Do not infer a causal improvement or divide these observations to claim a speed factor.
 
-尚未建立科研流程提速证据。两路径的操作员、先后次序和基础设施成熟度不同；不计算提速倍率或宣称因果改善。
-
-证据：`automatic-*.json`、`manual-*.json`、`workflow-comparison.json` 和实际原生消息／科研报告。
+[Original measurement](workflow-comparison.json) retains exact values, events, interventions and limits. Automatic/manual JSON files and native messages remain unchanged. This English summary replaces the earlier Chinese presentation; it does not alter run evidence.
