@@ -1,6 +1,6 @@
 # Pufibara Lab
 
-**[Watch the saved workflow below ↓](#recorded-workflow-walkthrough)** — no model connection required.
+**[Explore the interactive evidence walkthrough ↗](https://wangzizhe.github.io/Pufibara-Lab/)** · [Watch the GIF below ↓](#recorded-workflow-walkthrough) — saved evidence; no model connection required.
 
 **An automatic research environment that uses Omnigent to investigate how Harness mechanisms affect AI agents building physical models.**
 
@@ -73,6 +73,6 @@ Historical non-English text uses labeled editorial views; primary English run ev
 
 **Saved evidence, not a live run.** This 34-second animation shows the six stages of the completed research loop; stage timing is compressed. The recorded native span was 766 seconds, excluding setup. [Animation provenance](docs/assets/recorded-workflow-provenance.json).
 
-For all expandable Agent messages and tool records, use the [self-contained HTML walkthrough](docs/research-walkthrough.html). GitHub displays HTML as source: select **Download raw file**, then open it locally. The GIF above plays directly in the README. The HTML embeds the saved data and works offline; evidence links open the repository when clicked.
+For all expandable Agent messages and tool records, open the [online interactive walkthrough](https://wangzizhe.github.io/Pufibara-Lab/). It displays saved evidence and makes no model calls. The GIF above plays directly in the README. An [offline HTML copy](docs/research-walkthrough.html) is also available: choose **Download raw file** and open locally. Evidence links open the repository when clicked.
 
 The page can be regenerated from saved records with `python3 scripts/export_saved_workflow.py`; it makes no model calls. This supporting walkthrough complements the author's separately supplied two-minute demo.

@@ -29,7 +29,8 @@
     "Remaining seven Chinese Markdown documents replaced with English specifications/navigation/editorial historical summaries; underlying report/session JSON, native messages, logs, CSVs and scientific code unchanged.",
     "Entire current readable tree made English: script prompts/UI/report labels translated; historical non-English JSON fields replaced with explicitly marked editorial summaries and per-field/file original provenance. Primary English demo and all deterministic modeling artifacts unchanged; originals retained locally and in earlier Git commit. No history rewrite or new experiment.",
     "Final delivery audit: 36 no-model unit tests passed; Coordinator output language corrected to English, unavailable seed/temperature controls clarified, and live-run documentation separated fresh research budgeting from initialization task settings and archived journal requirements. New-clone live execution remains operator-configured and was not run.",
-    "Added self-contained saved-run HTML, actual page screenshots encoded as a six-frame timing-compressed GIF, and README top anchor/bottom inline walkthrough. Sources/hashes and saved-not-live labeling included. No new model calls or changes to original primary evidence."
+    "Added self-contained saved-run HTML, actual page screenshots encoded as a six-frame timing-compressed GIF, and README top anchor/bottom inline walkthrough. Sources/hashes and saved-not-live labeling included. No new model calls or changes to original primary evidence.",
+    "User-authorized GitHub Pages publication: docs entry redirects to the existing self-contained saved-evidence page; .nojekyll added; README and submission map link the public walkthrough. No model service or new experiment added."
   ],
   "files": [
     {
@@ -44,13 +45,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 8956,
-      "sha256": "a4ce9a9223388f1d5dc468c559700f087b0dcbe036fa6a2f146b5e8928e0f3db"
+      "bytes": 9109,
+      "sha256": "9228fbbef8418d02f98a6fb728fae7ca3e78956493688d0127d25917d54aded3"
     },
     {
       "path": "SUBMISSION.md",
-      "bytes": 2644,
-      "sha256": "0f312c29357b317dfa145ff8149f5d0fde0f803a347e2e3af72071f9762b01fc"
+      "bytes": 2779,
+      "sha256": "a5d9ac9876e3ad06c1ce0667eab89d4785fe60c0c6d9fdc11d315bd06afc0b5d"
     },
     {
       "path": "agents/lab/AGENTS.md",
@@ -213,6 +214,11 @@
       "sha256": "d55675a09da3d81c8ebe0d6ade2680c82188565c5d4a2a0d51b2b10abd511d45"
     },
     {
+      "path": "docs/.nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
       "path": "docs/ENGLISH_EDITION.md",
       "bytes": 1519,
       "sha256": "8f00500d0143c18449a94a1ee7a039294aa364966a990277b1841c5d45dc6392"
@@ -261,6 +267,11 @@
       "path": "docs/assets/research-loop.svg",
       "bytes": 3226,
       "sha256": "436d058b6a73f791368d7a361459bfe35cf04713a1f762fbfc5401274798d194"
+    },
+    {
+      "path": "docs/index.html",
+      "bytes": 483,
+      "sha256": "d8c113329e4a72504234d312d65d8e03e1395699787bd3133d3a752007f6ef95"
     },
     {
       "path": "docs/research-walkthrough.html",

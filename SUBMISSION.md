@@ -6,7 +6,7 @@ For a quick overview, read the [README](README.md). This page maps the requested
 | --- | --- |
 | Repository and reproducible experiment code | [Local setup](docs/LOCAL_SETUP.md), [research execution](docs/RESEARCH_RUN.md), `src/`, `scripts/`, `tasks/`, `tests/`, `requirements.lock`. |
 | Agent specifications and policies | [Role package](agents/lab/AGENTS.md) and [permissions/approval gates](docs/SECURITY.md). |
-| Two-minute demo | Supplied separately by the author. |
+| Two-minute demo | Supplied separately by the author. Supporting [interactive evidence walkthrough](https://wangzizhe.github.io/Pufibara-Lab/) displays saved records, not a live model run. |
 | Cited evidence and results | [Public sources](docs/SOURCES.md), [primary session](evidence/sessions/session-789344082fe64fabadcdb06e415d8d0d/session.json), [native role tree](evidence/omnigent-demo.json), [evidence navigation](evidence/README.md). |
 | Measured improvement | [Timing observations and limits](docs/MEASUREMENT.md). Overall speedup and token savings remain unproven. |
 | Next experiment | Matched manual-trigger/automatic workflow benchmark, proposed only in [MEASUREMENT](docs/MEASUREMENT.md). |
