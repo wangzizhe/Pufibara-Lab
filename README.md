@@ -1,6 +1,6 @@
 # Pufibara Lab
 
-<h2 align="center"><strong>Live Demo</strong></h2>
+<h3 align="center"><strong>Live Demo</strong></h3>
 
 <p align="center">
   <a href="https://wangzizhe.github.io/Pufibara-Lab/">https://wangzizhe.github.io/Pufibara-Lab</a>
