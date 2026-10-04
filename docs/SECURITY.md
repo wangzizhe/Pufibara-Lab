@@ -1,21 +1,33 @@
-# 权限与失败边界
+# Policies and tested boundaries
 
-## 已实测
+Agents make research decisions. Trusted code controls execution, evaluation and accounting. Evidence below establishes specific checks, not universal security.
 
-Modelica：固定本地镜像；无网络、无主目录与 socket 挂载、非 root、只读系统、移除 capabilities、禁止提权，限 CPU/内存/PID/时间/日志。仅新建输入目录只读挂载、输出目录可写。输出符号链接拒绝读取。原始来源、日志、CSV、失败及未执行状态都保存。
+## Role permissions
 
-研究工具进程：用户数据 `/Users` 默认拒读，仅开放 `.venv`、Agent 包及独立运行目录；系统运行路径可读。可信合成标记拒读成功，Omnigent 原生工具可调用本机 broker，其他测试网络端口拒绝。没有用真实私有目录或数据做拒读测试。
+| Role | Permitted research actions |
+| --- | --- |
+| Coordinator | Delegate declared roles and collect results. |
+| Planner | Inspect status and submit a costed plan. |
+| Executor | Start and finish allowed trials; delegate Modelers. |
+| Modeler | Obtain its public task, submit Modelica text and inspect its own logs. |
+| Analyst | Inspect permitted trial evidence and propose a budgeted follow-up. |
 
-工具权限：planner 仅提交计划；executor 启动/结束固定试次；modeler 只提交文本和查询当前日志；analyst 引用已有 run 并提交预算内后续计划。工具和最终评价不能由 Agent 重定义。role capability 不进入提示词或公开记录。
+Agents cannot redefine final evaluation, change budgets or use arbitrary host shell/web tools. Role capabilities remain on the trusted side, outside prompts and public evidence. [Role specifications](../agents/lab/AGENTS.md) and [broker implementation](../src/physicslab/broker.py).
 
-## 必须保留的限制
+## Tested execution boundaries
 
-- 当前不是完整 Omnigent 运行隔离证明；框架附加工具、进程和模型网关还需联合验证。
-- macOS profile 对 `/Users` 数据边界实测，不宣称操作系统所有路径都按最小权限封闭，也不宣称容器免于漏洞。
-- 源码关键字检查只是额外防护，不能替代运行隔离。评价能拒绝示例错误，不证明防御任意对抗性提交。
-- 共用进程中的角色能力需要可信框架调度；尚未验证恶意自定义 Agent 代码不能跨角色升级。仅加载本项目审核工具，Agent 没有编写/执行代码的接口。
-- 真实 Codex 请求已走预转发预算门；新增阶段沿用跨进程追加日志与锁，失败重试计数。未知实际用量保留 null。
-- 输出目录大小依赖容器工作区和限制；不允许外部 Modelica 代码或工具自行提供挂载参数。
-- 不发布、推送、共享或提交；重大部署/服务/预算路线由用户确认。
+- **Modelica container:** fixed image, no network or home/socket mounts, non-root, read-only system, dropped capabilities, and resource/time/log limits. Input is read-only; output is bounded and symlink reads are rejected. [Container checks](../evidence/isolation.json).
+- **Worker:** synthetic markers verify tested file/network denials. The launcher additionally denies trusted installed package files despite allowing the Python runtime. Retest after installation changes. Real private files are not used as probes. [Worker checks](../evidence/codex-worker-isolation.json).
+- **Tools:** only reviewed role tools call the local broker. Parsing and role declarations are checked separately. [Tool/specification check](../evidence/agent-spec-check.json).
 
-Codex worker 的 Python 运行路径包含 `.venv`，因此额外把已安装可信包所有文件写入启动器的字面路径拒读规则；真实启动器合成标记与 Codex binary 检查均通过。安装变更后须重测。插件拒绝广泛 host/terminal/web 工具和 agent 切换模型/预算；只有审核角色工具调用固定 broker。研究角色指令通过 `COMPOSED_PER_TURN` 交付。
+## Human approval and accounting
+
+Installation, model service and request/time budgets require authorization. Budget extensions do not reset consumption or deadlines. Failed requests and retries count. The tested subscription route prohibits automatic credit purchases and paid-API fallback; unknown usage is not zero. [Budget implementation](../src/physicslab/request_budget.py).
+
+Publication and formal submission require explicit user authorization. This repository has been pushed to GitHub with the author's permission; that does not authorize new model runs or a formal hackathon submission. Shipped model configurations disable execution authority.
+
+## Limits and failure handling
+
+The checks do not prove full operating-system isolation, vulnerability-free containers, resistance to arbitrary malicious Modelica, or safety of unreviewed Agent code. Keyword screening supplements isolation; it does not replace it. Shared role capabilities depend on trusted framework dispatch. Real deployments need further review.
+
+Keep failed, timed-out and unexecuted stages. Do not change criteria to improve scores, delete budget logs, share solutions across trials, or treat empty diagnostics as success. A fixed final verdict determines acceptance.

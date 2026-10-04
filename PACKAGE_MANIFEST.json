@@ -24,7 +24,8 @@
     "docs/ curated to LOCAL_SETUP, RESEARCH_RUN, MEASUREMENT, SECURITY and SOURCES; demo guides/internal status/Codex process history removed; retained documentation stripped of obsolete live authorizations and artifact links.",
     "Further reviewer cleanup: removed internal experiment plan/project README, obsolete archive manifest, UI screenshots and duplicate old package verification; removed video/presentation/package generation scripts; renamed current HANDOFF_CHECK to SUBMISSION; added English claim-linked README, evidence navigation and architecture SVG. Scientific runs and failures preserved.",
     "README refined for judge review: plain-language Harness definition, three evidence entry links, ordered research narrative, explicit hypothesis/result distinction and concise measured-improvement limits.",
-    "Generated Python egg-info excluded before GitHub publication; curated folder is the repository root."
+    "Generated Python egg-info excluded before GitHub publication; curated folder is the repository root.",
+    "Human-readable documentation pass: setup/run/security/sources unified in concise English, obsolete development status removed, submission map deduplicated; public GitHub status and undecided code license clarified. No scientific records or execution code changed."
   ],
   "files": [
     {
@@ -39,8 +40,8 @@
     },
     {
       "path": "SUBMISSION.md",
-      "bytes": 6275,
-      "sha256": "3cc188db4cead3d36965ad256a48fda59ff57f8996bd4ee9280c6df95ba802b2"
+      "bytes": 2644,
+      "sha256": "0f312c29357b317dfa145ff8149f5d0fde0f803a347e2e3af72071f9762b01fc"
     },
     {
       "path": "agents/lab/AGENTS.md",
@@ -204,8 +205,8 @@
     },
     {
       "path": "docs/LOCAL_SETUP.md",
-      "bytes": 5467,
-      "sha256": "230da3254eb6badbf97cbe124bc9a2cd9ba7b94072ddec2155aa0d81afdfd619"
+      "bytes": 2852,
+      "sha256": "89577dbb1bc02af3816d18811b4ca5cdb72ada256adb88e72d446e608fd9030e"
     },
     {
       "path": "docs/MEASUREMENT.md",
@@ -214,18 +215,18 @@
     },
     {
       "path": "docs/RESEARCH_RUN.md",
-      "bytes": 3124,
-      "sha256": "717e4359c3f95569e7af535372877893b618cbf39959ee455a6a93e899d04e99"
+      "bytes": 2952,
+      "sha256": "66450606d2cc28377d60bf35a959e70590423fec120c1c60db76763271186161"
     },
     {
       "path": "docs/SECURITY.md",
-      "bytes": 2361,
-      "sha256": "54c8f967fd46b7d152a1c3699c112eb55400f4e4d5657b16eb6d89af1b11a5a2"
+      "bytes": 2939,
+      "sha256": "91ab27cb2be7cd629a7192885952daa92b352d53c7760422f0541d46977c6f46"
     },
     {
       "path": "docs/SOURCES.md",
-      "bytes": 2132,
-      "sha256": "df3dba5bfcf8c0d8783dd616ba9edd72051885498cdce6005b0917635b646efe"
+      "bytes": 2535,
+      "sha256": "0245a04968335237ba10b3c80c80bdb2319da178524fc9f1f609aa87096a3ebc"
     },
     {
       "path": "docs/assets/research-loop.svg",
