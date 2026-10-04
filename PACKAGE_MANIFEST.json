@@ -31,7 +31,8 @@
     "Final delivery audit: 36 no-model unit tests passed; Coordinator output language corrected to English, unavailable seed/temperature controls clarified, and live-run documentation separated fresh research budgeting from initialization task settings and archived journal requirements. New-clone live execution remains operator-configured and was not run.",
     "Added self-contained saved-run HTML, actual page screenshots encoded as a six-frame timing-compressed GIF, and README top anchor/bottom inline walkthrough. Sources/hashes and saved-not-live labeling included. No new model calls or changes to original primary evidence.",
     "User-authorized GitHub Pages publication: docs entry redirects to the existing self-contained saved-evidence page; .nojekyll added; README and submission map link the public walkthrough. No model service or new experiment added.",
-    "Removed the redundant README GIF and its preview/provenance assets; prominent Live Demo heading and standalone URL identify the interactive saved-run replay. Primary run evidence unchanged."
+    "Removed the redundant README GIF and its preview/provenance assets; prominent Live Demo heading and standalone URL identify the interactive saved-run replay. Primary run evidence unchanged.",
+    "Centered the bold Live Demo heading and its standalone link in the reviewer README."
   ],
   "files": [
     {
@@ -46,8 +47,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8614,
-      "sha256": "fc1a5a3a28da1777bd8ce366791f73628e318cb568725e19f5dbf4bd06b483fa"
+      "bytes": 8689,
+      "sha256": "4d15542d2d5010b090e71b5842bb66363efd7d84a5f9933f74d373db1d949553"
     },
     {
       "path": "SUBMISSION.md",

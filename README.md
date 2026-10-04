@@ -1,8 +1,10 @@
 # Pufibara Lab
 
-## Live Demo
+<h2 align="center"><strong>Live Demo</strong></h2>
 
-[https://wangzizhe.github.io/Pufibara-Lab](https://wangzizhe.github.io/Pufibara-Lab/)
+<p align="center">
+  <a href="https://wangzizhe.github.io/Pufibara-Lab/">https://wangzizhe.github.io/Pufibara-Lab</a>
+</p>
 
 Explore the completed research workflow, Agent handoffs and tool records. **Interactive replay of a real saved run; no live model calls.**
 
