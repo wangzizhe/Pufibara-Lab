@@ -9,7 +9,7 @@
     "content": [
       {
         "type": "input_text",
-        "text": "执行已接受且现有 active trial；不要创建 trial。trial_id=trial-a8c1f1553c8a42e396651bfe7756e489，精确 config={\"task_id\":\"cooling-sign-v1\",\"diagnostics\":\"structured\",\"replicate\":0,\"max_attempts\":2}。公共任务为 cooling-sign-v1，必须调用 packaged modeler.task 获取该 trial 的原公共任务与原公共模型，再仅用该 trial 提供的信息执行。不得读取其他 trial 源码、答案、历史或其他会话，不得发现会话或轮询。当前无 attempt。使用与已接受机制匹配的同一 base model 与 output limit，保持原 200 次/60 分钟预算及原起算，额度错误立即停止，不绕过或重置。runtime 必须在科学运行前检查独立 Codex thread 与原生 child ID；若独立性检查失败，停止并报告基础设施失败。严格遵守 max_attempts=2，保留所有失败，不超预算重试，不编造结果。返回此 trial 全部真实 run/attempt/evidence IDs、分层评价、tool seconds、失败，以及模型与编排分别的可见用量和未知用量。不要 finish_trial（由父 executor 执行），不要制定 followup。"
+        "text": "[English editorial summary; not verbatim] Historical research instructions with task and budget constraints. Exact instructions and limits are preserved in the original snapshot; current live authority is disabled."
       }
     ]
   },
@@ -23,7 +23,7 @@
     "content": [
       {
         "type": "output_text",
-        "text": "我会先读取当前 trial 的公共任务与模型，并核查工具返回的运行隔离信息；若隔离检查或额度检查失败，会立即停止。\n"
+        "text": "[English editorial summary; not verbatim] Historical non-English message or presentation text. Read the original snapshot for exact content and the English historical report for context."
       }
     ],
     "model": "physics-lab"
@@ -58,7 +58,7 @@
     "content": [
       {
         "type": "output_text",
-        "text": "已读取该 trial 的原公共任务与模型，config 与指定值一致。\n\n**基础设施检查未通过：**当前工具返回未提供独立 Codex thread 与原生 child ID 的核验信息，无法确认运行隔离。依照你的要求，已在科学运行前停止。\n\n- Trial：`trial-a8c1f1553c8a42e396651bfe7756e489`\n- 真实 run / attempt / evidence IDs：无；未提交 attempt，最后 run ID 不存在。\n- 分层评价：公共任务读取成功；运行隔离无法核验；编译、仿真及物理评价未执行。\n- 可见用量：1 次 `task` 调用，0 次 `attempt`，0 次 `raw_log` 查询。\n- 未知用量：tool seconds、模型 token/请求用量、编排累计用量、原预算余量与起算时间，以及 base model / output limit 均未暴露。\n- 未创建或结束 trial，未读取其他会话，未重试、重置预算或制定 followup。"
+        "text": "[English editorial summary; not verbatim] Historical non-English message or presentation text. Read the original snapshot for exact content and the English historical report for context."
       }
     ],
     "model": "physics-lab"

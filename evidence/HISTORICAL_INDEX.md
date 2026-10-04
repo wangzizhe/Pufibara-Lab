@@ -10,6 +10,6 @@ These records precede the primary demonstration. Start with the [current evidenc
 | Engineering fixtures and boundary checks | [Container isolation](isolation.json), [worker isolation](codex-worker-isolation.json), [role/tool parsing](agent-spec-check.json), and engineering-smoke records. Fixtures are not Agent research. |
 | Complete historical artifacts | `runs/`, `sessions/`, `omnigent/` and captured index/manifest files. Older aggregates describe their own captured state, not the latest repository. |
 
-Source models, raw logs, CSVs, failures, native messages and usage records remain preserved. Token records require correct conversation attribution; unknown usage or subscription cost is not zero. These histories do not establish overall research acceleration.
+Source models, compiler logs, CSVs, failures and usage records remain preserved. Affected historical message fields are labeled English editorial views with links to their exact original snapshots. Token records require correct conversation attribution; unknown usage or subscription cost is not zero. These histories do not establish overall research acceleration.
 
 This English navigation replaces the Chinese index. It does not modify underlying evidence.

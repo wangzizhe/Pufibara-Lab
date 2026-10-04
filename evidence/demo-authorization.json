@@ -18,7 +18,7 @@
     "historical_enhancement_requests": 115,
     "cumulative_request_ceiling": 500,
     "execution_gate": "installed_code_tests_and_synthetic_worker_isolation_before_user_prompt",
-    "authorization_source": "explicit_user: 同意启动：最多100次请求、30分钟，仅现有Codex订阅。"
+    "authorization_source": "[English editorial summary; not verbatim] Historical human authorization statement. This record does not authorize a new run; refer to the archived original for exact permission."
   },
   "config_sha256": "191c2a85a5d4a14631ef1b98cde0c3ca3caad9d351bcb960f8e71266b494e1e2",
   "model_requests": 0,

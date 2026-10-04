@@ -19,3 +19,5 @@
 Other sessions, runs, usage journals and failure/recovery records remain for audit. They are not additional replicates of the primary demo. [Historical index](HISTORICAL_INDEX.md) and older index/manifest/verification files describe their own captured state and may predate the current code and latest run; do not treat them as current aggregates. Engineering fixtures and synthetic probes must remain distinct from Agent-generated experiments. Global usage records require attribution before summing tokens; missing costs are not zero.
 
 No experiment or model call was performed during submission cleanup. Source files and run records remain evidence; the README workflow illustration is explanatory only.
+
+Historical non-English text uses labeled editorial views; primary English run evidence is unchanged. See the [English-edition policy](../docs/ENGLISH_EDITION.md) and its source hashes before auditing exact historical wording.

@@ -6,4 +6,4 @@ Human manual path: **814.0 seconds**, **six UI actions**. Codex preparation was 
 
 **No workflow speedup is established.** Operators, execution order and infrastructure maturity differed. Do not infer a causal improvement or divide these observations to claim a speed factor.
 
-[Original measurement](workflow-comparison.json) retains exact values, events, interventions and limits. Automatic/manual JSON files and native messages remain unchanged. This English summary replaces the earlier Chinese presentation; it does not alter run evidence.
+[Original measurement](workflow-comparison.json) retains exact values, events, interventions and limits. Numeric observations are unchanged. Affected historical message fields are English editorial views; [provenance](../english-edition-provenance.json) links exact originals. This English summary replaces the earlier Chinese presentation; it does not alter run evidence.

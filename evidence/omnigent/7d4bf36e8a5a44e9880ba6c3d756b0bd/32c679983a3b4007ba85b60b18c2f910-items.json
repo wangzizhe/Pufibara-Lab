@@ -9,7 +9,7 @@
     "content": [
       {
         "type": "input_text",
-        "text": "按职责完成真实科研闭环的规划阶段。用户确认已修正阶段预算配置、此前未发出模型请求；新增总预算40次模型请求/30分钟，不购买额外额度。先读取 broker 当前状态并返回真实状态证据；提出可证伪假设，比较至少两个有成本估计的候选测试，选择可行的匹配对照方案并使用 record_plan 记录。不得修复模型或编造结果。遇到额度/期限错误停止。返回接受的 plan ID、证据 IDs、预算起点/截止时间及供 executor 使用的具体计划。我直接调用 status 返回未启用，请使用你职责允许的 packaged broker 工具。"
+        "text": "[English editorial summary; not verbatim] Historical non-English message or presentation text. Read the original snapshot for exact content and the English historical report for context."
       }
     ]
   },
@@ -23,7 +23,7 @@
     "content": [
       {
         "type": "output_text",
-        "text": "我先读取当前 broker 状态，以实际可用任务、额度和期限为依据制定匹配对照计划，再用 `record_plan` 记录；若遇到额度或期限错误就停止。"
+        "text": "[English editorial summary; not verbatim] Historical non-English message or presentation text. Read the original snapshot for exact content and the English historical report for context."
       }
     ],
     "model": "physics-lab"
@@ -98,7 +98,7 @@
     "content": [
       {
         "type": "output_text",
-        "text": "规划阶段受工具接口阻塞，尚未记录计划，也未发出实验模型请求。\n\n真实工具证据：\n\n- `functions.status` 返回：`tool 'status' is not enabled for this agent (not in the agent spec's registered tool surface)`。\n- `functions.exec` 的 `ALL_TOOLS` 仅列出 `clock__curr_time` 和 `image_gen__imagegen`，未暴露 packaged broker 工具。\n- 尝试读取当前 agent 元数据返回：`Tool outside research capability surface`。\n\n因此无法核实 broker 的任务、剩余额度、预算起点和截止时间。你提供的 **40 次模型请求／30 分钟、不购买额外额度**已作为约束，但不能当作 broker 已生效的状态证据。\n\n**接受的 plan ID：无；broker 证据 IDs：无；预算起点／截止时间：未核实。** 当前没有可交给 executor 的已接受计划；未调用 `record_plan`，以免在缺少真实任务与预算状态时编造方案。需要向此 planner 暴露职责允许的 packaged broker 状态及计划记录工具后才能继续。"
+        "text": "[English editorial summary; not verbatim] Historical operator/Agent continuation or recovery message. Original wording is archived; this presentation field is not an executable instruction or proof that recovery succeeded."
       }
     ],
     "model": "physics-lab"

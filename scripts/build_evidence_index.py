@@ -57,17 +57,17 @@ record = {"status": "closed_loop_verified_measurement_pending" if verified_repor
                         origin="live_agent" if r["run_id"] in live_run_ids else "engineering") for r in runs],
           "limitations": ["Engineering fixtures are not agent experiments", "No mechanism-effect or research-speed claim", "Full closed-loop status must be checked in the selected broker report"]}
 (root / "evidence/index.json").write_text(json.dumps(record, indent=2))
-lines = ["# 本地证据索引", "", "日期：2026-10-04。工程夹具与真实 Agent 运行分别标注；真实来源须有原生建模会话审计，不因存在计划就计为 Agent 实验。未建立科研提速证据。", "",
-         "| 来源 | Run ID | 工具状态 | 检查 | 仿真 | 行为 | 秒 |", "| --- | --- | --- | --- | --- | --- | --- |"]
+lines = ["# Local evidence index", "", "2026-10-04. Engineering fixtures and actual Agent runs are labeled separately. Agent provenance requires native modeling identity records; a plan alone is not an experiment. No research speedup established.", "",
+         "| Source | Run ID | Tool status | Checking | Simulation | Behavior | Seconds |", "| --- | --- | --- | --- | --- | --- | --- |"]
 for r in runs:
     e = r["evaluation"]
-    lines.append(f'| {"Agent" if r["run_id"] in live_run_ids else "工程"} | [{r["run_id"]}](runs/{r["run_id"]}/result.json) | {r["status"]} | {e["model_checking"]} | {e["simulation"]} | {e["behavior"]["status"]} | {r["seconds"]:.3f} |')
-lines += ["", "错误模型行为失败、可信修正夹具成功、语法错误下游未执行均已保存。最早一次仿真因工作区 noexec 失败，未删除。", "",
-          "- [Modelica 容器隔离](isolation.json)", "- [研究进程合成标记隔离](agent-isolation.json)", "- [Omnigent 角色与工具解析](agent-spec-check.json)", "- [Omnigent 原生工具到 broker 往返](tool-roundtrip.json)", "",
-          "实际模型请求以 index.json 阶段计数为准，包含失败与重试。订阅没有逐 token 美元账单，费用留空；工具结果中的 token/cost 缺测不能解释为真实 Agent 零开销。", "",
-          "历史工程运行尚无完整实现哈希；当前实现和全部原始结果另见 manifest.json。后续运行将记录评价器/runner/诊断哈希。"]
-lines += ['', '已核对闭环报告：'] + [f'- [{path}](../{path})' for path in verified_reports]
-lines += ['', '真人流程测量：'+('已保存真实观察，包含混淆因素，不计算提速倍率。' if human_measured else '尚待完成，自动路径观察不能替代真人计时。')]
+    lines.append(f'| {"Agent" if r["run_id"] in live_run_ids else "Engineering"} | [{r["run_id"]}](runs/{r["run_id"]}/result.json) | {r["status"]} | {e["model_checking"]} | {e["simulation"]} | {e["behavior"]["status"]} | {r["seconds"]:.3f} |')
+lines += ["", "Wrong-model behavior failures, successful trusted fixtures and syntax-error downstream non-execution are retained. The first noexec-workspace simulation failure is preserved.", "",
+          "- [Modelica container isolation](isolation.json)", "- [Research-process synthetic isolation probe](agent-isolation.json)", "- [Omnigent role/tool parsing](agent-spec-check.json)", "- [Native Omnigent tool-to-broker roundtrip](tool-roundtrip.json)", "",
+          "Actual requests use captured index.json phase counts, including failures and retries. Monetary costs are unknown; missing tool token/cost fields do not mean zero Agent overhead.", "",
+          "Historical engineering runs lack full implementation hashes. Captured implementation and raw results are in manifest.json; later runs record evaluator/runner/diagnostic hashes."]
+lines += ['', 'Verified closed-loop reports: '] + [f'- [{path}](../{path})' for path in verified_reports]
+lines += ['', 'Human workflow measurement: '+('Actual observations retained with confounds; no speed factor.' if human_measured else 'Pending; automatic-path observations cannot replace human timing.')]
 (root / "evidence/README.md").write_text("\n".join(lines) + "\n")
 paths = []
 for directory in ("src", "scripts", "agents", "tasks", "configs", "docs", "tests", "evidence"):

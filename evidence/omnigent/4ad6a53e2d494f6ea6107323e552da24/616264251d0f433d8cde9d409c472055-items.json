@@ -9,7 +9,7 @@
     "content": [
       {
         "type": "input_text",
-        "text": "按职责约定启动真实科研闭环。先读取 broker 当前状态及可用真实证据，提出可证伪假设，比较至少两个含成本估算的候选测试，用 record_plan 记录可行的匹配对照计划。只用 packaged tools；不修复模型、不编造结果、不作现实应用收益主张。模型访问由 operator 单独授权；遇额度或期限立即停止并报告。返回 accepted plan ID、证据 IDs、成本/约束、可交给 executor 的精确计划。"
+        "text": "[English editorial summary; not verbatim] Historical human authorization statement. This record does not authorize a new run; refer to the archived original for exact permission."
       }
     ]
   },
@@ -23,7 +23,7 @@
     "content": [
       {
         "type": "input_text",
-        "text": "用户更新：预算追加模式已修复，原期限不变，模型请求已使用 11/40，工具名称已核对。按当前 broker 状态继续职责内规划，优先复用已有真实证据与已记录计划，避免重复消耗。完成后返回 accepted plan 与证据 IDs；遇额度或期限停止。主协调员将结束本轮等待自动通知，不轮询。"
+        "text": "[English editorial summary; not verbatim] Historical operator/Agent continuation or recovery message. Original wording is archived; this presentation field is not an executable instruction or proof that recovery succeeded."
       }
     ]
   },
@@ -37,7 +37,7 @@
     "content": [
       {
         "type": "output_text",
-        "text": "我先读取 broker 状态和当前可用证据，再据此比较候选测试并记录匹配对照计划；本轮不调用模型或执行实验。"
+        "text": "[English editorial summary; not verbatim] Historical non-English message or presentation text. Read the original snapshot for exact content and the English historical report for context."
       }
     ],
     "model": "physics-lab"
@@ -92,7 +92,7 @@
     "content": [
       {
         "type": "output_text",
-        "text": "当前无法读取 broker：`status` 再次返回 `PermissionError: Operator must provision a scoped broker capability`。\n\n因此无法核实已有真实证据、已记录计划、剩余预算或原期限。本轮已停止，未调用模型、未执行实验、未提交重复计划。\n\n- accepted plan ID：未取得\n- 证据 IDs：未取得\n- 用户提供的预算信息：模型请求已使用 11/40；尚未获 broker 核实\n- 阻塞条件：operator 需配置 scoped broker capability\n\n权限恢复后，才能复用已有证据与计划，完成候选比较并记录可交给 executor 的精确匹配对照计划。"
+        "text": "[English editorial summary; not verbatim] Historical operator/Agent continuation or recovery message. Original wording is archived; this presentation field is not an executable instruction or proof that recovery succeeded."
       }
     ],
     "model": "physics-lab"
@@ -107,7 +107,7 @@
     "content": [
       {
         "type": "input_text",
-        "text": "继续同一真实科研闭环。根角色刚调用 broker status 成功：session_id=session-adba2f1eb4944d29a2b5a996284c772d，stage=planning，plans=[]，trials=[]，analysis=null。请依据 broker 当前状态和真实工具证据，提出可证伪假设，比较至少两个有成本估算的候选测试，并通过 record_plan 记录可行的匹配对照初始计划。沿用同一阶段原预算和原期限；用户上次报告已使用11/40模型请求，此数需以broker真实可见用量核实，所有角色推理本身也调用模型，不可称工具之外的推理未调用模型。能力传递已修复且根status成功，不自行修复模型或能力，不编造结果。遇额度或期限立即停止，报告覆盖阶段与证据。返回接受的完整计划、计划/证据ID、真实预算与期限信息及限制，以便交给executor通过modeler执行。只用打包工具；无需派发其他角色。"
+        "text": "[English editorial summary; not verbatim] Historical operator/Agent continuation or recovery message. Original wording is archived; this presentation field is not an executable instruction or proof that recovery succeeded."
       }
     ]
   },
@@ -121,7 +121,7 @@
     "content": [
       {
         "type": "output_text",
-        "text": "我会读取 broker 当前状态，核实可见证据、预算与期限，再记录初始匹配对照计划。本轮不派发其他角色、不执行实验；本轮推理也计入模型请求。\n"
+        "text": "[English editorial summary; not verbatim] Historical non-English message or presentation text. Read the original snapshot for exact content and the English historical report for context."
       }
     ],
     "model": "physics-lab"
@@ -156,7 +156,7 @@
     "content": [
       {
         "type": "output_text",
-        "text": "broker 确认当前处于 planning 阶段，尚无计划、试验或分析。返回内容没有用量、期限、任务清单或任务证据；因此无法核实此前的 11/40，也不能把示例任务当作已确认可用任务。我会向 `record_plan` 提交六次工具运行成本的初始方案，由 broker 校验任务可用性与预算约束；假设仍是待检验的。\n"
+        "text": "[English editorial summary; not verbatim] Historical non-English message or presentation text. Read the original snapshot for exact content and the English historical report for context."
       }
     ],
     "model": "physics-lab"
@@ -191,7 +191,7 @@
     "content": [
       {
         "type": "output_text",
-        "text": "已记录并获接受：**`initial-logs`**。\n\n真实证据来自 broker `status`：session 为 `session-adba2f1eb4944d29a2b5a996284c772d`，阶段为 `planning`，记录前 `plans=[]`、`trials=[]`、`analysis=null`。响应未提供独立证据 ID、模型请求用量或期限；此前 **11/40 尚未核实**。本轮推理也消耗模型请求。\n\n接受的完整计划如下，可交给 executor 通过 modeler 执行：\n\n```json\n{\n  \"id\": \"initial-logs\",\n  \"hypothesis\": \"在任务 cooling-sign-v1 可用且其余执行条件保持一致的条件下，structured 日志比 raw 日志更有助于执行模型在同一修复预算内通过既定最终验证；此假设为暂定假设，尚无试验支持。\",\n  \"falsification\": \"匹配试验中 structured 条件未通过既定最终验证而 raw 条件通过，构成反对假设的观察；两者均通过或均失败则本轮不能支持所假设的优势，不据此声称普遍效应。\",\n  \"candidates\": [\n    {\n      \"id\": \"logs\",\n      \"learning_value\": \"直接检验日志呈现机制与既定验证结果的关系；采用同任务、同 replicate 的 raw/structured 配对，避免更换评价标准。\",\n      \"feasibility\": \"需要 broker 确认 cooling-sign-v1 是可用真实任务，并由 operator 授权 modeler 访问模型；任务、模型、温度、工具、修复预算及评价必须匹配。两次 trial 各 max_attempts=2，按每 trial max_attempts+1 计费，总计六次确定性工具运行；estimated_tool_runs=4 指最多四次修复尝试，另有两次最终验证。当前 status 未暴露任务清单、模型请求用量或期限，不能声称已核实这些条件。\",\n      \"estimated_tool_runs\": 4\n    },\n    {\n      \"id\": \"information-loss\",\n      \"learning_value\": \"在相同任务和评价下以无修复配对检验日志呈现的信息损失是否足以改变最终验证结果；成本低，但不能观察日志对迭代修复的帮助。\",\n      \"feasibility\": \"若 broker 支持 max_attempts=0，可执行 raw/structured 各一次最终验证，总计两次确定性工具运行；仍需同一任务、模型、温度、工具和 operator 模型授权。该零修复配置的支持情况尚未由真实工具确认。\",\n      \"estimated_tool_runs\": 2\n    }\n  ],\n  \"selected_candidate\": \"logs\",\n  \"selection_reason\": \"选择直接观察修复过程的日志配对，学习价值高于无修复测试；初始成本为六次确定性工具运行，在初始和后续合计最多十二次的上限内保留六次供后续使用。仅在 broker 接受任务与计划且 operator 确认原模型请求预算和原期限仍允许执行时交给 executor；不重置预算或期限、不变更评价、不自行修复模型或能力。当前唯一真实证据为 session-adba2f1eb4944d29a2b5a996284c772d 的 status：stage=planning、plans=[]、trials=[]、analysis=null；该响应没有独立证据 ID，也没有可见用量和期限。\",\n  \"runs\": [\n    {\n      \"task_id\": \"cooling-sign-v1\",\n      \"diagnostics\": \"raw\",\n      \"replicate\": 0,\n      \"max_attempts\": 2\n    },\n    {\n      \"task_id\": \"cooling-sign-v1\",\n      \"diagnostics\": \"structured\",\n      \"replicate\": 0,\n      \"max_attempts\": 2\n    }\n  ]\n}\n```\n\n计划已接受，实验尚未执行。执行前仍须核实原预算、原期限与 operator 模型授权；遇额度或期限立即停止。`record_plan` 的接受响应未另外返回任务证据或预算信息。"
+        "text": "[English editorial summary; not verbatim] Historical human authorization statement. This record does not authorize a new run; refer to the archived original for exact permission."
       }
     ],
     "model": "physics-lab"

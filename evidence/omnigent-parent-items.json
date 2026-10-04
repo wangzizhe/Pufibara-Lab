@@ -11,7 +11,7 @@
       "content": [
         {
           "type": "input_text",
-          "text": "请按你的约定向 planner 发起一次真实研究规划交接，并返回 child session ID。不要执行实验。"
+          "text": "[English editorial summary; not verbatim] Historical non-English message or presentation text. Read the original snapshot for exact content and the English historical report for context."
         }
       ]
     },
@@ -25,7 +25,7 @@
       "content": [
         {
           "type": "output_text",
-          "text": "我会向 planner 发起一次研究规划交接，仅请求计划，不执行实验。"
+          "text": "[English editorial summary; not verbatim] Historical non-English message or presentation text. Read the original snapshot for exact content and the English historical report for context."
         }
       ],
       "model": "pilot-coordinator"
@@ -60,7 +60,7 @@
       "content": [
         {
           "type": "output_text",
-          "text": "已向 planner（`pilot-plan`）发起真实研究规划交接。\n\nChild session ID：`e1e0fd6746c944d29516ca159cf4bfdc`\n\n未执行实验；收到完成通知后会用一句话概括规划结果。"
+          "text": "[English editorial summary; not verbatim] Historical non-English message or presentation text. Read the original snapshot for exact content and the English historical report for context."
         }
       ],
       "model": "pilot-coordinator"

@@ -59,16 +59,16 @@ comparison = {'automatic': automatic, 'manual': manual, 'manual_codex_interventi
                               'Manual model time authorization was extended by the user; UI reload by Codex is recorded separately.',
                               'Report actual observations without a speedup ratio or causal claim.']}
 (folder / 'workflow-comparison.json').write_text(json.dumps(comparison, ensure_ascii=False, indent=2))
-lines = ['# 科研流程瓶颈实测', '',
-         f"自动路径（Codex 操作）从已记录初始控制输入到报告保存：{automatic['elapsed_seconds']:.1f} 秒；记录到 {automatic['recorded_native_control_inputs']} 次原生控制输入。",
-         '该时间包含排错与恢复。终端操作、代码修改和可复用准备未完整计时，人工总动作数未知；不能把原生消息数当成总人工步骤。', '']
+lines = ['# Workflow bottleneck observations', '',
+         f"Automatic path (Codex-operated), recorded initial control to report save: {automatic['elapsed_seconds']:.1f} seconds; recorded {automatic['recorded_native_control_inputs']} native control inputs.",
+         'Includes debugging and recovery. Shell actions, edits and reusable setup are incompletely timed; total operator actions are unknown. Native message count is not total human steps.', '']
 if manual:
-    lines += [f"真人手工路径：{manual['elapsed_seconds']:.1f} 秒，{manual['operator_actions']} 次界面动作（含错误／恢复），环境准备 {manual.get('setup_seconds')} 秒（Codex 操作，另列）。", '']
-    lines += [f'手工路径期间另有 {len(operator_events)} 次已记录 Codex 界面维护动作，单独列出，不冒充真人点击。用户明确延长共享阶段时长20分钟；该次时间修改未增请求。另在后续验证结算后把总请求上限提升到500，未重置已用199次。', '']
+    lines += [f"Human manual path: {manual['elapsed_seconds']:.1f} seconds, {manual['operator_actions']} UI actions (including failures/recovery); preparation {manual.get('setup_seconds')} seconds (Codex-operated, separately recorded).", '']
+    lines += [f'During the manual path, another {len(operator_events)} Codex UI-maintenance actions are separate from human clicks. The user extended the shared deadline by 20 minutes without adding requests, then raised the request limit to 500 after follow-up settlement without resetting 199 consumed requests.', '']
 else:
-    lines += ['真人手工路径尚未完成，不填估计值。', '']
-lines += ['尚未建立科研流程提速证据。两路径的操作员、先后次序和基础设施成熟度不同；不计算提速倍率或宣称因果改善。', '',
-          '证据：`automatic-*.json`、`manual-*.json`、`workflow-comparison.json` 和实际原生消息／科研报告。']
+    lines += ['Human manual path incomplete; no estimated values inserted.', '']
+lines += ['No workflow speedup established. Operators, order and infrastructure maturity differ; no speed factor or causal improvement claim.', '',
+          'Evidence: automatic/manual JSON records, workflow-comparison.json and actual native messages/reports.']
 (folder / 'workflow-comparison.md').write_text('\n'.join(lines) + '\n')
 print(json.dumps({'automatic_seconds': automatic['elapsed_seconds'], 'manual_finished': bool(manual),
                   'speed_improvement_established': False}))

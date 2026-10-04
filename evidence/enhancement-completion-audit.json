@@ -65,7 +65,7 @@
         "docs/TECHNICAL_WALKTHROUGH_60S_EN.md",
         "docs/DEMO_LIVE_ENGLISH.md"
       ],
-      "limit": "User explicitly instructed: 你不用管我怎么录demo. Recording and video review removed from assistant scope, not claimed completed."
+      "limit": "[English editorial summary; not verbatim] Historical non-English message or presentation text. Read the original snapshot for exact content and the English historical report for context."
     }
   ],
   "model_host_stopped": true,

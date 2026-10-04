@@ -82,39 +82,39 @@ if args.enhancement:
     record['primary_native_operator_control_inputs'] = 6
     record['unintervened_full_scientific_loop'] = False
 (folder / 'report.json').write_text(json.dumps(record,ensure_ascii=False,indent=2))
-lines = ['# 实际科研运行报告','',f'Broker 会话：`{args.session_id}`。Omnigent 父会话：`{native["parent_session_id"]}`。',
-    '',f'当前阶段：**{session["stage"]}**；完整闭环核对：**{verified}**；建模会话分离：**{separated}**。',
-    '', '## Agent 提出与选择','']
+lines = ['# Actual research run report','',f'Broker session: `{args.session_id}` . Omnigent parent: `{native["parent_session_id"]}`。',
+    '',f'Stage: **{session["stage"]}** ; closed-loop verification: **{verified}** ; Modeler conversation separation: **{separated}**。',
+    '', '## Agent hypotheses and selection','']
 for plan in session['plans']:
-    lines += [f'### {plan["id"]}', '', '假设（待验证）：'+plan['hypothesis'], '', '证伪条件：'+plan['falsification'], '',
-        '| 候选 | 学习价值 | 可行性 | 预计工具运行 |', '| --- | --- | --- | --- |']
+    lines += [f'### {plan["id"]}', '', 'Hypothesis (untested): '+plan['hypothesis'], '', 'Falsification: '+plan['falsification'], '',
+        '| Candidate | Learning value | Feasibility | Estimated tool runs |', '| --- | --- | --- | --- |']
     for c in plan['candidates']:
         lines += [f'| {c["id"]} | {c["learning_value"]} | {c["feasibility"]} | {c["estimated_tool_runs"]} |']
-    lines += ['', '选择：'+plan['selected_candidate']+'。'+plan['selection_reason'], '']
-lines += ['## 实际实验','', '| 计划 | 机制 | 开发尝试（含基线） | 检查 | 仿真 | 行为 | 工具秒 | 证据 |', '| --- | --- | --- | --- | --- | --- | --- | --- |']
+    lines += ['', 'Selection: '+plan['selected_candidate']+'。'+plan['selection_reason'], '']
+lines += ['## Actual experiments','', '| Plan | Mechanism | Development attempts (including baseline) | Checking | Simulation | Behavior | Tool seconds | Evidence |', '| --- | --- | --- | --- | --- | --- | --- | --- |']
 for t in finished:
     e=t['evaluation']; rid=t['final_run_id']
     lines += [f'| {t["plan_id"]} | {t["config"]["diagnostics"]} | {len(t["attempts"])} | {e["model_checking"]} | {e["simulation"]} | {e["behavior"]} | {t["tool_seconds"]:.3f} | [{rid}](../../runs/{rid}/result.json) |']
 for t in trials:
     if not t['finished']:
-        lines += [f'\n未结束试次：`{t["trial_id"]}`，已保存 {len(t["attempts"])} 次开发运行；不计为最终通过。']
+        lines += [f'\nUnfinished trial: `{t["trial_id"]}`; saved {len(t["attempts"])} development runs; not counted as final acceptance.']
 if session['analysis']:
-    a=session['analysis']; lines += ['', '## 结果驱动的调整','', '支持程度：'+a['support'], '', '调整理由：'+a['adjustment_reason'], '', '限制：'+a['limitations'], '', '引用：'+', '.join(a['evidence_run_ids'])]
-bottleneck = '科研流程瓶颈：实际手工/自动对照尚待完成，当前不报告改善。'
+    a=session['analysis']; lines += ['', '## Evidence-driven adjustment','', 'Support: '+a['support'], '', 'Adjustment reason: '+a['adjustment_reason'], '', 'Limitations: '+a['limitations'], '', 'References: '+', '.join(a['evidence_run_ids'])]
+bottleneck = 'Workflow bottleneck: a real manual/automatic comparison is pending; no improvement reported.'
 if args.enhancement:
-    bottleneck = '历史真人/自动实测见 evidence/measurements/workflow-comparison.json；尚未建立整体提速证据。本次包含6次已记录原生控制输入及工程恢复，不推断人工步骤减少。'
+    bottleneck = 'Historical manual/automatic measurements: evidence/measurements/workflow-comparison.json. No overall speedup established. This run includes six recorded native controls and engineering recovery; do not infer reduced human work.'
     interpretation = record['followup_interpretation']
-    lines += ['', '## 后续实际解释', '', '来源：`'+interpretation['source']+'`。父角色收件箱工具缺失导致末次结果未被根角色读取；此失败保留，不能声称本次全程自动完成。']
+    lines += ['', '## Actual follow-up interpretation', '', 'Source: `'+interpretation['source']+'`. The parent lacked its inbox tool and could not collect the last result. Failure is preserved; do not claim uninterrupted automation.']
     for message in interpretation['actual_messages']:
         lines += ['', *[content['text'] for content in message.get('content', []) if content.get('type') == 'output_text']]
 if human and human.get('finished'):
     observation = record['workflow_observations']
-    bottleneck = (f"科研流程瓶颈实测：真人手工 {observation['manual_seconds']:.1f} 秒、"
-        f"{observation['manual_ui_actions']} 次界面动作；自动路径 {observation['automatic_seconds']:.1f} 秒、"
-        f"{observation['automatic_recorded_native_control_inputs']} 次已记录原生控制输入。"
-        '自动路径的终端/修改总动作未完整记录，操作员与基础设施成熟度不同；不计算提速倍率。')
-lines += ['', '## 用量与限制','', '模型实际请求由阶段网关计数，包含基础设施失败和重试。研究与建模 token 仅在能对应真实会话时分列；早期匿名键不强行归因，属于全局历史缺测，不能算成本次研究的全部未知成本。订阅没有逐 token 美元账单，费用留空。', '',
+    bottleneck = (f"Observed workflow bottleneck: human manual {observation['manual_seconds']:.1f} seconds, "
+        f"{observation['manual_ui_actions']} UI actions; automatic path {observation['automatic_seconds']:.1f} seconds, "
+        f"{observation['automatic_recorded_native_control_inputs']} recorded native controls. "
+        'Automatic shell/edit actions are incompletely recorded; operator and infrastructure maturity differ. No speed factor is computed.')
+lines += ['', '## Usage and limitations','', 'The phase gateway counts actual requests, including infrastructure failures and retries. Research/modeling tokens are attributed only when bound to actual conversations. Early anonymous keys remain unattributed global history, not this study cost. Subscription billing does not provide per-token dollar charges; monetary cost stays unknown.', '',
     bottleneck, '', *('- '+x for x in record['limitations']), '',
-    '原始消息：`evidence/omnigent/'+native['parent_session_id']+'`；原始计划、源代码、日志和模型产物保留于本项目证据目录。']
+    'Original messages: `evidence/omnigent/'+native['parent_session_id']+'`; plans, source, logs and model artifacts are preserved in evidence.']
 (folder / 'report.md').write_text('\n'.join(lines)+'\n')
 print(json.dumps({'report':str(folder / 'report.md'), 'stage':session['stage'], 'closed_loop_verified':verified},ensure_ascii=False))

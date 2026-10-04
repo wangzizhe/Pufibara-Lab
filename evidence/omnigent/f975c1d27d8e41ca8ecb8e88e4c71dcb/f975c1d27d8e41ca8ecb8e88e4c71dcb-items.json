@@ -9,7 +9,7 @@
     "content": [
       {
         "type": "input_text",
-        "text": "这是实际真人手工触发对照。提出并记录日志机制的可证伪假设、至少两个成本候选并选择 matched raw/structured 对照。固定任务cooling-sign-v1，初始 raw/structured 各一次，replicate=0,max_attempts=2，既定检查/仿真/行为评价不可更改；总确定性工具运行12，留6次后续预算。不要执行实验。 沿用本阶段200请求/60分钟总上限及原起算时间，模型请求包括各角色推理和失败重试。派发子角色后结束当前轮等自动通知，不轮询；runtime自动检查建模会话分离，不调用会话发现/历史工具。"
+        "text": "[English editorial summary; not verbatim] Historical research instructions with task and budget constraints. Exact instructions and limits are preserved in the original snapshot; current live authority is disabled."
       }
     ]
   },
@@ -23,7 +23,7 @@
     "content": [
       {
         "type": "output_text",
-        "text": "我会先读取当前公开状态，核对预算和既定任务，再记录可证伪假设及 raw/structured 配对计划；本轮不执行实验。"
+        "text": "[English editorial summary; not verbatim] Historical non-English message or presentation text. Read the original snapshot for exact content and the English historical report for context."
       }
     ],
     "model": "planner"
@@ -78,7 +78,7 @@
     "content": [
       {
         "type": "output_text",
-        "text": "已记录计划 `initial-logs`，系统已接受。未执行实验，未派发子角色。\n\n- **可证伪假设**：其他条件固定时，structured 日志能帮助修复冷却符号错误，以更少修复尝试通过既定最终验证。structured 结果更差，或结果相同但尝试数不少于 raw，均计为本次对照不支持假设。\n- **两个成本候选**：直接日志对照 `logs`，预计6次；等信息量表达对照 `information-loss`，预计6次。选择前者。\n- **初始配对**：固定 `cooling-sign-v1`，raw/structured 各一次，均为 `replicate=0, max_attempts=2`。初始预算6次，保留6次后续预算。\n- **约束保持**：模型、温度、工具及既定检查/仿真/行为评价不变；沿用原起算时间和200请求/60分钟上限。公开状态显示已用154/200请求。"
+        "text": "[English editorial summary; not verbatim] Historical research instructions with task and budget constraints. Exact instructions and limits are preserved in the original snapshot; current live authority is disabled."
       }
     ],
     "model": "planner"

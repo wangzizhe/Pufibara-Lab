@@ -62,3 +62,5 @@ Historical manual/automatic observations were 813.986/2293.816 seconds, with dif
 **Proposed, not executed:** compare manual stage triggering with automatic orchestration under matched prepared conditions and completion criteria. Include waits, failures and recovery, record operator work separately, alternate order if repeated, and validate token attribution. [Protocol](docs/MEASUREMENT.md).
 
 Before real-world use, independent physical tasks, broader repetitions, numerical robustness, measured physical data and qualified engineering review remain necessary. The idealized cooling example is not hardware validation. This submission demonstrates an executed scientific loop with a small negative mechanism result; it does not establish a generally faster research system.
+
+Historical non-English text uses labeled editorial views; primary English run evidence is unchanged. See the [English-edition policy](docs/ENGLISH_EDITION.md) and its source hashes before auditing exact historical wording.
