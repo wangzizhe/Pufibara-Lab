@@ -28,7 +28,8 @@
     "Human-readable documentation pass: setup/run/security/sources unified in concise English, obsolete development status removed, submission map deduplicated; public GitHub status and undecided code license clarified. No scientific records or execution code changed.",
     "Remaining seven Chinese Markdown documents replaced with English specifications/navigation/editorial historical summaries; underlying report/session JSON, native messages, logs, CSVs and scientific code unchanged.",
     "Entire current readable tree made English: script prompts/UI/report labels translated; historical non-English JSON fields replaced with explicitly marked editorial summaries and per-field/file original provenance. Primary English demo and all deterministic modeling artifacts unchanged; originals retained locally and in earlier Git commit. No history rewrite or new experiment.",
-    "Final delivery audit: 36 no-model unit tests passed; Coordinator output language corrected to English, unavailable seed/temperature controls clarified, and live-run documentation separated fresh research budgeting from initialization task settings and archived journal requirements. New-clone live execution remains operator-configured and was not run."
+    "Final delivery audit: 36 no-model unit tests passed; Coordinator output language corrected to English, unavailable seed/temperature controls clarified, and live-run documentation separated fresh research budgeting from initialization task settings and archived journal requirements. New-clone live execution remains operator-configured and was not run.",
+    "Added self-contained saved-run HTML, actual page screenshots encoded as a six-frame timing-compressed GIF, and README top anchor/bottom inline walkthrough. Sources/hashes and saved-not-live labeling included. No new model calls or changes to original primary evidence."
   ],
   "files": [
     {
@@ -43,8 +44,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7886,
-      "sha256": "dcd572aaa5e0ff038e4d86facace58e3eb6ea4cef5eb92bada3a212d69db6187"
+      "bytes": 8956,
+      "sha256": "a4ce9a9223388f1d5dc468c559700f087b0dcbe036fa6a2f146b5e8928e0f3db"
     },
     {
       "path": "SUBMISSION.md",
@@ -242,9 +243,29 @@
       "sha256": "0245a04968335237ba10b3c80c80bdb2319da178524fc9f1f609aa87096a3ebc"
     },
     {
+      "path": "docs/assets/recorded-workflow-preview.png",
+      "bytes": 389523,
+      "sha256": "aa790ca4896b2a31900444e48999811404bc1284ee5bda4d43f05075b5f98ba2"
+    },
+    {
+      "path": "docs/assets/recorded-workflow-provenance.json",
+      "bytes": 746,
+      "sha256": "7e9457df7032371910cdbce161cfe214e4cebe5941e917f67c85e7f91e86f8ff"
+    },
+    {
+      "path": "docs/assets/recorded-workflow.gif",
+      "bytes": 1334197,
+      "sha256": "6164b686e6f6fbf9e248a5f9157b6122b14cc2a77830c10c995c395e2c8c3765"
+    },
+    {
       "path": "docs/assets/research-loop.svg",
       "bytes": 3226,
       "sha256": "436d058b6a73f791368d7a361459bfe35cf04713a1f762fbfc5401274798d194"
+    },
+    {
+      "path": "docs/research-walkthrough.html",
+      "bytes": 284160,
+      "sha256": "b191d5afb09ad7e664a2c21226df3f52c1da1a275558a659c4375c2f0e9ec169"
     },
     {
       "path": "evidence/HISTORICAL_INDEX.md",
@@ -2200,6 +2221,11 @@
       "path": "scripts/engineering_smoke.py",
       "bytes": 1480,
       "sha256": "700a62a7685431246c515348b2d4f0b97fd705584de75d34bf98ad49e46003d1"
+    },
+    {
+      "path": "scripts/export_saved_workflow.py",
+      "bytes": 10440,
+      "sha256": "fbe96844c9f131c1709e8f8ae288cd4111576cc9e118f38f3ace6acf4e333706"
     },
     {
       "path": "scripts/manual_workflow_ui.py",

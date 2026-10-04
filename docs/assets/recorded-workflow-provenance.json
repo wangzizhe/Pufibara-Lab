@@ -1,0 +1,24 @@
+{
+  "kind": "screenshot_animation_of_saved_evidence_walkthrough",
+  "page": "docs/research-walkthrough.html",
+  "generator": "scripts/export_saved_workflow.py",
+  "gif": "docs/assets/recorded-workflow.gif",
+  "frames": 6,
+  "durations_ms": [
+    5000,
+    6000,
+    5000,
+    6500,
+    5000,
+    6500
+  ],
+  "display_duration_seconds": 34,
+  "actual_native_goal_to_final_span_seconds": 766,
+  "timing_compressed": true,
+  "is_live_run": false,
+  "new_model_calls": 0,
+  "native_parent": "e33643e43bc04dba8cd0fd538bbe4dde",
+  "sources": "Source paths/hashes embedded in HTML",
+  "gif_sha256": "6164b686e6f6fbf9e248a5f9157b6122b14cc2a77830c10c995c395e2c8c3765",
+  "page_sha256": "b191d5afb09ad7e664a2c21226df3f52c1da1a275558a659c4375c2f0e9ec169"
+}

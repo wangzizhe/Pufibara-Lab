@@ -1,5 +1,7 @@
 # Pufibara Lab
 
+**[Watch the saved workflow below ↓](#recorded-workflow-walkthrough)** — no model connection required.
+
 **An automatic research environment that uses Omnigent to investigate how Harness mechanisms affect AI agents building physical models.**
 
 A *Harness* is the context, tools, feedback and execution rules surrounding an agent. Our research question is: **which mechanisms improve modeling success, reduce completion time, or use fewer tokens?** The delivered system runs the research loop; the small Modelica study below demonstrates it with real experiments.
@@ -64,3 +66,13 @@ Historical manual/automatic observations were 813.986/2293.816 seconds, with dif
 Before real-world use, independent physical tasks, broader repetitions, numerical robustness, measured physical data and qualified engineering review remain necessary. The idealized cooling example is not hardware validation. This submission demonstrates an executed scientific loop with a small negative mechanism result; it does not establish a generally faster research system.
 
 Historical non-English text uses labeled editorial views; primary English run evidence is unchanged. See the [English-edition policy](docs/ENGLISH_EDITION.md) and its source hashes before auditing exact historical wording.
+
+## Recorded workflow walkthrough
+
+![Six-stage walkthrough of saved research evidence](docs/assets/recorded-workflow.gif)
+
+**Saved evidence, not a live run.** This 34-second animation shows the six stages of the completed research loop; stage timing is compressed. The recorded native span was 766 seconds, excluding setup. [Animation provenance](docs/assets/recorded-workflow-provenance.json).
+
+For all expandable Agent messages and tool records, use the [self-contained HTML walkthrough](docs/research-walkthrough.html). GitHub displays HTML as source: select **Download raw file**, then open it locally. The GIF above plays directly in the README. The HTML embeds the saved data and works offline; evidence links open the repository when clicked.
+
+The page can be regenerated from saved records with `python3 scripts/export_saved_workflow.py`; it makes no model calls. This supporting walkthrough complements the author's separately supplied two-minute demo.
