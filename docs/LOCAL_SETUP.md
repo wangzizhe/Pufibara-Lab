@@ -8,7 +8,7 @@ macOS, Python 3.14.8, Omnigent 0.16.0 and an existing OpenModelica 1.26.1 arm64 
 
 ## Install
 
-Run from the repository root after approving dependency installation:
+For execution, use a separate directory as described in [RESEARCH_RUN](RESEARCH_RUN.md), keeping the published evidence read-only. Run from that directory after approving dependency installation:
 
 ```sh
 python3 -m venv .venv

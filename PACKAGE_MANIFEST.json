@@ -27,7 +27,8 @@
     "Generated Python egg-info excluded before GitHub publication; curated folder is the repository root.",
     "Human-readable documentation pass: setup/run/security/sources unified in concise English, obsolete development status removed, submission map deduplicated; public GitHub status and undecided code license clarified. No scientific records or execution code changed.",
     "Remaining seven Chinese Markdown documents replaced with English specifications/navigation/editorial historical summaries; underlying report/session JSON, native messages, logs, CSVs and scientific code unchanged.",
-    "Entire current readable tree made English: script prompts/UI/report labels translated; historical non-English JSON fields replaced with explicitly marked editorial summaries and per-field/file original provenance. Primary English demo and all deterministic modeling artifacts unchanged; originals retained locally and in earlier Git commit. No history rewrite or new experiment."
+    "Entire current readable tree made English: script prompts/UI/report labels translated; historical non-English JSON fields replaced with explicitly marked editorial summaries and per-field/file original provenance. Primary English demo and all deterministic modeling artifacts unchanged; originals retained locally and in earlier Git commit. No history rewrite or new experiment.",
+    "Final delivery audit: 36 no-model unit tests passed; Coordinator output language corrected to English, unavailable seed/temperature controls clarified, and live-run documentation separated fresh research budgeting from initialization task settings and archived journal requirements. New-clone live execution remains operator-configured and was not run."
   ],
   "files": [
     {
@@ -53,7 +54,7 @@
     {
       "path": "agents/lab/AGENTS.md",
       "bytes": 1417,
-      "sha256": "665d46e8991910422d6b5a244df5bf5cfb1b881c3225d0da01d33909f0280722"
+      "sha256": "5a723cf8f4f49310a137d6b855c5169ba40466a8f64b82afdb729a3752b52794"
     },
     {
       "path": "agents/lab/agents/analyst/AGENTS.md",
@@ -132,8 +133,8 @@
     },
     {
       "path": "agents/lab/agents/planner/AGENTS.md",
-      "bytes": 1829,
-      "sha256": "3e05da28ade03b0fc86dc41f3994c8cc8e4226aab7aaaa1d1596a4776a007513"
+      "bytes": 1937,
+      "sha256": "c45538a8d5cb3623fda29b4466a8e83cf62794a3e46a7d86a4ab6330e2e753fe"
     },
     {
       "path": "agents/lab/agents/planner/config.yaml",
@@ -217,8 +218,8 @@
     },
     {
       "path": "docs/LOCAL_SETUP.md",
-      "bytes": 2852,
-      "sha256": "89577dbb1bc02af3816d18811b4ca5cdb72ada256adb88e72d446e608fd9030e"
+      "bytes": 2978,
+      "sha256": "0ca8299e51b16c4f839a5afa8573e9cb4f419407dda969e6ca83696ccdf2fbcb"
     },
     {
       "path": "docs/MEASUREMENT.md",
@@ -227,8 +228,8 @@
     },
     {
       "path": "docs/RESEARCH_RUN.md",
-      "bytes": 2952,
-      "sha256": "66450606d2cc28377d60bf35a959e70590423fec120c1c60db76763271186161"
+      "bytes": 4243,
+      "sha256": "7aa6a0639c16cec5941a61250ca4a0273a404269e1046a7e6a7e00fd7ecb35ca"
     },
     {
       "path": "docs/SECURITY.md",

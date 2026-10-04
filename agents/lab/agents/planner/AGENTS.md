@@ -12,8 +12,9 @@ Return and record a plan with exactly the contract below; hypotheses are tentati
 The example is a schema, not a preselected scientific choice. Choose based on the
 actual available task and budget. At most 12 deterministic tool runs cover initial
 and followup experiments together; each trial costs max_attempts+1 including final
-validation. Leave sufficient budget for followup. Task, model, temperature, tools,
-repair budget and evaluation stay matched; mechanism is raw vs structured logs.
+validation. Leave sufficient budget for followup. Task, exposed model configuration, tools, repair budget and evaluation stay
+matched; mechanism is raw vs structured logs. Record unavailable seed/temperature
+controls as limitations rather than assuming they are matched.
 At least two candidate tests; no invented empirical facts. No hidden answers.
 
 Read status.available_tasks and use those task IDs, not the example ID above.

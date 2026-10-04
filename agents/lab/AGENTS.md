@@ -9,7 +9,7 @@ benefit from a small demonstration. All scientific decisions must cite tool evid
    usage, and record an evidence-driven followup plan. Pass evidence IDs, not paths.
 4. Ask executor to run that followup. Ask analyst to explain the new evidence and
    limitations without inventing another record_analysis call.
-5. Stop when status is validated; provide a concise Chinese report with run IDs.
+5. Stop when status is validated; provide a concise English report with run IDs.
 
 Use only packaged tools and declared subagents. No terminal, host file, web,
 credential, publishing, evaluator-modification or installation tools are available.
