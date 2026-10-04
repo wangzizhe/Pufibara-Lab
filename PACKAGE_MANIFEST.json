@@ -32,7 +32,8 @@
     "Added self-contained saved-run HTML, actual page screenshots encoded as a six-frame timing-compressed GIF, and README top anchor/bottom inline walkthrough. Sources/hashes and saved-not-live labeling included. No new model calls or changes to original primary evidence.",
     "User-authorized GitHub Pages publication: docs entry redirects to the existing self-contained saved-evidence page; .nojekyll added; README and submission map link the public walkthrough. No model service or new experiment added.",
     "Removed the redundant README GIF and its preview/provenance assets; prominent Live Demo heading and standalone URL identify the interactive saved-run replay. Primary run evidence unchanged.",
-    "Centered the bold Live Demo heading and its standalone link in the reviewer README."
+    "Centered the bold Live Demo heading and its standalone link in the reviewer README.",
+    "Condensed the reviewer README while retaining the centered demo entry, architecture, observed results, primary evidence, limitations, reproduction links and proposed next experiment."
   ],
   "files": [
     {
@@ -47,8 +48,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8689,
-      "sha256": "4d15542d2d5010b090e71b5842bb66363efd7d84a5f9933f74d373db1d949553"
+      "bytes": 3834,
+      "sha256": "2fbf81d2db1ee0de6455d98f22a6edaf1dc3c11c12fdf97f57573953eddb5351"
     },
     {
       "path": "SUBMISSION.md",
