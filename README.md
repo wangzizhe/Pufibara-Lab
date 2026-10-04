@@ -6,7 +6,9 @@
   <a href="https://wangzizhe.github.io/Pufibara-Lab/">https://wangzizhe.github.io/Pufibara-Lab</a>
 </p>
 
-**Interactive replay of a real saved run; no live model calls.** Narrated demo videos are supplied separately.
+<p align="center"><em>Interactive replay of a real saved run; no live model calls.</em></p>
+
+## Overview
 
 **An automatic research environment for studying how Harness mechanisms affect AI agents building physical models.** A Harness provides an agent's context, tools, feedback and execution rules. Our question: which mechanisms improve modeling success, completion time or token use?
 
@@ -46,3 +48,7 @@ The latest run took **766 seconds from goal to summary**, excluding setup. **Ove
 New live runs require dedicated model access and authorized budgets; archived execution authority is disabled. An [offline walkthrough](docs/research-walkthrough.html) is available to download and open locally.
 
 **Next experiment (proposed):** a matched manual-trigger versus automatic-workflow benchmark, including waits, failures, operator work and reliable token accounting. [Protocol](docs/MEASUREMENT.md). Before real-world use, broader tasks, repetitions, physical validation and qualified engineering review are still needed.
+
+## License
+
+Project code and documentation are [MIT licensed](LICENSE). Tasks marked CC0-1.0 and third-party dependencies retain their respective licenses.

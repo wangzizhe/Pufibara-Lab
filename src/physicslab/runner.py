@@ -21,7 +21,7 @@ class DockerRunner:
         if not self.image or not re.fullmatch(r"sha256:[0-9a-f]{64}", self.image):
             raise ValueError("Pinned local image ID required")
         self.docker = settings.get("docker_executable", "/usr/local/bin/docker")
-        self.host = "unix:///Users/meow/.docker/run/docker.sock"
+        self.host = "unix://" + str(Path.home() / ".docker/run/docker.sock")
         self.env = {"PATH": "/usr/local/bin:/usr/bin:/bin", "DOCKER_CONFIG": str(self.root / ".runtime/docker-config")}
         Path(self.env["DOCKER_CONFIG"]).mkdir(parents=True, exist_ok=True)
 

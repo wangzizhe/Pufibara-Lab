@@ -7,6 +7,7 @@ name = "physics-harness-lab"
 version = "0.1.0"
 description = "Evidence-driven Modelica harness research tools"
 requires-python = ">=3.12"
+license = {file = "LICENSE"}
 dependencies = []
 
 [project.scripts]

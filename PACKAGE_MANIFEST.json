@@ -9,7 +9,7 @@
     "model_authority_included": false,
     "published": false
   },
-  "published": false,
+  "published": true,
   "formally_submitted": false,
   "new_experiments_run": false,
   "human_narrated_demo_included": false,
@@ -34,14 +34,13 @@
     "Removed the redundant README GIF and its preview/provenance assets; prominent Live Demo heading and standalone URL identify the interactive saved-run replay. Primary run evidence unchanged.",
     "Centered the bold Live Demo heading and its standalone link in the reviewer README.",
     "Condensed the reviewer README while retaining the centered demo entry, architecture, observed results, primary evidence, limitations, reproduction links and proposed next experiment.",
-    "Changed the centered Live Demo heading to h3 to avoid the GitHub h2 underline."
+    "Changed the centered Live Demo heading to h3 to avoid the GitHub h2 underline.",
+    "Local final review: Overview heading retained, saved-run replay disclosure restored, current publication flag corrected; historical source archive metadata unchanged. No commit or push.",
+    "Removed the hard-coded local username from Docker socket selection; resolve the same Docker Desktop socket relative to the current user home. Local change only; historical evidence unchanged.",
+    "Local cleanup after stopping project services: removed generated caches and Finder metadata; virtual environment, source, scientific records, runtime databases, budgets and original evidence backups retained. No commit or push.",
+    "User selected MIT for project code and documentation; LICENSE and package metadata added, README/source/submission notices updated. Declared CC0 tasks and third-party licenses remain separate. Current local changes consolidated in one commit; no push implied."
   ],
   "files": [
-    {
-      "path": ".DS_Store",
-      "bytes": 8196,
-      "sha256": "3617830c3adb718b6e2d9e7c9d3fbef5d64f7f482090602d325b2137c5799128"
-    },
     {
       "path": ".gitignore",
       "bytes": 263,
@@ -49,13 +48,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 3834,
-      "sha256": "0055961d56bb2ad5ee1e216dbfa95ee5a9007d6740efadbd4c0eefcb0de43744"
+      "bytes": 3985,
+      "sha256": "087a7f3deb57dd7fdc3f3acd28a315b403a82503d566bce916367d2e715ccdaa"
     },
     {
       "path": "SUBMISSION.md",
-      "bytes": 2779,
-      "sha256": "a5d9ac9876e3ad06c1ce0667eab89d4785fe60c0c6d9fdc11d315bd06afc0b5d"
+      "bytes": 2838,
+      "sha256": "cd8ec228a6e0626dc0269cedb02ccd9e82dabe585641b0a7a05f589d7a5b958b"
     },
     {
       "path": "agents/lab/AGENTS.md",
@@ -249,8 +248,8 @@
     },
     {
       "path": "docs/SOURCES.md",
-      "bytes": 2535,
-      "sha256": "0245a04968335237ba10b3c80c80bdb2319da178524fc9f1f609aa87096a3ebc"
+      "bytes": 2489,
+      "sha256": "8d8fdef21211a25e3261df34084fab6f7a46869b14f06f466f187548b396ac6e"
     },
     {
       "path": "docs/assets/research-loop.svg",
@@ -2149,8 +2148,8 @@
     },
     {
       "path": "pyproject.toml",
-      "bytes": 474,
-      "sha256": "daa3d2f17d34d4389da140fc9aab6610eb71f77dd3b5c6168af5c37b262f2c92"
+      "bytes": 503,
+      "sha256": "5828c3c03812f98a18d5d851043a95e01a6517fd31cba9668d09b2db5865b51d"
     },
     {
       "path": "requirements.lock",
@@ -2344,8 +2343,8 @@
     },
     {
       "path": "src/physicslab/runner.py",
-      "bytes": 9167,
-      "sha256": "8974c70368832e31b9bc300bae354df48fb82b776c9bcdd52dcd2a946c187e62"
+      "bytes": 9179,
+      "sha256": "1d96fe90a6bbd05368e3f7cb80a5e943cf2776d1b5dbd11c79577267ff41d091"
     },
     {
       "path": "tasks/cooling/Cooling.mo",
@@ -2401,6 +2400,11 @@
       "path": "tests/test_resume.py",
       "bytes": 2220,
       "sha256": "48aaeb245578152698444194dd8a1d03e1d12556d39008c5a60d9d251e8a8ff8"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1066,
+      "sha256": "855630b1439b226c9abe6c6868984042822a17d2ecd451427d165e80b295933c"
     }
   ],
   "cleanup_removed_paths": [
@@ -2416,5 +2420,6 @@
     "evidence/enhancement-package-verification.json",
     "evidence/final-review-package-verification.json",
     "evidence/review-package-verification.json"
-  ]
+  ],
+  "license": "MIT"
 }

@@ -19,4 +19,4 @@ The [latest native timestamp observation](evidence/measurements/demo-observation
 
 Task, exposed model route, tools, attempt allowance and fixed evaluation were matched; seed/temperature controls were unavailable. Separate modeling conversations, failed baselines and final run provenance are retained. Engineering probes are not counted as research replicates.
 
-Before real-world use: independent tasks, broader repetitions, reliable cost/time instrumentation, measured physical data, numerical robustness and qualified review remain outstanding. Current file hashes are in `PACKAGE_MANIFEST.json`. A repository-wide code license remains undecided.
+Before real-world use: independent tasks, broader repetitions, reliable cost/time instrumentation, measured physical data, numerical robustness and qualified review remain outstanding. Current file hashes are in `PACKAGE_MANIFEST.json`. Project code and documentation are [MIT licensed](LICENSE); task and dependency licenses remain as declared.

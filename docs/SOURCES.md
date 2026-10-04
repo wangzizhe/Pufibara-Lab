@@ -17,6 +17,6 @@ This is not measured-device validation. Independent tasks, physical data, numeri
 
 ## Materials and licensing
 
-Tasks were newly authored and their metadata declares CC0-1.0. No repository-wide code license has been selected; public visibility does not itself grant an open-source license. Third-party dependencies retain their own licenses.
+Tasks were newly authored and their metadata declares CC0-1.0. Project code and documentation are licensed under [MIT](../LICENSE). Third-party dependencies retain their own licenses.
 
 The author-provided four-page Challenge PDF informed the requirements map. It is omitted because redistribution permission was not established; the repository does not claim to reproduce the full official rules or deadline. No private GateForge/Pufibara assets were used.
