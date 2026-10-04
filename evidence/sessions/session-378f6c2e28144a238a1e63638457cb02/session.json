@@ -1,0 +1,232 @@
+{
+  "session_id": "session-378f6c2e28144a238a1e63638457cb02",
+  "stage": "validated",
+  "plans": [
+    {
+      "id": "initial-logs",
+      "hypothesis": "\u5728\u56fa\u5b9a cooling-sign-v1 \u4efb\u52a1\u3001\u6a21\u578b\u3001\u6e29\u5ea6\u3001\u5de5\u5177\u3001\u4fee\u590d\u9884\u7b97\u53ca\u65e2\u5b9a\u68c0\u67e5/\u4eff\u771f/\u884c\u4e3a\u8bc4\u4ef7\u7684\u6761\u4ef6\u4e0b\uff0cstructured \u65e5\u5fd7\u6bd4 raw \u65e5\u5fd7\u66f4\u6709\u52a9\u4e8e\u5b9a\u4f4d\u5e76\u4fee\u590d\u51b7\u5374\u7b26\u53f7\u9519\u8bef\uff0c\u8868\u73b0\u4e3a\u5728\u76f8\u540c\u5c1d\u8bd5\u4e0a\u9650\u5185\u901a\u8fc7\u65e2\u5b9a\u6700\u7ec8\u9a8c\u8bc1\uff0c\u4e14\u6240\u9700\u4fee\u590d\u5c1d\u8bd5\u66f4\u5c11\uff1b\u8fd9\u662f\u5f85\u68c0\u9a8c\u5047\u8bbe\u3002",
+      "falsification": "\u521d\u59cb matched \u5bf9\u7167\u4e2d\uff0cstructured \u7684\u65e2\u5b9a\u6700\u7ec8\u9a8c\u8bc1\u7ed3\u679c\u5dee\u4e8e raw\uff0c\u6216\u4e24\u8005\u9a8c\u8bc1\u7ed3\u679c\u76f8\u540c\u800c structured \u6240\u9700\u4fee\u590d\u5c1d\u8bd5\u4e0d\u5c11\u4e8e raw\uff0c\u5747\u8ba1\u4e3a\u672c\u6b21\u5bf9\u7167\u4e0d\u652f\u6301\u8be5\u5047\u8bbe\uff1b\u5355\u6b21\u914d\u5bf9\u4e0d\u7528\u4e8e\u65ad\u8a00\u666e\u904d\u6548\u5e94\u3002",
+      "candidates": [
+        {
+          "id": "logs",
+          "learning_value": "\u76f4\u63a5\u6bd4\u8f83 raw \u4e0e structured \u65e5\u5fd7\u673a\u5236\u5bf9\u65e2\u5b9a\u4efb\u52a1\u4fee\u590d\u53ca\u6700\u7ec8\u9a8c\u8bc1\u7684\u5f71\u54cd\uff1b\u6240\u6709\u5176\u4ed6\u6761\u4ef6\u5339\u914d\u3002",
+          "feasibility": "\u56fa\u5b9a cooling-sign-v1\uff0craw/structured \u5404\u4e00\u6b21\uff0creplicate=0\u3001max_attempts=2\uff1b\u6bcf\u4e2a trial \u6309 max_attempts+1 \u8ba13\u6b21\u786e\u5b9a\u6027\u5de5\u5177\u8fd0\u884c\uff0c\u521d\u59cb\u51716\u6b21\uff0c\u4fdd\u75596\u6b21\u540e\u7eed\u9884\u7b97\u3002",
+          "estimated_tool_runs": 6
+        },
+        {
+          "id": "information-loss",
+          "learning_value": "\u6bd4\u8f83\u7b49\u4fe1\u606f\u91cf\u7684 raw \u4e0e structured \u8868\u8fbe\uff0c\u4ee5\u533a\u5206\u65e5\u5fd7\u7ec4\u7ec7\u6548\u679c\u4e0e\u4fe1\u606f\u9057\u6f0f\u7684\u5f71\u54cd\uff1b\u4ec5\u4e3a\u540e\u7eed\u5019\u9009\uff0c\u4e0d\u6539\u8bc4\u4ef7\u6807\u51c6\u3002",
+          "feasibility": "\u9700\u8981\u786e\u8ba4\u4e24\u79cd\u65e5\u5fd7\u7684\u4fe1\u606f\u7b49\u4ef7\u6027\uff1b\u53ef\u5728\u5269\u4f596\u6b21\u9884\u7b97\u5185\u5b89\u6392\u53e6\u4e00\u7ec4\u540c\u4efb\u52a1\u3001\u540c\u6761\u4ef6\u3001max_attempts=2\u7684 matched \u5bf9\u7167\uff0c\u672c\u8f6e\u4e0d\u6267\u884c\u4e5f\u4e0d\u627f\u8bfa\u542f\u52a8\u3002",
+          "estimated_tool_runs": 6
+        }
+      ],
+      "selected_candidate": "logs",
+      "selection_reason": "\u76f4\u63a5\u68c0\u9a8c\u65e5\u5fd7\u673a\u5236\uff0c\u4e14\u7b26\u5408\u7528\u6237\u6307\u5b9a\u7684\u521d\u59cb matched raw/structured \u5bf9\u7167\u3002\u521d\u59cb\u9884\u7b976\u6b21\uff0c\u540e\u7eed\u4fdd\u75596\u6b21\uff0c\u603b\u8ba1\u4e0d\u8d85\u8fc712\u6b21\u786e\u5b9a\u6027\u5de5\u5177\u8fd0\u884c\u3002\u6cbf\u7528\u672c\u9636\u6bb5200\u6a21\u578b\u8bf7\u6c42/60\u5206\u949f\u603b\u4e0a\u9650\u53ca\u539f\u8d77\u7b97\u65f6\u95f4\uff0c\u6240\u6709\u89d2\u8272\u63a8\u7406\u548c\u5931\u8d25\u91cd\u8bd5\u5747\u8ba1\u5165\uff1b\u5f53\u524d\u516c\u5f00\u72b6\u6001\u5df2\u4f7f\u7528154/200\u8bf7\u6c42\uff0c\u622a\u6b62\u65f6\u95f41791107297.777293\u3002\u4e0d\u66f4\u6539\u4efb\u52a1\u3001\u6a21\u578b\u3001\u6e29\u5ea6\u3001\u5de5\u5177\u3001\u4fee\u590d\u9884\u7b97\u6216\u65e2\u5b9a\u68c0\u67e5/\u4eff\u771f/\u884c\u4e3a\u8bc4\u4ef7\uff1b\u672c\u8f6e\u53ea\u8bb0\u5f55\u8ba1\u5212\uff0c\u4e0d\u6267\u884c\u5b9e\u9a8c\u6216\u6d3e\u53d1\u5b50\u89d2\u8272\u3002",
+      "runs": [
+        {
+          "task_id": "cooling-sign-v1",
+          "diagnostics": "raw",
+          "replicate": 0,
+          "max_attempts": 2
+        },
+        {
+          "task_id": "cooling-sign-v1",
+          "diagnostics": "structured",
+          "replicate": 0,
+          "max_attempts": 2
+        }
+      ]
+    },
+    {
+      "id": "matched-logs-replicate-1",
+      "hypothesis": "\u56fa\u5b9a cooling-sign-v1\u3001\u539f\u57fa\u7840\u6a21\u578b\u3001\u6e29\u5ea6\u3001\u5de5\u5177\u3001max_attempts=2 \u548c\u539f\u8bc4\u4ef7\uff0cstructured \u76f8\u8f83 raw \u80fd\u5728\u6700\u7ec8\u4e09\u9879\u8bc4\u4ef7\u5747\u901a\u8fc7\u7684\u6761\u4ef6\u4e0b\u51cf\u5c11\u5b9e\u9645\u4fee\u590d\u5c1d\u8bd5\uff1b\u8be5\u6536\u76ca\u4ecd\u5f85\u68c0\u9a8c\u3002",
+      "falsification": "\u65b0\u589e\u914d\u5bf9\u4e2d structured \u6700\u7ec8\u8bc4\u4ef7\u5dee\u4e8e raw\uff0c\u6216\u6700\u7ec8\u8bc4\u4ef7\u76f8\u540c\u4e14 structured \u5b9e\u9645\u4fee\u590d\u5c1d\u8bd5\u4e0d\u5c11\u4e8e raw\uff0c\u5219\u8be5\u914d\u5bf9\u4e0d\u652f\u6301\u5047\u8bbe\uff1b\u82e5\u5b9e\u9645\u5c1d\u8bd5\u6570\u4ecd\u672a\u8bb0\u5f55\uff0c\u5219\u51cf\u5c11\u5c1d\u8bd5\u7684\u5047\u8bbe\u4fdd\u6301\u4e0d\u53ef\u5224\u5b9a\u3002\u65b0\u589e\u4e00\u5bf9\u4e0d\u80fd\u8bc1\u660e\u666e\u904d\u673a\u5236\u6536\u76ca\u3002",
+      "repeat_reason": "run-601bfbe255a44421a446d7f5644a26fb \u4e0e run-f2021aaae52a41879f0a9c3aa878f7b3 \u5747\u6700\u7ec8\u901a\u8fc7\u4f46\u4ec5\u5404\u4e00\u6b21\uff0c\u7f3a\u5c11\u5b9e\u9645\u5c1d\u8bd5\u6570\uff0c\u5b58\u5728\u7a33\u5b9a\u6027\u53ca\u6548\u7387\u5224\u5b9a\u7684\u4e0d\u786e\u5b9a\u6027\uff1b\u4fdd\u7559\u914d\u7f6e\u6761\u4ef6\uff0c\u4ec5\u5c06 replicate \u4ece0\u6539\u4e3a1\u3002",
+      "candidates": [
+        {
+          "id": "matched-repeat",
+          "learning_value": "\u589e\u52a0\u540c\u6761\u4ef6 raw/structured \u914d\u5bf9\uff0c\u68c0\u9a8c\u6700\u7ec8\u8bc4\u4ef7\u7a33\u5b9a\u6027\uff1b\u82e5\u8865\u9f50\u5b9e\u9645\u5c1d\u8bd5\u6570\uff0c\u53ef\u76f4\u63a5\u5224\u65ad\u539f\u5047\u8bbe\u3002\u4fdd\u7559\u539f\u59cb\u8bca\u65ad\u7528\u4e8e\u5ba1\u8ba1\u4fe1\u606f\u635f\u5931\uff0c\u4e0d\u6539\u53d8\u8f93\u5165\u6216\u8bc4\u4ef7\u3002",
+          "feasibility": "\u4e24 trial\uff0c\u5404 max_attempts=2\uff0c\u6309\u6bcf trial\u6700\u591a3\u6b21\u5de5\u5177\u8fd0\u884c\u8ba1\uff0c\u51716\u6b21\uff1b\u52a0\u521d\u59cb6\u6b21\u4e0d\u8d85\u8fc712\u3002\u4ec5\u5728\u539f\u8bf7\u6c42\u548c\u65f6\u95f4\u9884\u7b97\u4ecd\u5141\u8bb8\u65f6\u53e6\u884c\u6267\u884c\uff0c\u672c\u8f6e\u4e0d\u6267\u884c\u3002",
+          "estimated_tool_runs": 6
+        },
+        {
+          "id": "structured-only-repeat",
+          "learning_value": "\u68c0\u9a8c structured \u6700\u7ec8\u901a\u8fc7\u80fd\u5426\u590d\u73b0\uff0c\u4f46\u7f3a\u5c11\u540c\u671f raw \u5bf9\u7167\uff0c\u5bf9\u673a\u5236\u6bd4\u8f83\u7684\u89e3\u91ca\u529b\u8f83\u4f4e\u3002",
+          "feasibility": "\u4e00\u4e2a structured trial\u3001replicate=1\u3001max_attempts=2\uff0c\u6700\u591a3\u6b21\u5de5\u5177\u8fd0\u884c\uff1b\u52a0\u521d\u59cb6\u6b21\u4e3a9\u6b21\u3002",
+          "estimated_tool_runs": 3
+        }
+      ],
+      "selected_candidate": "matched-repeat",
+      "selection_reason": "\u4e24\u73b0\u6709 final runs \u7684\u6700\u7ec8\u8bc4\u4ef7\u6301\u5e73\uff0c\u9700\u8981\u4fdd\u7559\u540c\u671f\u5339\u914d\u5bf9\u7167\u6765\u89e3\u91ca\u65b0\u589e\u7ed3\u679c\u3002\u914d\u5bf9\u91cd\u590d\u6bd4\u5355\u72ec structured \u91cd\u590d\u66f4\u76f4\u63a5\u670d\u52a1\u539f\u5047\u8bbe\uff0c\u6700\u591a\u6d88\u8017\u5269\u4f596\u6b21\u5de5\u5177\u989d\u5ea6\uff1b\u6210\u672c\u4e3a\u5de5\u5177\u6b21\u6570\u4e0a\u9650\uff0c\u5b9e\u9645token\u548c\u8d27\u5e01\u6210\u672c\u672a\u77e5\u3002\u7ee7\u627f\u540c\u4efb\u52a1\u3001\u57fa\u7840\u6a21\u578b\u53ca\u5168\u90e8\u539f\u8bc4\u4ef7\u4e0e\u4fee\u590d\u6761\u4ef6\uff0c\u4e0d\u6d3e\u53d1\u3001\u4e0d\u6267\u884c\uff0c\u4e0d\u91cd\u7f6e200\u8bf7\u6c42/60\u5206\u949f\u603b\u4e0a\u9650\u6216\u539f\u8d77\u7b97\u65f6\u95f4\u3002",
+      "runs": [
+        {
+          "task_id": "cooling-sign-v1",
+          "diagnostics": "raw",
+          "replicate": 1,
+          "max_attempts": 2
+        },
+        {
+          "task_id": "cooling-sign-v1",
+          "diagnostics": "structured",
+          "replicate": 1,
+          "max_attempts": 2
+        }
+      ]
+    }
+  ],
+  "trials": [
+    {
+      "trial_id": "trial-a9f1adcd26ec4643b47777b6bd282a7e",
+      "plan_id": "initial-logs",
+      "config": {
+        "task_id": "cooling-sign-v1",
+        "diagnostics": "raw",
+        "replicate": 0,
+        "max_attempts": 2
+      },
+      "attempts": [
+        "run-71558ae35ec046a2b20f66d4e463cd19"
+      ],
+      "source": "model Cooling\n  parameter Real C = 1000 \"Thermal capacity J/K\";\n  parameter Real G = 10 \"Thermal conductance W/K\";\n  parameter Real T_ambient = 293.15 \"Ambient K\";\n  Real T(start=333.15, fixed=true) \"Body K\";\nequation\n  C * der(T) = -G * (T - T_ambient);\nend Cooling;\n",
+      "finished": true,
+      "final_run_id": "run-601bfbe255a44421a446d7f5644a26fb",
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": "passed",
+        "all_passed": true
+      },
+      "tool_seconds": 9.935757166007534
+    },
+    {
+      "trial_id": "trial-96bd803ae5a54ff2aace1bad99f81f08",
+      "plan_id": "initial-logs",
+      "config": {
+        "task_id": "cooling-sign-v1",
+        "diagnostics": "structured",
+        "replicate": 0,
+        "max_attempts": 2
+      },
+      "attempts": [
+        "run-08c3de744b8545dab7ff5bd96c400ac0"
+      ],
+      "source": "model Cooling\n  parameter Real C = 1000 \"Thermal capacity J/K\";\n  parameter Real G = 10 \"Thermal conductance W/K\";\n  parameter Real T_ambient = 293.15 \"Ambient K\";\n  Real T(start=333.15, fixed=true) \"Body K\";\nequation\n  C * der(T) = -G * (T - T_ambient);\nend Cooling;\n",
+      "finished": true,
+      "final_run_id": "run-f2021aaae52a41879f0a9c3aa878f7b3",
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": "passed",
+        "all_passed": true
+      },
+      "tool_seconds": 7.319038040994201
+    },
+    {
+      "trial_id": "trial-19f5c3a8308146a983fd9a392b9be36b",
+      "plan_id": "matched-logs-replicate-1",
+      "config": {
+        "task_id": "cooling-sign-v1",
+        "diagnostics": "raw",
+        "replicate": 1,
+        "max_attempts": 2
+      },
+      "attempts": [
+        "run-d808782963964417a95fab56db187ccb"
+      ],
+      "source": "model Cooling\n  parameter Real C = 1000 \"Thermal capacity J/K\";\n  parameter Real G = 10 \"Thermal conductance W/K\";\n  parameter Real T_ambient = 293.15 \"Ambient K\";\n  Real T(start=333.15, fixed=true) \"Body K\";\nequation\n  C * der(T) = -G * (T - T_ambient);\nend Cooling;\n",
+      "finished": true,
+      "final_run_id": "run-2ee73bcb64764d738e07364e6edb213a",
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": "passed",
+        "all_passed": true
+      },
+      "tool_seconds": 10.465259209013311
+    },
+    {
+      "trial_id": "trial-79f5a806a7004c7faeb18e2311786481",
+      "plan_id": "matched-logs-replicate-1",
+      "config": {
+        "task_id": "cooling-sign-v1",
+        "diagnostics": "structured",
+        "replicate": 1,
+        "max_attempts": 2
+      },
+      "attempts": [
+        "run-34781cb833e64ceca39201ef9c5f5d77"
+      ],
+      "source": "model Cooling\n  parameter Real C = 1000 \"Thermal capacity J/K\";\n  parameter Real G = 10 \"Thermal conductance W/K\";\n  parameter Real T_ambient = 293.15 \"Ambient K\";\n  Real T(start=333.15, fixed=true) \"Body K\";\nequation\n  C * der(T) = -G * (T - T_ambient);\nend Cooling;\n",
+      "finished": true,
+      "final_run_id": "run-d5e33d4ed40248199b67931e1035fbb9",
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": "passed",
+        "all_passed": true
+      },
+      "tool_seconds": 8.049699499970302
+    }
+  ],
+  "analysis": {
+    "support": "inconclusive",
+    "evidence_run_ids": [
+      "run-601bfbe255a44421a446d7f5644a26fb",
+      "run-f2021aaae52a41879f0a9c3aa878f7b3"
+    ],
+    "limitations": "raw \u6700\u7ec8 run-601bfbe255a44421a446d7f5644a26fb \u4e0e structured \u6700\u7ec8 run-f2021aaae52a41879f0a9c3aa878f7b3 \u7684 model_checking\u3001simulation\u3001behavior \u5747\u5206\u522b passed\u3002status \u672a\u63d0\u4f9b\u72ec\u7acb compiler \u5b57\u6bb5\uff0c\u7f16\u8bd1\u7ed3\u679c\u4e0d\u80fd\u5355\u72ec\u8ba4\u5b9a\u901a\u8fc7\uff1b\u4efb\u4f55 not_run \u5747\u4e0d\u7b97\u901a\u8fc7\u3002\u6bcf\u79cd\u6761\u4ef6\u53ea\u6709\u4e00\u4e2a trial\uff0c\u4e14\u6ca1\u6709\u5b9e\u9645\u4fee\u590d\u5c1d\u8bd5\u6b21\u6570\uff0c\u4e0d\u80fd\u5224\u5b9a structured \u662f\u5426\u51cf\u5c11\u5c1d\u8bd5\uff0c\u4e5f\u4e0d\u80fd\u4ece\u4e24\u8005\u6700\u7ec8\u5747\u901a\u8fc7\u63a8\u65ad\u673a\u5236\u6536\u76ca\u3002\u4e24 run \u7684 tool_seconds \u5206\u522b\u4e3a9.935757166007534\u548c7.319038040994201\uff0c\u4ec5\u4e3a\u5de5\u5177\u65f6\u95f4\uff0c\u7f3a\u5c11\u7aef\u5230\u7aef\u5de5\u4f5c\u6d41\u8017\u65f6\u3001token\u3001\u5b9e\u9645\u8d27\u5e01\u6210\u672c\u53ca\u5404\u89d2\u8272\u63a8\u7406/\u5931\u8d25\u91cd\u8bd5\u5206\u9879\uff1b\u4e0d\u80fd\u636e\u6b64\u5ba3\u79f0\u7814\u7a76\u63d0\u901f\u621610\u500d\u6536\u76ca\u3002status \u672a\u5c55\u793a\u8bca\u65ad\u5185\u5bb9\u53ca\u4fdd\u7559\u5b57\u6bb5\uff0c\u65e0\u6cd5\u6392\u9664 structured \u4e22\u5931\u8bca\u65ad\u4fe1\u606f\u6216\u4e24\u6761\u4ef6\u4fe1\u606f\u4e0d\u7b49\u4ef7\u3002\u6309\u5df2\u63a5\u53d7\u521d\u59cb\u9884\u7b976\u6b21\u3001\u5269\u4f596\u6b21\u4fdd\u5b88\u8ba1\u8d39\uff0c\u603b\u5de5\u5177\u989d\u5ea612\uff1bstatus \u672a\u5217\u51fa\u9010\u6b21\u5de5\u5177\u8d26\u672c\u3002\u6cbf\u7528\u672c\u9636\u6bb5200\u8bf7\u6c42/60\u5206\u949f\u53ca\u539f\u8d77\u7b97\u65f6\u95f4\uff0c\u4e0d\u91cd\u7f6e\uff1b\u5f53\u524dstatus\u4e3a177/200\uff0cdeadline_unix=1791108497.777293\uff0c\u4e0e\u521d\u59cb\u8ba1\u5212\u6587\u5b57\u4e2d\u76841791107297.777293\u5b58\u5728\u5dee\u5f02\uff0c\u8bb0\u5f55\u6b64\u5dee\u5f02\uff0c\u4e0d\u81ea\u884c\u5ef6\u957f\u6216\u91cd\u7b97\u622a\u6b62\u65f6\u95f4\u3002",
+    "adjustment_reason": "run-601bfbe255a44421a446d7f5644a26fb \u4e0e run-f2021aaae52a41879f0a9c3aa878f7b3 \u5728\u65e2\u5b9a\u4e09\u9879\u6700\u7ec8\u8bc4\u4ef7\u4e0a\u5747\u901a\u8fc7\uff0c\u672a\u663e\u793a\u6700\u7ec8\u6210\u529f\u7387\u4f18\u52bf\uff1b\u53c8\u7f3a\u5c11\u5b9e\u9645\u5c1d\u8bd5\u6570\uff0c\u56e0\u6b64\u5f53\u524d\u5047\u8bbe\u652f\u6301\u7a0b\u5ea6\u4e3a inconclusive\u3002\u4e0b\u4e00\u6b65\u4ece\u5ba3\u79f0\u673a\u5236\u6536\u76ca\u8f6c\u4e3a\u8865\u5145\u4e00\u4e2a\u5339\u914d\u91cd\u590d\uff0c\u68c0\u9a8c\u7ed3\u679c\u7a33\u5b9a\u6027\uff0c\u5e76\u8981\u6c42\u4fdd\u7559\u5b9e\u9645\u5c1d\u8bd5\u6570\u53ca\u8bca\u65ad\u5185\u5bb9\u4ee5\u5224\u65ad\u539f\u5047\u8bbe\uff1b\u672c\u8f6e\u53ea\u8bb0\u5f55\uff0c\u4e0d\u542f\u52a8\u9a8c\u8bc1\u3002",
+    "followup": {
+      "id": "matched-logs-replicate-1",
+      "hypothesis": "\u56fa\u5b9a cooling-sign-v1\u3001\u539f\u57fa\u7840\u6a21\u578b\u3001\u6e29\u5ea6\u3001\u5de5\u5177\u3001max_attempts=2 \u548c\u539f\u8bc4\u4ef7\uff0cstructured \u76f8\u8f83 raw \u80fd\u5728\u6700\u7ec8\u4e09\u9879\u8bc4\u4ef7\u5747\u901a\u8fc7\u7684\u6761\u4ef6\u4e0b\u51cf\u5c11\u5b9e\u9645\u4fee\u590d\u5c1d\u8bd5\uff1b\u8be5\u6536\u76ca\u4ecd\u5f85\u68c0\u9a8c\u3002",
+      "falsification": "\u65b0\u589e\u914d\u5bf9\u4e2d structured \u6700\u7ec8\u8bc4\u4ef7\u5dee\u4e8e raw\uff0c\u6216\u6700\u7ec8\u8bc4\u4ef7\u76f8\u540c\u4e14 structured \u5b9e\u9645\u4fee\u590d\u5c1d\u8bd5\u4e0d\u5c11\u4e8e raw\uff0c\u5219\u8be5\u914d\u5bf9\u4e0d\u652f\u6301\u5047\u8bbe\uff1b\u82e5\u5b9e\u9645\u5c1d\u8bd5\u6570\u4ecd\u672a\u8bb0\u5f55\uff0c\u5219\u51cf\u5c11\u5c1d\u8bd5\u7684\u5047\u8bbe\u4fdd\u6301\u4e0d\u53ef\u5224\u5b9a\u3002\u65b0\u589e\u4e00\u5bf9\u4e0d\u80fd\u8bc1\u660e\u666e\u904d\u673a\u5236\u6536\u76ca\u3002",
+      "repeat_reason": "run-601bfbe255a44421a446d7f5644a26fb \u4e0e run-f2021aaae52a41879f0a9c3aa878f7b3 \u5747\u6700\u7ec8\u901a\u8fc7\u4f46\u4ec5\u5404\u4e00\u6b21\uff0c\u7f3a\u5c11\u5b9e\u9645\u5c1d\u8bd5\u6570\uff0c\u5b58\u5728\u7a33\u5b9a\u6027\u53ca\u6548\u7387\u5224\u5b9a\u7684\u4e0d\u786e\u5b9a\u6027\uff1b\u4fdd\u7559\u914d\u7f6e\u6761\u4ef6\uff0c\u4ec5\u5c06 replicate \u4ece0\u6539\u4e3a1\u3002",
+      "candidates": [
+        {
+          "id": "matched-repeat",
+          "learning_value": "\u589e\u52a0\u540c\u6761\u4ef6 raw/structured \u914d\u5bf9\uff0c\u68c0\u9a8c\u6700\u7ec8\u8bc4\u4ef7\u7a33\u5b9a\u6027\uff1b\u82e5\u8865\u9f50\u5b9e\u9645\u5c1d\u8bd5\u6570\uff0c\u53ef\u76f4\u63a5\u5224\u65ad\u539f\u5047\u8bbe\u3002\u4fdd\u7559\u539f\u59cb\u8bca\u65ad\u7528\u4e8e\u5ba1\u8ba1\u4fe1\u606f\u635f\u5931\uff0c\u4e0d\u6539\u53d8\u8f93\u5165\u6216\u8bc4\u4ef7\u3002",
+          "feasibility": "\u4e24 trial\uff0c\u5404 max_attempts=2\uff0c\u6309\u6bcf trial\u6700\u591a3\u6b21\u5de5\u5177\u8fd0\u884c\u8ba1\uff0c\u51716\u6b21\uff1b\u52a0\u521d\u59cb6\u6b21\u4e0d\u8d85\u8fc712\u3002\u4ec5\u5728\u539f\u8bf7\u6c42\u548c\u65f6\u95f4\u9884\u7b97\u4ecd\u5141\u8bb8\u65f6\u53e6\u884c\u6267\u884c\uff0c\u672c\u8f6e\u4e0d\u6267\u884c\u3002",
+          "estimated_tool_runs": 6
+        },
+        {
+          "id": "structured-only-repeat",
+          "learning_value": "\u68c0\u9a8c structured \u6700\u7ec8\u901a\u8fc7\u80fd\u5426\u590d\u73b0\uff0c\u4f46\u7f3a\u5c11\u540c\u671f raw \u5bf9\u7167\uff0c\u5bf9\u673a\u5236\u6bd4\u8f83\u7684\u89e3\u91ca\u529b\u8f83\u4f4e\u3002",
+          "feasibility": "\u4e00\u4e2a structured trial\u3001replicate=1\u3001max_attempts=2\uff0c\u6700\u591a3\u6b21\u5de5\u5177\u8fd0\u884c\uff1b\u52a0\u521d\u59cb6\u6b21\u4e3a9\u6b21\u3002",
+          "estimated_tool_runs": 3
+        }
+      ],
+      "selected_candidate": "matched-repeat",
+      "selection_reason": "\u4e24\u73b0\u6709 final runs \u7684\u6700\u7ec8\u8bc4\u4ef7\u6301\u5e73\uff0c\u9700\u8981\u4fdd\u7559\u540c\u671f\u5339\u914d\u5bf9\u7167\u6765\u89e3\u91ca\u65b0\u589e\u7ed3\u679c\u3002\u914d\u5bf9\u91cd\u590d\u6bd4\u5355\u72ec structured \u91cd\u590d\u66f4\u76f4\u63a5\u670d\u52a1\u539f\u5047\u8bbe\uff0c\u6700\u591a\u6d88\u8017\u5269\u4f596\u6b21\u5de5\u5177\u989d\u5ea6\uff1b\u6210\u672c\u4e3a\u5de5\u5177\u6b21\u6570\u4e0a\u9650\uff0c\u5b9e\u9645token\u548c\u8d27\u5e01\u6210\u672c\u672a\u77e5\u3002\u7ee7\u627f\u540c\u4efb\u52a1\u3001\u57fa\u7840\u6a21\u578b\u53ca\u5168\u90e8\u539f\u8bc4\u4ef7\u4e0e\u4fee\u590d\u6761\u4ef6\uff0c\u4e0d\u6d3e\u53d1\u3001\u4e0d\u6267\u884c\uff0c\u4e0d\u91cd\u7f6e200\u8bf7\u6c42/60\u5206\u949f\u603b\u4e0a\u9650\u6216\u539f\u8d77\u7b97\u65f6\u95f4\u3002",
+      "runs": [
+        {
+          "task_id": "cooling-sign-v1",
+          "diagnostics": "raw",
+          "replicate": 1,
+          "max_attempts": 2
+        },
+        {
+          "task_id": "cooling-sign-v1",
+          "diagnostics": "structured",
+          "replicate": 1,
+          "max_attempts": 2
+        }
+      ]
+    }
+  },
+  "kind": "live_pending",
+  "runtime": {
+    "schema_version": 1,
+    "model_service": null,
+    "model": null,
+    "max_model_calls": 0,
+    "max_total_usd": 0,
+    "max_model_tokens": 0,
+    "max_tool_runs": 12,
+    "max_tool_seconds": 60,
+    "max_repair_attempts": 3,
+    "omc_image": "openmodelica/openmodelica:v1.26.1-minimal",
+    "omc_image_digest": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+    "install_authorized": true,
+    "model_calls_authorized": false
+  }
+}

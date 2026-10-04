@@ -1,0 +1,48 @@
+true
+""
+CHECK_BEGIN
+
+"Check of Cooling completed successfully.
+Class Cooling has 1 equation(s) and 1 variable(s).
+1 of these are trivial equation(s)."
+""
+CHECK_END
+
+record SimulationResult
+    resultFile = "",
+    simulationOptions = "startTime = 0.0, stopTime = 300.0, numberOfIntervals = 300, tolerance = 1e-7, method = 'dassl', fileNamePrefix = 'cooling', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = ''",
+    messages = "Simulation execution failed for model: Cooling
+LOG_INIT          | error   | The initialization problem is inconsistent due to the following equation: 0 != -40 = T_ambient - T
+LOG_STDOUT        | warning | Error in initialization. Storing results and exiting.
+|                 | |       | Use -lv=LOG_INIT -w for more information.
+",
+    timeFrontend = 6.03833e-4,
+    timeBackend = 0.0013770000000000002,
+    timeSimCode = 3.88167e-4,
+    timeTemplates = 0.0012763330000000002,
+    timeCompile = 2.752486793,
+    timeSimulation = 0.0053312080000000005,
+    timeTotal = 2.761537626
+end SimulationResult;
+"Warning: It was not possible to determine if the initialization problem is consistent, because of not evaluable parameters/start values during compile time: T = T_ambient ($START.T = T_ambient)
+Warning: The initial conditions are over specified. For more information set -d=initialization. In OMEdit Tools->Options->Simulation->Show additional information from the initialization process, in OMNotebook call setCommandLineOptions(\"-d=initialization\").
+"
+record SimulationResult
+    resultFile = "",
+    simulationOptions = "startTime = 0.0, stopTime = 300.0, numberOfIntervals = 300, tolerance = 1e-7, method = 'dassl', fileNamePrefix = 'validation', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = '-override=C=2000,G=5'",
+    messages = "Simulation execution failed for model: Cooling
+LOG_INIT          | error   | The initialization problem is inconsistent due to the following equation: 0 != -40 = T_ambient - T
+LOG_STDOUT        | warning | Error in initialization. Storing results and exiting.
+|                 | |       | Use -lv=LOG_INIT -w for more information.
+",
+    timeFrontend = 8.35e-4,
+    timeBackend = 8.952090000000001e-4,
+    timeSimCode = 1.87333e-4,
+    timeTemplates = 0.001000583,
+    timeCompile = 2.277007959,
+    timeSimulation = 0.004964041000000001,
+    timeTotal = 2.284937292
+end SimulationResult;
+"Warning: It was not possible to determine if the initialization problem is consistent, because of not evaluable parameters/start values during compile time: T = T_ambient ($START.T = T_ambient)
+Warning: The initial conditions are over specified. For more information set -d=initialization. In OMEdit Tools->Options->Simulation->Show additional information from the initialization process, in OMNotebook call setCommandLineOptions(\"-d=initialization\").
+"

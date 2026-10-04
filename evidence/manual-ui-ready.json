@@ -1,0 +1,32 @@
+{
+  "checked_at": 1791106123.884351,
+  "session_id": "session-378f6c2e28144a238a1e63638457cb02",
+  "state": {
+    "preview": false,
+    "stage": "planning",
+    "enabled": {
+      "plan": true,
+      "accept": false,
+      "initial": false,
+      "analysis": false,
+      "followup": false,
+      "report": false,
+      "retry": false
+    },
+    "events": [],
+    "statuses": {},
+    "request_count": 153,
+    "request_limit": 200,
+    "seconds_left": 1174,
+    "elapsed_seconds": null,
+    "finished": false,
+    "plans": [],
+    "analysis": null,
+    "trials": []
+  },
+  "checks": [
+    "only_first_button_enabled",
+    "human_timer_not_started",
+    "prior_global_budget_preserved"
+  ]
+}

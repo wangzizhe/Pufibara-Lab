@@ -1,0 +1,10 @@
+spec_version: 1
+name: analyst
+instructions: AGENTS.md
+skills: none
+tools:
+  builtins: []
+executor:
+  type: omnigent
+  config:
+    harness: physics-codex

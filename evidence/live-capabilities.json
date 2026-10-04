@@ -1,0 +1,28 @@
+{
+  "kind": "native_env_and_local_tool_transport_no_model",
+  "capabilities_forwarded_to_trusted_runner": true,
+  "capabilities_absent_from_model_env": true,
+  "checks": [
+    {
+      "role": "coordinator",
+      "stage": "planning",
+      "native_registered_status": true
+    },
+    {
+      "role": "planner",
+      "stage": "planning",
+      "native_registered_status": true
+    },
+    {
+      "role": "executor",
+      "stage": "planning",
+      "native_registered_status": true
+    },
+    {
+      "role": "analyst",
+      "stage": "planning",
+      "native_registered_status": true
+    }
+  ],
+  "passed": true
+}

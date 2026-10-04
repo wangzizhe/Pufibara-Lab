@@ -1,0 +1,12 @@
+{
+  "event": "budget_amended",
+  "max_requests": 200,
+  "wall_seconds": 3600,
+  "deadline_unix": 1791107297.777293,
+  "at_unix": 1791104425.959979,
+  "consumed_requests_preserved": 40,
+  "prior_max_requests": 40,
+  "prior_wall_seconds": 1800,
+  "origin_preserved": true,
+  "authorization_source": "user_explicit_raise_40_to_200_and_30_to_60_minutes"
+}

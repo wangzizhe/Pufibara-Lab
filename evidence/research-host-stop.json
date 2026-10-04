@@ -1,0 +1,11 @@
+{
+  "stopped_at_unix": 1791107906.778374,
+  "action": "SIGINT_to_known_research_host_session_7912",
+  "host_process_terminal": true,
+  "terminal_exit_code": 1,
+  "termination_kind": "intentional_keyboard_interrupt_after_all_8_actual_native_actors_idle",
+  "model_requests_at_stop": 199,
+  "latest_request_authority": 500,
+  "model_calls_after_completion": 0,
+  "local_readonly_interfaces_retained": true
+}

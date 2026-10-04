@@ -1,0 +1,105 @@
+{
+  "checked_at": 1791107929.404178,
+  "goal_complete": true,
+  "scope": "User-authorized local hackathon environment and review materials; formal publication/submission excluded",
+  "requirements": [
+    {
+      "requirement": "Omnigent real multi-agent orchestration",
+      "status": "proved_with_recorded_operator_recovery",
+      "evidence": [
+        "evidence/omnigent-research.json",
+        "evidence/omnigent-manual.json",
+        "evidence/final-scientific-artifact-verification.json"
+      ]
+    },
+    {
+      "requirement": "Hypothesis, two costed candidates, actual experiments, result-driven adjustment, subsequent validation",
+      "status": "proved_in_two_independent_actual_workflows",
+      "evidence": [
+        "evidence/sessions/session-adba2f1eb4944d29a2b5a996284c772d/report.json",
+        "evidence/sessions/session-378f6c2e28144a238a1e63638457cb02/report.json"
+      ]
+    },
+    {
+      "requirement": "Reproducible code, fixed dependencies, configurations, actual messages, source and simulation evidence",
+      "status": "proved_procedural_reproducibility_not_identical_stochastic_outputs",
+      "evidence": [
+        "requirements.lock",
+        "docs/LOCAL_SETUP.md",
+        "docs/RESEARCH_RUN.md",
+        "evidence/final-scientific-artifact-verification.json",
+        "evidence/review-package-verification.json"
+      ]
+    },
+    {
+      "requirement": "Actual research bottleneck measurement and result",
+      "status": "proved_observations_no_speed_improvement_established",
+      "evidence": [
+        "evidence/measurements/workflow-comparison.json",
+        "evidence/measurements/workflow-comparison.md"
+      ]
+    },
+    {
+      "requirement": "Two-minute demo, role specifications, usage, citations, limitations and next-study suggestion",
+      "status": "proved_local_materials",
+      "evidence": [
+        "artifacts/demo/evidence-walkthrough-final-v4.mp4.json",
+        "artifacts/demo/provenance.json",
+        "agents/lab",
+        "docs/DEMO_2MIN.md",
+        "docs/SOURCES.md",
+        "docs/SECURITY.md"
+      ]
+    },
+    {
+      "requirement": "Hidden evaluator boundary, actual worker and container isolation, executable role/quota constraints, failures preserved",
+      "status": "bounded_checks_proved_not_universal_security",
+      "evidence": [
+        "evidence/isolation.json",
+        "evidence/codex-worker-isolation.json",
+        "evidence/modeler-conversations.jsonl",
+        "tests",
+        "evidence/research-budget-request-extension.json"
+      ]
+    },
+    {
+      "requirement": "Local offline review archive and fresh extraction tests",
+      "status": "proved_archive_integrity_and_28_checks_fixed_dependency_runtime",
+      "evidence": [
+        "artifacts/submission/latest.json",
+        "evidence/review-package-verification.json"
+      ]
+    },
+    {
+      "requirement": "Stop after completion; no extra fees/publication/Git commit/formal submission",
+      "status": "research_host_stopped_no_additional_research",
+      "evidence": [
+        "evidence/research-host-stop.json"
+      ]
+    }
+  ],
+  "remaining": [],
+  "limitations": [
+    "Automatic run required operator engineering recovery; not unattended.",
+    "Manual 813.986 seconds / 6 UI actions vs automatic 2293.816 seconds / 10 recorded native inputs; automatic total actions and setup unknown. No causal speed claim.",
+    "Same configured base model/default CLI route; temperature and seed controls unavailable. Small one-task samples cannot establish mechanism benefit.",
+    "Subscription token-dollar costs unavailable; early pilot one request unattributed and global early role-token attribution incomplete, never zero-filled.",
+    "Offline fresh extraction reused fixed project dependencies; fresh network dependency installation not verified.",
+    "Video is a 120-second silent saved-evidence walkthrough with separate Chinese script, not live recording.",
+    "No public code redistribution license selected; Challenge PDF excluded. Deadline/formal submission requires separate authorization."
+  ],
+  "budget": {
+    "research_requests": 199,
+    "research_request_ceiling": 500,
+    "phase_wall_seconds": 4800,
+    "deadline_unix": 1791108497.777293,
+    "pilot_requests": 7,
+    "pilot_unattributed_requests": 1
+  },
+  "human_observation": {
+    "finished": true,
+    "seconds": 813.9863920211792,
+    "ui_actions": 6,
+    "preparation_seconds": 38.94773316383362
+  }
+}

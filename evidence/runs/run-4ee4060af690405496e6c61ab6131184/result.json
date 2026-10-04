@@ -1,0 +1,39 @@
+{
+  "status": "completed",
+  "exit_code": 0,
+  "seconds": 2.2427198750083335,
+  "raw": "true\n\"\"\nCHECK_BEGIN\n\n\"Check of Cooling completed successfully.\nClass Cooling has 1 equation(s) and 1 variable(s).\n1 of these are trivial equation(s).\"\n\"\"\nCHECK_END\n\nrecord SimulationResult\n    resultFile = \"/work/cooling_res.csv\",\n    simulationOptions = \"startTime = 0.0, stopTime = 300.0, numberOfIntervals = 300, tolerance = 1e-7, method = 'dassl', fileNamePrefix = 'cooling', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = ''\",\n    messages = \"LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.\nLOG_SUCCESS       | info    | The simulation finished successfully.\n\",\n    timeFrontend = 6.51834e-4,\n    timeBackend = 9.622090000000001e-4,\n    timeSimCode = 2.6704100000000003e-4,\n    timeTemplates = 9.341670000000001e-4,\n    timeCompile = 2.036011167,\n    timeSimulation = 0.0056022500000000005,\n    timeTotal = 2.044479293\nend SimulationResult;\n\"\"\n",
+  "log_truncated": false,
+  "run_id": "run-4ee4060af690405496e6c61ab6131184",
+  "source_sha256": "9df318be9ff9fc19a831f1181b952bef73c72c5332edd27600138c1917b89d21",
+  "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+  "implementation_sha256": {
+    "runner.py": "8974c70368832e31b9bc300bae354df48fb82b776c9bcdd52dcd2a946c187e62",
+    "evaluator.py": "f1ea4df0220da5d08de6b17998a1b5369d7a3cbf8aae2a088ef14ce61464aa01",
+    "diagnostics.py": "fc61ff3e5c79637b79a5645a5ebc431829ba3a6e5699f572c0f06dbf1467ec24"
+  },
+  "mechanism": "structured",
+  "final": false,
+  "evaluation": {
+    "model_checking": "passed",
+    "simulation": "passed",
+    "behavior": {
+      "status": "passed",
+      "max_abs_error_k": 5.966772920373842e-05,
+      "samples": 302
+    },
+    "all_passed": true
+  },
+  "feedback": {
+    "mechanism": "structured",
+    "diagnostic_lines": [],
+    "parser": "keyword-v1",
+    "total_lines": 25,
+    "omitted_lines": 25,
+    "raw_available": true,
+    "interpretation": "Compiler messages only; no inferred repair or validation answer.",
+    "empty_diagnostic": true
+  },
+  "tokens": null,
+  "cost_usd": null
+}

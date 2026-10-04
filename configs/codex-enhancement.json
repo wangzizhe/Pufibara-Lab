@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "authorization_date": "2026-10-04",
+  "model_service": "codex_chatgpt_subscription",
+  "max_wall_seconds": 0,
+  "max_model_requests": 0,
+  "allow_credit_purchase": false,
+  "allow_api_fallback": false,
+  "stop_on_subscription_limit": true,
+  "authorization_confirmed": false,
+  "execution_gate": "new_case_and_worker_isolation_verified_before_enhancement",
+  "phase": "enhancement",
+  "prior_phase_requests": 206,
+  "authorization_source": "No live authority in review archive; obtain a new explicit authorization",
+  "start_on_first_request": true,
+  "historical_research_requests": 199,
+  "historical_pilot_requests": 7,
+  "cumulative_request_ceiling": 500
+}

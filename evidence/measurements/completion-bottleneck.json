@@ -1,0 +1,21 @@
+{
+  "kind": "observed_native_completion_bottleneck",
+  "before_source": "evidence/omnigent-enhancement-before-runner-patch.json",
+  "after_source": "evidence/completion-regression.json",
+  "before": "Initial pair finished; root stopped at analysis and needed an operator resume. Full science also had the later omitted-inbox-tool failure.",
+  "after": {
+    "root_native_inbox_reads": 1,
+    "final_executor_to_parent_summary_seconds": 22,
+    "goal_to_summary_seconds": 236,
+    "stage_recoveries": 0,
+    "native_initial_controls": 1
+  },
+  "historical_full_workflow_measurement_source": "evidence/measurements/workflow-comparison.json",
+  "full_workflow_speed_improvement_established": false,
+  "limitations": [
+    "Targeted after-run reuses an actual Analyst plan and has only baseline trials; not a matched full scientific workflow benchmark.",
+    "One successful engineering regression is not a general stability guarantee.",
+    "Setup/edit actions not fully timed; do not infer total human-work reduction.",
+    "Historical manual and auto workflows have operator/order/infrastructure confounds."
+  ]
+}

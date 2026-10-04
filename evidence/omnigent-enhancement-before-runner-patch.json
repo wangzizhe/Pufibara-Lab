@@ -1,0 +1,136 @@
+{
+  "parent_session_id": "04eae0d423494253a685e1455986499a",
+  "kind": "real_research_pending",
+  "bundle": ".runtime/enhancement-live-agent",
+  "session_created": true,
+  "message_submitted": true,
+  "sessions": [
+    {
+      "id": "04eae0d423494253a685e1455986499a",
+      "status": "idle",
+      "agent_name": "pufibara-lab",
+      "sub_agent_name": null,
+      "kind": "default",
+      "parent_session_id": null,
+      "harness": "physics-codex",
+      "usage_by_model": null,
+      "last_task_error": null,
+      "research_role": null,
+      "item_count": 24,
+      "assistant_messages": 5,
+      "dispatches": [
+        {
+          "id": "103de82ef9264b92a072650e67312ebe",
+          "response_id": "resp_a846af4e24dc419980c42aa9",
+          "type": "function_call",
+          "status": "completed",
+          "created_at": 1791110781,
+          "model": "pufibara-lab",
+          "name": "sys_session_send",
+          "arguments": "{\"agent\": \"planner\", \"title\": \"Initialization study plan\", \"args\": \"Plan the original English study using broker public task cooling-init-v1 and fixed evaluation. Status reports planning, no plans/trials/analysis, baseline_first=true, max_tool_runs=12; subscription budget enhancement used_requests=2/max_requests=120, original deadline_unix=1791113795.365171. Preserve earlier failed turns and unchanged clock/count. Use packaged scientific tools to inspect task and propose a falsifiable hypothesis comparing structured versus raw diagnostics for AI repair. Compare at least two feasible costed candidate experiments, select a feasible matched-control plan, and record it with record_plan. Do not repair model or run trials. All visible text and records in concise English. Cite tool evidence and return accepted plan/evidence IDs and costs. Stop immediately on budget, quota, or isolation error; preserve errors.\"}",
+          "call_id": "call_WvcjzJOSRYqHEJpvoqolXBFy"
+        },
+        {
+          "id": "09a87ca2fb634585a63b60b999b21d26",
+          "response_id": "resp_36bb2061dbd745399fda3266",
+          "type": "function_call",
+          "status": "completed",
+          "created_at": 1791110871,
+          "model": "pufibara-lab",
+          "name": "sys_session_send",
+          "arguments": "{\"agent\": \"executor\", \"title\": \"Matched initialization trials\", \"args\": \"Execute accepted plan ID initial-logs for public task cooling-init-v1 through modeler, using packaged tools and fixed evaluation. Read accepted record for exact settings; preserve baseline_first and matched raw/structured controls. Plan allocates six tool runs with six reserved for evidence-driven followup. Do not repair model yourself or change evaluation. Preserve all failures and unknown usage; return actual run IDs, results, evidence IDs and budget accounting. Original deadline 1791113795.365171 and consumed count remain unchanged (planner last reported 5/120). All visible communication English and concise. Stop immediately on budget, quota, or isolation error.\"}",
+          "call_id": "call_BU21kRPkpNn9FsQEh9UKllRC"
+        }
+      ]
+    },
+    {
+      "id": "0f9c088c4ab049a8bf856980508a690c",
+      "status": "idle",
+      "agent_name": "executor",
+      "sub_agent_name": "executor",
+      "kind": "sub_agent",
+      "parent_session_id": "04eae0d423494253a685e1455986499a",
+      "harness": "physics-codex",
+      "usage_by_model": null,
+      "last_task_error": null,
+      "research_role": "executor",
+      "item_count": 31,
+      "assistant_messages": 8,
+      "dispatches": [
+        {
+          "id": "dd0871b70dc74a37a741df3073b8451b",
+          "response_id": "resp_345aee316129424ab1dfefef",
+          "type": "function_call",
+          "status": "completed",
+          "created_at": 1791110912,
+          "model": "pufibara-lab",
+          "name": "sys_session_send",
+          "arguments": "{\"agent\": \"modeler\", \"title\": \"Raw cooling trial b70e4553\", \"args\": \"Execute only this accepted trial using packaged tools. Verify runtime conversation/thread isolation and the supplied model budget before scientific runs; stop immediately on budget, quota, or isolation error. Use the same base model and output limit required by runtime. Submit the exact baseline first, then at most one correction. Do not inspect other trials or evaluator answers. Return actual attempt/run IDs, evidence IDs, tool seconds, failures, model usage and unknown usage. Do not call finish_trial; parent will do fixed evaluation only if an attempt was submitted.\\ntrial_id: trial-b70e4553cd9e462492d9b110ce16bbe7\\nExact configuration: {\\\"task_id\\\":\\\"cooling-init-v1\\\",\\\"diagnostics\\\":\\\"raw\\\",\\\"replicate\\\":0,\\\"max_attempts\\\":2}\\nPublic task: {\\\"id\\\":\\\"cooling-init-v1\\\",\\\"model\\\":\\\"Cooling\\\",\\\"source\\\":\\\"model Cooling\\\\n  parameter Real C = 1000 \\\\\\\"Thermal capacity J/K\\\\\\\";\\\\n  parameter Real G = 10 \\\\\\\"Thermal conductance W/K\\\\\\\";\\\\n  parameter Real T_ambient = 293.15 \\\\\\\"Ambient K\\\\\\\";\\\\n  Real T(start=333.15, fixed=true) \\\\\\\"Body K\\\\\\\";\\\\ninitial equation\\\\n  T = T_ambient;\\\\nequation\\\\n  C * der(T) = G * (T_ambient - T);\\\\nend Cooling;\\\\n\\\",\\\"license\\\":\\\"CC0-1.0\\\",\\\"goal\\\":\\\"Repair the lumped thermal model so the body starts at 333.15 K and cools toward constant ambient without heat input. Preserve C, G, T_ambient and variable T. First submit the exact public baseline to observe initialization diagnostics; this consumes one attempt. Then explain the observed diagnostic and submit a correction. No external libraries, files or network operations.\\\",\\\"controls\\\":{\\\"C\\\":1000,\\\"G\\\":10,\\\"T_ambient\\\":293.15,\\\"T_initial\\\":333.15},\\\"stop_time\\\":300,\\\"intervals\\\":300,\\\"development_feedback\\\":\\\"Initialization diagnostics are available in the assigned raw or structured format. This baseline-first protocol controls diagnostic exposure; it does not prove that source-only repair would be impossible.\\\",\\\"baseline_first\\\":true}\\nAccepted plan initial-logs allocates 6 runs and reserves 6 for evidence-driven followup, maximum 12. Original deadline 1791113795.365171 must remain unchanged; planner reported 5/120 and status now reports 11/120. Preserve consumed counts and all failures. Verify fresh runtime session identity before attempts and report it. All visible communication English and concise.\"}",
+          "call_id": "call_pTrHyW9PdgKoO33WumsjSUsR"
+        },
+        {
+          "id": "b3e5be3bea60486dae33012c7f2948c4",
+          "response_id": "resp_dbabe5a9c6bb41fab3778366",
+          "type": "function_call",
+          "status": "completed",
+          "created_at": 1791111024,
+          "model": "pufibara-lab",
+          "name": "sys_session_send",
+          "arguments": "{\"agent\": \"modeler\", \"title\": \"Structured cooling trial 9c8589a4\", \"args\": \"Execute only this accepted trial using packaged tools. Verify runtime conversation/thread isolation before scientific runs: your session and thread must differ from prior session f3907c735ca94ef7b432c36388c786aa and thread 01a10687-a088-70a1-b62a-60487452bb9e. Verify required gpt-6.1-sol base model and native default output limit, matching controls. Stop immediately on budget, quota, or isolation error. Submit exact public baseline first, then at most one correction. Do not inspect other trials or evaluator answers. Return actual run IDs, evidence IDs, layer outcomes, tool seconds, failures and usage, preserving unknowns. Do not call finish_trial; parent evaluates only after an attempt is submitted.\\ntrial_id: trial-9c8589a4d93442808431ba65e8403b6d\\nExact configuration: {\\\"task_id\\\":\\\"cooling-init-v1\\\",\\\"diagnostics\\\":\\\"structured\\\",\\\"replicate\\\":0,\\\"max_attempts\\\":2}\\nPublic task: {\\\"id\\\":\\\"cooling-init-v1\\\",\\\"model\\\":\\\"Cooling\\\",\\\"source\\\":\\\"model Cooling\\\\n  parameter Real C = 1000 \\\\\\\"Thermal capacity J/K\\\\\\\";\\\\n  parameter Real G = 10 \\\\\\\"Thermal conductance W/K\\\\\\\";\\\\n  parameter Real T_ambient = 293.15 \\\\\\\"Ambient K\\\\\\\";\\\\n  Real T(start=333.15, fixed=true) \\\\\\\"Body K\\\\\\\";\\\\ninitial equation\\\\n  T = T_ambient;\\\\nequation\\\\n  C * der(T) = G * (T_ambient - T);\\\\nend Cooling;\\\\n\\\",\\\"license\\\":\\\"CC0-1.0\\\",\\\"goal\\\":\\\"Repair the lumped thermal model so the body starts at 333.15 K and cools toward constant ambient without heat input. Preserve C, G, T_ambient and variable T. First submit the exact public baseline to observe initialization diagnostics; this consumes one attempt. Then explain the observed diagnostic and submit a correction. No external libraries, files or network operations.\\\",\\\"controls\\\":{\\\"C\\\":1000,\\\"G\\\":10,\\\"T_ambient\\\":293.15,\\\"T_initial\\\":333.15},\\\"stop_time\\\":300,\\\"intervals\\\":300,\\\"development_feedback\\\":\\\"Initialization diagnostics are available in the assigned raw or structured format. This baseline-first protocol controls diagnostic exposure; it does not prove that source-only repair would be impossible.\\\",\\\"baseline_first\\\":true}\\nPlan initial-logs allocates six tool runs and reserves six for evidence-driven followup, ceiling 12. Preserve original deadline 1791113795.365171 and cumulative consumed count (planner reported 5/120; last runtime report 17/120, not current final usage). Do not reset counts. All visible communication English and concise.\"}",
+          "call_id": "call_9xETxOd7aryws7C5UR4Mcwrk"
+        }
+      ]
+    },
+    {
+      "id": "369a3f3f1d7e4b06bf2fdd782e72387c",
+      "status": "idle",
+      "agent_name": "planner",
+      "sub_agent_name": "planner",
+      "kind": "sub_agent",
+      "parent_session_id": "04eae0d423494253a685e1455986499a",
+      "harness": "physics-codex",
+      "usage_by_model": null,
+      "last_task_error": null,
+      "research_role": "planner",
+      "item_count": 8,
+      "assistant_messages": 3,
+      "dispatches": []
+    },
+    {
+      "id": "7145b1b07fda4a6a897daab9ab162402",
+      "status": "idle",
+      "agent_name": "modeler",
+      "sub_agent_name": "modeler",
+      "kind": "sub_agent",
+      "parent_session_id": "0f9c088c4ab049a8bf856980508a690c",
+      "harness": "physics-codex",
+      "usage_by_model": null,
+      "last_task_error": null,
+      "research_role": "modeler",
+      "item_count": 11,
+      "assistant_messages": 4,
+      "dispatches": []
+    },
+    {
+      "id": "f3907c735ca94ef7b432c36388c786aa",
+      "status": "idle",
+      "agent_name": "modeler",
+      "sub_agent_name": "modeler",
+      "kind": "sub_agent",
+      "parent_session_id": "0f9c088c4ab049a8bf856980508a690c",
+      "harness": "physics-codex",
+      "usage_by_model": null,
+      "last_task_error": null,
+      "research_role": "modeler",
+      "item_count": 10,
+      "assistant_messages": 3,
+      "dispatches": []
+    }
+  ],
+  "native_dispatch_observed": true,
+  "child_plan_completed": true,
+  "collected_at_unix": 1791111171.955561,
+  "scope": "Actual Omnigent parent/child orchestration; scientific experiments require broker run evidence separately.",
+  "broker_session_id": "session-d32b3336026842fcba860f2d22b06ec6",
+  "boundary": "Before actual runner completion patch; initial matched trials done, root did not begin analysis automatically"
+}

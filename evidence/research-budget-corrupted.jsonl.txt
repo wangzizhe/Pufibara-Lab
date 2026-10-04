@@ -1,0 +1,10 @@
+{"event": "budget_started", "max_requests": 40, "wall_seconds": 1800, "deadline_unix": 1791105497.777293}
+{"event": "request_gate", "reason": "allowed", "reserved_requests": 1}
+{"event": "request_gate", "reason": "allowed", "reserved_requests": 2}
+{"event": "request_gate", "reason": "allowed", "reserved_requests": 3}
+{"event": "request_gate", "reason": "allowed", "reserved_requests": 4}
+{"event": "request_gate", "reason": "allowed", "reserved_requests": 6}
+{"event": "request_gate", "reason": "allowed", "reserved_requests": 11}
+"event": "request_gate", "reason": "allowed", "reserved_requests": 8}
+{"event": "request_gate", "reason": "allowed", "reserved_requests": 9}
+{"event": "request_gate", "reason": "allowed", "reserved_requests": 10}

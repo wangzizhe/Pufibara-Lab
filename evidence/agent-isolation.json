@@ -1,0 +1,8 @@
+{
+  "kind": "agent_process_synthetic_marker_probe",
+  "exit_code": 0,
+  "stdout": "{\"allowed_marker_read\": true, \"trusted_marker_denied\": true, \"omnigent_imported\": true}\n",
+  "stderr": "",
+  "scope": "Host user data under /Users denied except venv, agent packages and agent-home; system runtime paths remain readable. Python/Omnigent import and synthetic marker allow/deny only. Full live Omnigent server, network boundary and per-trial conversation separation not yet verified.",
+  "passed": true
+}

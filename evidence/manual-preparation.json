@@ -1,0 +1,10 @@
+{
+  "started_at": 1791106084.936482,
+  "operator": "codex_local_preparation",
+  "automatic_session": "session-adba2f1eb4944d29a2b5a996284c772d",
+  "scope": "Switch settled broker/host and expose human UI; reusable original setup timing unknown",
+  "ended_at": 1791106123.884215,
+  "elapsed_seconds": 38.94773316383362,
+  "manual_session": "session-378f6c2e28144a238a1e63638457cb02",
+  "ready_verified": true
+}

@@ -1,0 +1,11 @@
+spec_version: 1
+name: pufibara-lab
+instructions: AGENTS.md
+skills: none
+tools:
+  agents: [planner, executor, analyst]
+  builtins: []
+executor:
+  type: omnigent
+  config:
+    harness: physics-codex

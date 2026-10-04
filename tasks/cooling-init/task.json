@@ -1,0 +1,17 @@
+{
+  "id": "cooling-init-v1",
+  "model": "Cooling",
+  "source": "Cooling.mo",
+  "license": "CC0-1.0",
+  "goal": "Repair the lumped thermal model so the body starts at 333.15 K and cools toward constant ambient without heat input. Preserve C, G, T_ambient and variable T. First submit the exact public baseline to observe initialization diagnostics; this consumes one attempt. Then explain the observed diagnostic and submit a correction. No external libraries, files or network operations.",
+  "controls": {
+    "C": 1000,
+    "G": 10,
+    "T_ambient": 293.15,
+    "T_initial": 333.15
+  },
+  "stop_time": 300,
+  "intervals": 300,
+  "development_feedback": "Initialization diagnostics are available in the assigned raw or structured format. This baseline-first protocol controls diagnostic exposure; it does not prove that source-only repair would be impossible.",
+  "baseline_first": true
+}

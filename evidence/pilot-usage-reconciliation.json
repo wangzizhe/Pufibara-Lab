@@ -1,0 +1,10 @@
+{
+  "checked_at": 1791106735.433978,
+  "journal_requests": 7,
+  "previous_reported_requests": 6,
+  "unattributed_requests": 1,
+  "policy": "Preserve actual journal count; unknown attribution, no budget reset",
+  "research_journal_requests": 153,
+  "research_request_limit": 200,
+  "source": ".runtime/pilot-requests.jsonl"
+}

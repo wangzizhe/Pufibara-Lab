@@ -1,0 +1,8 @@
+{
+  "event": "budget_started",
+  "max_requests": 12,
+  "wall_seconds": 900,
+  "deadline_unix": 1791103493.327515,
+  "origin": "original_journal_filesystem_birthtime",
+  "migration_preserved_requests": 2
+}

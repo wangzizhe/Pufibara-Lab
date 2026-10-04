@@ -1,0 +1,11 @@
+{
+  "kind": "project_local_upstream_completion_fix",
+  "version": "0.16.0",
+  "changed": true,
+  "before_sha256": "9dde9dc61b4e8068702657862c298e0dac028e882eea004d177b742fcf3025db",
+  "after_sha256": "973772e8cdf353b05df4f4179c14bfac72cde5382e1950ab72ba4759febed9d2",
+  "scope": "Defer successful runner completion while registered children remain pending; native dispatch, inbox and wake preserved",
+  "live_verified": true,
+  "live_verification_source": "evidence/completion-regression.json",
+  "live_scope": "Two baseline-only native Executor/Modeler trials; not a new complete scientific loop or a speed benchmark"
+}

@@ -1,0 +1,14 @@
+{
+  "event": "budget_amended",
+  "max_requests": 500,
+  "wall_seconds": 4800,
+  "deadline_unix": 1791108497.777293,
+  "amended_at_unix": 1791107669.7638001,
+  "authorization_source": "explicit_user_message_raise_total_requests_from_200_to_500",
+  "consumed_requests_preserved": 199,
+  "prior_max_requests": 200,
+  "prior_journal_sha256": "243ae5de7c8bddf5a1a459e5a6bc49b147470329f73481d99fc96eab8580e908",
+  "original_header_preserved": true,
+  "requests_not_reset": true,
+  "deadline_not_extended": true
+}

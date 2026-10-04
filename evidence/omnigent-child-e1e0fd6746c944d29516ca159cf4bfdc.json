@@ -1,0 +1,22 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "7a210a963da5439e83a635d39c56b87d",
+      "response_id": "turn_1abbb2c406fb4a40855585f220cfd0ac",
+      "type": "message",
+      "status": "completed",
+      "created_at": 1791102989,
+      "role": "user",
+      "content": [
+        {
+          "type": "input_text",
+          "text": "请完成一次科研规划交接：提出可证伪的日志诊断机制假设、两个小型候选实验、选择理由和固定控制条件。当前未提供具体系统或日志，请明确必要假设及适用边界，不编造观测结果。仅输出研究计划，不执行实验，不调用其他角色、网络、文件或实验工具，不查询或更改模型，不发布、共享或提交。明确区分假设、预测与证伪判据，不宣称发现或机制有效。"
+        }
+      ]
+    }
+  ],
+  "first_id": "7a210a963da5439e83a635d39c56b87d",
+  "last_id": "7a210a963da5439e83a635d39c56b87d",
+  "has_more": false
+}

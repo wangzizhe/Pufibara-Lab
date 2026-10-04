@@ -1,0 +1,40 @@
+true
+""
+CHECK_BEGIN
+
+"Check of Cooling completed successfully.
+Class Cooling has 1 equation(s) and 1 variable(s).
+1 of these are trivial equation(s)."
+""
+CHECK_END
+
+record SimulationResult
+    resultFile = "/work/cooling_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 300.0, numberOfIntervals = 300, tolerance = 1e-7, method = 'dassl', fileNamePrefix = 'cooling', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = ''",
+    messages = "LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 0.039862875000000006,
+    timeBackend = 0.001150584,
+    timeSimCode = 3.1112500000000004e-4,
+    timeTemplates = 0.0010985,
+    timeCompile = 2.400180584,
+    timeSimulation = 0.0053356670000000005,
+    timeTotal = 2.447991252
+end SimulationResult;
+""
+record SimulationResult
+    resultFile = "/work/validation_res.csv",
+    simulationOptions = "startTime = 0.0, stopTime = 300.0, numberOfIntervals = 300, tolerance = 1e-7, method = 'dassl', fileNamePrefix = 'validation', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = '-override=C=2000,G=5'",
+    messages = "LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.
+LOG_SUCCESS       | info    | The simulation finished successfully.
+",
+    timeFrontend = 7.60875e-4,
+    timeBackend = 0.0010819170000000002,
+    timeSimCode = 1.6900000000000002e-4,
+    timeTemplates = 7.51958e-4,
+    timeCompile = 2.166385626,
+    timeSimulation = 0.005005208000000001,
+    timeTotal = 2.174191751
+end SimulationResult;
+""

@@ -1,0 +1,47 @@
+{
+  "status": "schema_and_tools_checked_not_live",
+  "agent": {
+    "name": "pufibara-lab",
+    "tools": [
+      "status"
+    ],
+    "children": [
+      {
+        "name": "analyst",
+        "tools": [
+          "record_analysis",
+          "status",
+          "trial_evidence"
+        ],
+        "children": []
+      },
+      {
+        "name": "executor",
+        "tools": [
+          "finish_trial",
+          "start_trial",
+          "status"
+        ],
+        "children": [
+          {
+            "name": "modeler",
+            "tools": [
+              "attempt",
+              "raw_log",
+              "task"
+            ],
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "planner",
+        "tools": [
+          "record_plan",
+          "status"
+        ],
+        "children": []
+      }
+    ]
+  }
+}

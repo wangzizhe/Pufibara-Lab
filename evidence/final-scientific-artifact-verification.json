@@ -1,0 +1,62 @@
+{
+  "checked_at_unix": 1791107871.663956,
+  "checks": [
+    {
+      "session_id": "session-adba2f1eb4944d29a2b5a996284c772d",
+      "native_actors": 12,
+      "actual_function_call_names": [
+        "attempt",
+        "finish_trial",
+        "raw_log",
+        "record_analysis",
+        "record_plan",
+        "start_trial",
+        "status",
+        "sys_read_inbox",
+        "sys_session_get_info",
+        "sys_session_list",
+        "sys_session_send",
+        "task"
+      ],
+      "final_runs_source_hash_log_and_two_csv_evaluations_verified": [
+        "run-05cf3e79d9f3426b9f45535ddd2f5bfc",
+        "run-ba0c4282ae8544d9b388a9a243179275",
+        "run-ada46c10bd8c4ed083a9ab4fa2c2c4d3",
+        "run-42d3ebbc005f4e70b26bcb51de073cb0"
+      ],
+      "replicates": [
+        0,
+        1
+      ],
+      "closed_loop": true
+    },
+    {
+      "session_id": "session-378f6c2e28144a238a1e63638457cb02",
+      "native_actors": 8,
+      "actual_function_call_names": [
+        "attempt",
+        "finish_trial",
+        "record_analysis",
+        "record_plan",
+        "start_trial",
+        "status",
+        "sys_read_inbox",
+        "sys_session_send",
+        "task"
+      ],
+      "final_runs_source_hash_log_and_two_csv_evaluations_verified": [
+        "run-601bfbe255a44421a446d7f5644a26fb",
+        "run-f2021aaae52a41879f0a9c3aa878f7b3",
+        "run-2ee73bcb64764d738e07364e6edb213a",
+        "run-d5e33d4ed40248199b67931e1035fbb9"
+      ],
+      "replicates": [
+        0,
+        1
+      ],
+      "closed_loop": true
+    }
+  ],
+  "model_requests": 0,
+  "scope": "Saved actual native calls, broker plans and provenance, source/log hashes, recomputed original fixed CSV evaluator; no new simulation or model run."
+}

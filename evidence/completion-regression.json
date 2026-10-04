@@ -1,0 +1,30 @@
+{
+  "kind": "targeted_native_completion_regression",
+  "broker_session_id": "session-d4ddaadea0624a4c99dbd96dca885746",
+  "source_broker_session_id": "session-d32b3336026842fcba860f2d22b06ec6",
+  "source_plan_id": "cooling-diagnostic-fidelity-v2",
+  "source_plan_sha256": "0ac130f34627d48d427d3c535acdff567306b412607efa92e1dd2ac14280310a",
+  "decision_source": "Real primary Analyst record_analysis; trusted operator reuses it, no simulated Planner",
+  "started_unix": 1791112939.9918451,
+  "model_requests_at_setup": 90,
+  "expected_trials": 2,
+  "expected_final_stage": "analysis",
+  "scope": "Two baseline-only native Executor/Modeler trials; not a new complete scientific loop or a speed benchmark",
+  "operator_stage_recoveries": 0,
+  "verified": true,
+  "verified_at_unix": 1791113244.164669,
+  "parent_session_id": "44635ecca8d14b968ac6a52c578ae811",
+  "native_control_inputs": 1,
+  "final_run_ids": [
+    "run-8beb95ffaefe4e73a30386bd225515f1",
+    "run-ce999704405d4c2aa55fd2f72acd4f36"
+  ],
+  "native_inbox_collected_final_run_ids": true,
+  "all_four_native_actors_idle": true,
+  "parent_wakes": 1,
+  "root_inbox_reads": 1,
+  "root_wake_after_executor_final": true,
+  "final_executor_to_parent_summary_seconds": 22,
+  "elapsed_goal_to_summary_seconds": 236,
+  "full_unintervened_scientific_loop_verified": false
+}

@@ -1,0 +1,71 @@
+{
+  "session_id": "session-378f6c2e28144a238a1e63638457cb02",
+  "auto_session": "session-adba2f1eb4944d29a2b5a996284c772d",
+  "prepared_at": 1791106110.363193,
+  "started_at": 1791106869.82721,
+  "events": [
+    {
+      "at_unix": 1791106869.8272069,
+      "action": "plan",
+      "prior_stage": "planning",
+      "session_id": "f975c1d27d8e41ca8ecb8e88e4c71dcb",
+      "status": "applied"
+    },
+    {
+      "at_unix": 1791107001.592868,
+      "action": "accept",
+      "prior_stage": "experiment",
+      "status": "applied"
+    },
+    {
+      "at_unix": 1791107025.262151,
+      "action": "initial",
+      "prior_stage": "experiment",
+      "session_id": "525815e947074be0b973e062b0f12d71",
+      "status": "applied"
+    },
+    {
+      "at_unix": 1791107228.1668868,
+      "action": "analysis",
+      "prior_stage": "analysis",
+      "session_id": "c5e8e26e05bc4f5db2fd58530372d2ef",
+      "status": "applied"
+    },
+    {
+      "at_unix": 1791107442.612393,
+      "action": "followup",
+      "prior_stage": "followup",
+      "session_id": "c859045cd17f47ec9a59ba84e9558486",
+      "status": "applied"
+    },
+    {
+      "at_unix": 1791107683.517954,
+      "action": "report",
+      "prior_stage": "validated",
+      "status": "applied"
+    }
+  ],
+  "roots": [
+    "f975c1d27d8e41ca8ecb8e88e4c71dcb",
+    "525815e947074be0b973e062b0f12d71",
+    "c5e8e26e05bc4f5db2fd58530372d2ef",
+    "c859045cd17f47ec9a59ba84e9558486"
+  ],
+  "roles": {
+    "f975c1d27d8e41ca8ecb8e88e4c71dcb": "planner",
+    "525815e947074be0b973e062b0f12d71": "executor",
+    "c5e8e26e05bc4f5db2fd58530372d2ef": "analyst",
+    "c859045cd17f47ec9a59ba84e9558486": "executor"
+  },
+  "accepted": true,
+  "finished": true,
+  "operator": "human_ui_clicks",
+  "condition": "cooling-sign-v1-gpt6.1sol-matched-logs-max2-fixed-evaluator",
+  "setup_seconds": 38.94773316383362,
+  "setup_operator": "codex_local_preparation",
+  "ready_wait_seconds": 759.4640169143677,
+  "ended_at": 1791107683.813601,
+  "elapsed_seconds": 813.9863920211792,
+  "operator_actions": 6,
+  "report": "evidence/sessions/session-378f6c2e28144a238a1e63638457cb02/report.md"
+}

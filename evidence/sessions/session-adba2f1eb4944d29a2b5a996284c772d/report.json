@@ -1,0 +1,949 @@
+{
+  "kind": "actual_omnigent_broker_report",
+  "session_id": "session-adba2f1eb4944d29a2b5a996284c772d",
+  "parent_session_id": "93cb3317d6fa4eb2b8824034b9ae539a",
+  "stage": "validated",
+  "closed_loop_verified": true,
+  "modeler_conversation_separation": true,
+  "plans": [
+    {
+      "id": "initial-logs",
+      "hypothesis": "在任务 cooling-sign-v1 可用且其余执行条件保持一致的条件下，structured 日志比 raw 日志更有助于执行模型在同一修复预算内通过既定最终验证；此假设为暂定假设，尚无试验支持。",
+      "falsification": "匹配试验中 structured 条件未通过既定最终验证而 raw 条件通过，构成反对假设的观察；两者均通过或均失败则本轮不能支持所假设的优势，不据此声称普遍效应。",
+      "candidates": [
+        {
+          "id": "logs",
+          "learning_value": "直接检验日志呈现机制与既定验证结果的关系；采用同任务、同 replicate 的 raw/structured 配对，避免更换评价标准。",
+          "feasibility": "需要 broker 确认 cooling-sign-v1 是可用真实任务，并由 operator 授权 modeler 访问模型；任务、模型、温度、工具、修复预算及评价必须匹配。两次 trial 各 max_attempts=2，按每 trial max_attempts+1 计费，总计六次确定性工具运行；estimated_tool_runs=4 指最多四次修复尝试，另有两次最终验证。当前 status 未暴露任务清单、模型请求用量或期限，不能声称已核实这些条件。",
+          "estimated_tool_runs": 4
+        },
+        {
+          "id": "information-loss",
+          "learning_value": "在相同任务和评价下以无修复配对检验日志呈现的信息损失是否足以改变最终验证结果；成本低，但不能观察日志对迭代修复的帮助。",
+          "feasibility": "若 broker 支持 max_attempts=0，可执行 raw/structured 各一次最终验证，总计两次确定性工具运行；仍需同一任务、模型、温度、工具和 operator 模型授权。该零修复配置的支持情况尚未由真实工具确认。",
+          "estimated_tool_runs": 2
+        }
+      ],
+      "selected_candidate": "logs",
+      "selection_reason": "选择直接观察修复过程的日志配对，学习价值高于无修复测试；初始成本为六次确定性工具运行，在初始和后续合计最多十二次的上限内保留六次供后续使用。仅在 broker 接受任务与计划且 operator 确认原模型请求预算和原期限仍允许执行时交给 executor；不重置预算或期限、不变更评价、不自行修复模型或能力。当前唯一真实证据为 session-adba2f1eb4944d29a2b5a996284c772d 的 status：stage=planning、plans=[]、trials=[]、analysis=null；该响应没有独立证据 ID，也没有可见用量和期限。",
+      "runs": [
+        {
+          "task_id": "cooling-sign-v1",
+          "diagnostics": "raw",
+          "replicate": 0,
+          "max_attempts": 2
+        },
+        {
+          "task_id": "cooling-sign-v1",
+          "diagnostics": "structured",
+          "replicate": 0,
+          "max_attempts": 2
+        }
+      ]
+    },
+    {
+      "id": "followup-logs-replicate1",
+      "hypothesis": "在 cooling-sign-v1、新 replicate=1 且其余条件匹配、max_attempts=2 的条件下，structured 相比 raw 是否出现既定最终验证的通过优势；此为初始优势假设的独立配对复核，现有证据未支持该优势。",
+      "falsification": "structured 任一原评价层未通过而 raw 三层均通过，构成反对优势的观察；两者均通过或均失败仍不能支持优势；structured 三层均通过而 raw 失败只作为单配对的方向性证据，不能推出普遍收益。工具失败、停止、not_run、未知评价须分别报告，不当作通过，不混同为行为失败。",
+      "candidates": [
+        {
+          "id": "matched-replicate1",
+          "learning_value": "以新 replicate 复核初始两者均通过的无区分观察，维持原任务、max_attempts=2 和三层评价，可与初始结果保持同预算可比。",
+          "feasibility": "raw/structured 各一 trial，各最多两次修复加一次最终验证，配置成本上限共六次确定性工具运行；占用 followup 原预留六次。须由 broker 核实实际剩余额度及原请求/期限允许，固定相同模型、温度、工具、任务起点、评价及执行政策，仅 diagnostics 不同；不得重跑 replicate=0，不修复模型。",
+          "estimated_tool_runs": 6
+        },
+        {
+          "id": "matched-reduced-budget",
+          "learning_value": "使用 replicate=1、raw/structured 各 max_attempts=1，以较紧预算探索初始双通过是否来自预算充足；但改变原修复预算，不能作为原同预算结果的直接复核。",
+          "feasibility": "两 trial 各最多一次修复加一次最终验证，总成本上限四次确定性工具运行；保留原任务与评价，配对内部其余条件匹配。模型请求/token/cost 未知，不能量化总体费用。",
+          "estimated_tool_runs": 4
+        }
+      ],
+      "selected_candidate": "matched-replicate1",
+      "selection_reason": "初始 run-05cf3e79d9f3426b9f45535ddd2f5bfc 与 run-ba0c4282ae8544d9b388a9a243179275 均通过，首要不确定性是这一结果是否在新样本中重复。选择六次上限的原预算配对，避免四次候选引入修复预算变化；初始计划上限六次加 followup 上限六次为十二次。实际历史消耗当前不可见，不能以预留替代余额证明，交由 broker 核验；若额度不足或 quota 错误则停止，不派发或重试。原200请求、60分钟及起算保持不变。",
+      "repeat_reason": "run-05cf3e79d9f3426b9f45535ddd2f5bfc 与 run-ba0c4282ae8544d9b388a9a243179275 仅一个 replicate 且均通过，存在小样本与通过结果无区分的不确定性；重复任务与预算但使用新 replicate=1，不重复初次配置或初次试次。",
+      "runs": [
+        {
+          "task_id": "cooling-sign-v1",
+          "diagnostics": "raw",
+          "replicate": 1,
+          "max_attempts": 2
+        },
+        {
+          "task_id": "cooling-sign-v1",
+          "diagnostics": "structured",
+          "replicate": 1,
+          "max_attempts": 2
+        }
+      ]
+    }
+  ],
+  "analysis": {
+    "support": "not_supported",
+    "evidence_run_ids": [
+      "run-05cf3e79d9f3426b9f45535ddd2f5bfc",
+      "run-ba0c4282ae8544d9b388a9a243179275"
+    ],
+    "limitations": "status 中 raw 的 final_run_id=run-05cf3e79d9f3426b9f45535ddd2f5bfc 与 structured 的 final_run_id=run-ba0c4282ae8544d9b388a9a243179275 的 model_checking、simulation、behavior 分别均为 passed；没有将 not_run 计为 passed。仅一个任务的一组配对，按 initial-logs 预先 falsification，两者均通过不能支持 structured 的同预算通过优势，也不足以证明无效或普遍机制。上述两 run 的 tool_seconds 分别为 13.054623665986583 和 9.089917165983934；单组确定性工具时间差不是模型端到端耗时、工作流速度、机制收益或现实应用收益。当前可调用 packaged 工具只有 status/record_analysis，没有逐 run 评价及资源读取接口；无法检查未出现在 status trials 中的旧停止、工具失败、未知 usage 或其他完成试次，不能断言它们不存在。token、成本、实际确定性工具已用/剩余次数、尝试轨迹以及 raw/structured 诊断保留与丢失字段未知，无法评价诊断信息损失。status model_budget 显示 used_requests=116、max_requests=200、deadline_unix=1791107297.777293，但后续调用仍消耗原预算；不重置原200请求/60分钟或原起算。followup 的六次为按 max_attempts+1 计算的配置上限，不是已核实余额；实际额度须由 broker 的资源账本校验，quota 错误立即停止，不能自行忽略或重试。",
+    "adjustment_reason": "run-05cf3e79d9f3426b9f45535ddd2f5bfc 与 run-ba0c4282ae8544d9b388a9a243179275 三层评价均通过，使原优势假设本轮不获支持。保持原任务、修复预算和评价，改用新 replicate 的匹配配对，检验这一无区分结果在另一个执行样本中是否重复；不基于小样本 tool_seconds 选择机制或宣称速度收益。",
+    "followup": {
+      "id": "followup-logs-replicate1",
+      "hypothesis": "在 cooling-sign-v1、新 replicate=1 且其余条件匹配、max_attempts=2 的条件下，structured 相比 raw 是否出现既定最终验证的通过优势；此为初始优势假设的独立配对复核，现有证据未支持该优势。",
+      "falsification": "structured 任一原评价层未通过而 raw 三层均通过，构成反对优势的观察；两者均通过或均失败仍不能支持优势；structured 三层均通过而 raw 失败只作为单配对的方向性证据，不能推出普遍收益。工具失败、停止、not_run、未知评价须分别报告，不当作通过，不混同为行为失败。",
+      "candidates": [
+        {
+          "id": "matched-replicate1",
+          "learning_value": "以新 replicate 复核初始两者均通过的无区分观察，维持原任务、max_attempts=2 和三层评价，可与初始结果保持同预算可比。",
+          "feasibility": "raw/structured 各一 trial，各最多两次修复加一次最终验证，配置成本上限共六次确定性工具运行；占用 followup 原预留六次。须由 broker 核实实际剩余额度及原请求/期限允许，固定相同模型、温度、工具、任务起点、评价及执行政策，仅 diagnostics 不同；不得重跑 replicate=0，不修复模型。",
+          "estimated_tool_runs": 6
+        },
+        {
+          "id": "matched-reduced-budget",
+          "learning_value": "使用 replicate=1、raw/structured 各 max_attempts=1，以较紧预算探索初始双通过是否来自预算充足；但改变原修复预算，不能作为原同预算结果的直接复核。",
+          "feasibility": "两 trial 各最多一次修复加一次最终验证，总成本上限四次确定性工具运行；保留原任务与评价，配对内部其余条件匹配。模型请求/token/cost 未知，不能量化总体费用。",
+          "estimated_tool_runs": 4
+        }
+      ],
+      "selected_candidate": "matched-replicate1",
+      "selection_reason": "初始 run-05cf3e79d9f3426b9f45535ddd2f5bfc 与 run-ba0c4282ae8544d9b388a9a243179275 均通过，首要不确定性是这一结果是否在新样本中重复。选择六次上限的原预算配对，避免四次候选引入修复预算变化；初始计划上限六次加 followup 上限六次为十二次。实际历史消耗当前不可见，不能以预留替代余额证明，交由 broker 核验；若额度不足或 quota 错误则停止，不派发或重试。原200请求、60分钟及起算保持不变。",
+      "repeat_reason": "run-05cf3e79d9f3426b9f45535ddd2f5bfc 与 run-ba0c4282ae8544d9b388a9a243179275 仅一个 replicate 且均通过，存在小样本与通过结果无区分的不确定性；重复任务与预算但使用新 replicate=1，不重复初次配置或初次试次。",
+      "runs": [
+        {
+          "task_id": "cooling-sign-v1",
+          "diagnostics": "raw",
+          "replicate": 1,
+          "max_attempts": 2
+        },
+        {
+          "task_id": "cooling-sign-v1",
+          "diagnostics": "structured",
+          "replicate": 1,
+          "max_attempts": 2
+        }
+      ]
+    }
+  },
+  "trials": [
+    {
+      "trial_id": "trial-b7292edfeb0f4651a92434442dc306f6",
+      "plan_id": "initial-logs",
+      "config": {
+        "task_id": "cooling-sign-v1",
+        "diagnostics": "raw",
+        "replicate": 0,
+        "max_attempts": 2
+      },
+      "attempts": [
+        "run-e3fdef192fb0486b93a054ba325e0b7a",
+        "run-333565a46cd245a8939dfe98b765a0d9"
+      ],
+      "source": "model Cooling\n  parameter Real C = 1000 \"Thermal capacity J/K\";\n  parameter Real G = 10 \"Thermal conductance W/K\";\n  parameter Real T_ambient = 293.15 \"Ambient K\";\n  Real T(start=333.15, fixed=true) \"Body K\";\nequation\n  C * der(T) = -G * (T - T_ambient);\nend Cooling;\n",
+      "finished": true,
+      "final_run_id": "run-05cf3e79d9f3426b9f45535ddd2f5bfc",
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": "passed",
+        "all_passed": true
+      },
+      "tool_seconds": 13.054623665986583
+    },
+    {
+      "trial_id": "trial-a8c1f1553c8a42e396651bfe7756e489",
+      "plan_id": "initial-logs",
+      "config": {
+        "task_id": "cooling-sign-v1",
+        "diagnostics": "structured",
+        "replicate": 0,
+        "max_attempts": 2
+      },
+      "attempts": [
+        "run-531d0e53cc804e278f95733118c72950"
+      ],
+      "source": "model Cooling\n  parameter Real C = 1000 \"Thermal capacity J/K\";\n  parameter Real G = 10 \"Thermal conductance W/K\";\n  parameter Real T_ambient = 293.15 \"Ambient K\";\n  Real T(start=333.15, fixed=true) \"Body K\";\nequation\n  C * der(T) = G * (T_ambient - T);\nend Cooling;\n",
+      "finished": true,
+      "final_run_id": "run-ba0c4282ae8544d9b388a9a243179275",
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": "passed",
+        "all_passed": true
+      },
+      "tool_seconds": 9.089917165983934
+    },
+    {
+      "trial_id": "trial-81b5fb222a4d440783f3acb5cf9fe2c1",
+      "plan_id": "followup-logs-replicate1",
+      "config": {
+        "task_id": "cooling-sign-v1",
+        "diagnostics": "raw",
+        "replicate": 1,
+        "max_attempts": 2
+      },
+      "attempts": [
+        "run-415aca30d3504ebb9ae8ab7c7b35e29d"
+      ],
+      "source": "model Cooling\n  parameter Real C = 1000 \"Thermal capacity J/K\";\n  parameter Real G = 10 \"Thermal conductance W/K\";\n  parameter Real T_ambient = 293.15 \"Ambient K\";\n  Real T(start=333.15, fixed=true) \"Body K\";\nequation\n  C * der(T) = G * (T_ambient - T);\nend Cooling;\n",
+      "finished": true,
+      "final_run_id": "run-ada46c10bd8c4ed083a9ab4fa2c2c4d3",
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": "passed",
+        "all_passed": true
+      },
+      "tool_seconds": 9.727088249986991
+    },
+    {
+      "trial_id": "trial-65db2919cceb44398b6c345cd0f7d018",
+      "plan_id": "followup-logs-replicate1",
+      "config": {
+        "task_id": "cooling-sign-v1",
+        "diagnostics": "structured",
+        "replicate": 1,
+        "max_attempts": 2
+      },
+      "attempts": [
+        "run-4bb6d695fddc4ad2aa1a59f8c682ba6d"
+      ],
+      "source": "model Cooling\n  parameter Real C = 1000 \"Thermal capacity J/K\";\n  parameter Real G = 10 \"Thermal conductance W/K\";\n  parameter Real T_ambient = 293.15 \"Ambient K\";\n  Real T(start=333.15, fixed=true) \"Body K\";\nequation\n  C * der(T) = G * (T_ambient - T);\nend Cooling;\n",
+      "finished": true,
+      "final_run_id": "run-42d3ebbc005f4e70b26bcb51de073cb0",
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": "passed",
+        "all_passed": true
+      },
+      "tool_seconds": 8.40954866699758
+    }
+  ],
+  "role_usage_records": {
+    "executor": [
+      {
+        "session_id": "6e6e5032b95446d99d546dde296442ab",
+        "session_key": "6e6e5032b95446d99d546dde296442ab",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 17274,
+          "output_tokens": 717,
+          "total_tokens": 66375,
+          "cache_read_input_tokens": 48384,
+          "context_tokens": 17431
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791104300.740562
+      },
+      {
+        "session_id": "6e6e5032b95446d99d546dde296442ab",
+        "session_key": "6e6e5032b95446d99d546dde296442ab",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 19403,
+          "output_tokens": 759,
+          "total_tokens": 56130,
+          "cache_read_input_tokens": 35968,
+          "context_tokens": 19405
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791104960.9961832
+      },
+      {
+        "session_id": "6e6e5032b95446d99d546dde296442ab",
+        "session_key": "dba7390a2c58414fb07e07a8d2501be1",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 19317,
+          "output_tokens": 491,
+          "total_tokens": 37728,
+          "cache_read_input_tokens": 17920,
+          "context_tokens": 19572
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105076.518977
+      },
+      {
+        "session_id": "4855f417f6e44258b32868c01c44a00a",
+        "session_key": "2c5105c00a0f48c59f1053ba936a3759",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 16847,
+          "output_tokens": 405,
+          "total_tokens": 32740,
+          "cache_read_input_tokens": 15488,
+          "context_tokens": 17031
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105222.927765
+      },
+      {
+        "session_id": "4855f417f6e44258b32868c01c44a00a",
+        "session_key": "2c5105c00a0f48c59f1053ba936a3759",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 1889,
+          "output_tokens": 221,
+          "total_tokens": 70718,
+          "cache_read_input_tokens": 68608,
+          "context_tokens": 17944
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105282.6517031
+      },
+      {
+        "session_id": "4855f417f6e44258b32868c01c44a00a",
+        "session_key": "2c5105c00a0f48c59f1053ba936a3759",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 2097,
+          "output_tokens": 863,
+          "total_tokens": 39440,
+          "cache_read_input_tokens": 36480,
+          "context_tokens": 20097
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105417.371427
+      },
+      {
+        "session_id": "4855f417f6e44258b32868c01c44a00a",
+        "session_key": "2c5105c00a0f48c59f1053ba936a3759",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 2512,
+          "output_tokens": 186,
+          "total_tokens": 83594,
+          "cache_read_input_tokens": 80896,
+          "context_tokens": 21426
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105507.5453382
+      },
+      {
+        "session_id": "4855f417f6e44258b32868c01c44a00a",
+        "session_key": "2c5105c00a0f48c59f1053ba936a3759",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 6481,
+          "output_tokens": 1087,
+          "total_tokens": 100752,
+          "cache_read_input_tokens": 93184,
+          "context_tokens": 27536
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105782.938329
+      },
+      {
+        "session_id": "4855f417f6e44258b32868c01c44a00a",
+        "session_key": "2c5105c00a0f48c59f1053ba936a3759",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 2457,
+          "output_tokens": 250,
+          "total_tokens": 113427,
+          "cache_read_input_tokens": 110720,
+          "context_tokens": 28817
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105845.388421
+      },
+      {
+        "session_id": "4855f417f6e44258b32868c01c44a00a",
+        "session_key": "2c5105c00a0f48c59f1053ba936a3759",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 4292,
+          "output_tokens": 720,
+          "total_tokens": 65684,
+          "cache_read_input_tokens": 60672,
+          "context_tokens": 33243
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105909.992239
+      },
+      {
+        "session_id": "4855f417f6e44258b32868c01c44a00a",
+        "session_key": "2c5105c00a0f48c59f1053ba936a3759",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 3108,
+          "output_tokens": 656,
+          "total_tokens": 171828,
+          "cache_read_input_tokens": 168064,
+          "context_tokens": 35440
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105989.46692
+      },
+      {
+        "session_id": "4855f417f6e44258b32868c01c44a00a",
+        "session_key": "2c5105c00a0f48c59f1053ba936a3759",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 2282,
+          "output_tokens": 197,
+          "total_tokens": 108335,
+          "cache_read_input_tokens": 105856,
+          "context_tokens": 36694
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791106071.593007
+      }
+    ],
+    "coordinator": [
+      {
+        "session_id": "4ad6a53e2d494f6ea6107323e552da24",
+        "session_key": "4ad6a53e2d494f6ea6107323e552da24",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 18379,
+          "output_tokens": 415,
+          "total_tokens": 35690,
+          "cache_read_input_tokens": 16896,
+          "context_tokens": 18509
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791104840.98859
+      },
+      {
+        "session_id": "4ad6a53e2d494f6ea6107323e552da24",
+        "session_key": "4ad6a53e2d494f6ea6107323e552da24",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 19540,
+          "output_tokens": 168,
+          "total_tokens": 37756,
+          "cache_read_input_tokens": 18048,
+          "context_tokens": 18918
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791104974.361334
+      },
+      {
+        "session_id": "4ad6a53e2d494f6ea6107323e552da24",
+        "session_key": "f685d4489fd04f6292ed446ec5df7296",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 17616,
+          "output_tokens": 346,
+          "total_tokens": 17962,
+          "context_tokens": 17962
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105037.857707
+      },
+      {
+        "session_id": "4ad6a53e2d494f6ea6107323e552da24",
+        "session_key": "f685d4489fd04f6292ed446ec5df7296",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 1014,
+          "output_tokens": 142,
+          "total_tokens": 36612,
+          "cache_read_input_tokens": 35456,
+          "context_tokens": 18347
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105098.948123
+      },
+      {
+        "session_id": "93cb3317d6fa4eb2b8824034b9ae539a",
+        "session_key": "1c3f8c6d7ac744ba84c573ec1640a86d",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 16749,
+          "output_tokens": 444,
+          "total_tokens": 32553,
+          "cache_read_input_tokens": 15360,
+          "context_tokens": 16959
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105197.3582778
+      },
+      {
+        "session_id": "93cb3317d6fa4eb2b8824034b9ae539a",
+        "session_key": "1c3f8c6d7ac744ba84c573ec1640a86d",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 1052,
+          "output_tokens": 91,
+          "total_tokens": 34551,
+          "cache_read_input_tokens": 33408,
+          "context_tokens": 17302
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105233.203051
+      },
+      {
+        "session_id": "93cb3317d6fa4eb2b8824034b9ae539a",
+        "session_key": "1c3f8c6d7ac744ba84c573ec1640a86d",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 1471,
+          "output_tokens": 841,
+          "total_tokens": 54280,
+          "cache_read_input_tokens": 51968,
+          "context_tokens": 18521
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105403.560632
+      },
+      {
+        "session_id": "93cb3317d6fa4eb2b8824034b9ae539a",
+        "session_key": "1c3f8c6d7ac744ba84c573ec1640a86d",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 969,
+          "output_tokens": 84,
+          "total_tokens": 37661,
+          "cache_read_input_tokens": 36608,
+          "context_tokens": 18857
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105425.997781
+      },
+      {
+        "session_id": "93cb3317d6fa4eb2b8824034b9ae539a",
+        "session_key": "1c3f8c6d7ac744ba84c573ec1640a86d",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 2095,
+          "output_tokens": 589,
+          "total_tokens": 59388,
+          "cache_read_input_tokens": 56704,
+          "context_tokens": 20894
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105637.074662
+      },
+      {
+        "session_id": "93cb3317d6fa4eb2b8824034b9ae539a",
+        "session_key": "1c3f8c6d7ac744ba84c573ec1640a86d",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 1980,
+          "output_tokens": 583,
+          "total_tokens": 64771,
+          "cache_read_input_tokens": 62208,
+          "context_tokens": 22351
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105749.9142
+      },
+      {
+        "session_id": "93cb3317d6fa4eb2b8824034b9ae539a",
+        "session_key": "1c3f8c6d7ac744ba84c573ec1640a86d",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 1201,
+          "output_tokens": 83,
+          "total_tokens": 45316,
+          "cache_read_input_tokens": 44032,
+          "context_tokens": 22684
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105798.83301
+      },
+      {
+        "session_id": "93cb3317d6fa4eb2b8824034b9ae539a",
+        "session_key": "1c3f8c6d7ac744ba84c573ec1640a86d",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 838,
+          "output_tokens": 540,
+          "total_tokens": 46690,
+          "cache_read_input_tokens": 45312,
+          "context_tokens": 23722
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105888.512911
+      },
+      {
+        "session_id": "93cb3317d6fa4eb2b8824034b9ae539a",
+        "session_key": "1c3f8c6d7ac744ba84c573ec1640a86d",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 1134,
+          "output_tokens": 87,
+          "total_tokens": 48069,
+          "cache_read_input_tokens": 46848,
+          "context_tokens": 24061
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105920.775292
+      }
+    ],
+    "modeler": [
+      {
+        "session_id": "74a05f36c812431dae5ac83a67152c31",
+        "session_key": "57b3d7a2a4624aaa9e43aced59362a12",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 14119,
+          "output_tokens": 79,
+          "total_tokens": 14198,
+          "context_tokens": 14198
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105247.6028469
+      },
+      {
+        "session_id": "970f287814e44bcc84ac405aa2fb7bab",
+        "session_key": "246691623ea74559a7e324e39c42b0d0",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 15553,
+          "output_tokens": 417,
+          "total_tokens": 44514,
+          "cache_read_input_tokens": 28544,
+          "context_tokens": 15274
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105471.505606
+      },
+      {
+        "session_id": "f4648fbf3f34468fb175932cc7f38201",
+        "session_key": "2bc1e61e73e54bb9ab4aab6c9c70a4d8",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 14269,
+          "output_tokens": 91,
+          "total_tokens": 14360,
+          "context_tokens": 14360
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105816.070018
+      },
+      {
+        "session_id": "f4648fbf3f34468fb175932cc7f38201",
+        "session_key": "2bc1e61e73e54bb9ab4aab6c9c70a4d8",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 1974,
+          "output_tokens": 892,
+          "total_tokens": 31538,
+          "cache_read_input_tokens": 28672,
+          "context_tokens": 16029
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105941.6515741
+      },
+      {
+        "session_id": "0d0a6dc493854cb1a366484837ad182d",
+        "session_key": "0e38e69a585b4528b9721200928c9905",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 3071,
+          "output_tokens": 309,
+          "total_tokens": 29364,
+          "cache_read_input_tokens": 25984,
+          "context_tokens": 15021
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791106031.846211
+      }
+    ],
+    "analyst": [
+      {
+        "session_id": "1a189f32f036451a9046272bcba76f2e",
+        "session_key": "a738359693aa42f5a0764d3746d39119",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 16525,
+          "output_tokens": 1691,
+          "total_tokens": 47784,
+          "cache_read_input_tokens": 29568,
+          "context_tokens": 17806
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791105721.8204532
+      }
+    ]
+  },
+  "unattributed_early_usage_records": [
+    {
+      "session_id": "8bef5f781e644bd792fe6c7f250765a9",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 15654,
+        "output_tokens": 162,
+        "total_tokens": 58312,
+        "cache_read_input_tokens": 42496,
+        "context_tokens": 15139
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791103760.365172
+    },
+    {
+      "session_id": "36561413acb04eb0a884a8dbeb7a51fe",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 15402,
+        "output_tokens": 202,
+        "total_tokens": 15604,
+        "context_tokens": 15604
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791103868.308855
+    },
+    {
+      "session_id": "36561413acb04eb0a884a8dbeb7a51fe",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 857,
+        "output_tokens": 211,
+        "total_tokens": 31916,
+        "cache_read_input_tokens": 30848,
+        "context_tokens": 16072
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791103879.7062762
+    },
+    {
+      "session_id": "b21358e662794e389309a47be2c138cb",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 14359,
+        "output_tokens": 69,
+        "total_tokens": 28380,
+        "cache_read_input_tokens": 13952,
+        "context_tokens": 14256
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791103891.4214232
+    },
+    {
+      "session_id": "36561413acb04eb0a884a8dbeb7a51fe",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 788,
+        "output_tokens": 39,
+        "total_tokens": 32571,
+        "cache_read_input_tokens": 31744,
+        "context_tokens": 16311
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791103903.578305
+    },
+    {
+      "session_id": null,
+      "session_key": "4bffdaf0120a4c5fbc0c3b3d206c77ea",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 16192,
+        "output_tokens": 329,
+        "total_tokens": 32137,
+        "cache_read_input_tokens": 15616,
+        "context_tokens": 16228
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791104079.077922
+    },
+    {
+      "session_id": null,
+      "session_key": "cb4d4ee8391e4ed8a9064b3580651649",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 14872,
+        "output_tokens": 892,
+        "total_tokens": 30228,
+        "cache_read_input_tokens": 14464,
+        "context_tokens": 15555
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791104229.007079
+    },
+    {
+      "session_id": null,
+      "session_key": "4bffdaf0120a4c5fbc0c3b3d206c77ea",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 2319,
+        "output_tokens": 528,
+        "total_tokens": 51231,
+        "cache_read_input_tokens": 48384,
+        "context_tokens": 18170
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791104254.353455
+    },
+    {
+      "session_id": null,
+      "session_key": "3165dcf03f794736b6393a13494001d7",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 18022,
+        "output_tokens": 464,
+        "total_tokens": 51894,
+        "cache_read_input_tokens": 33408,
+        "context_tokens": 17930
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791104482.034575
+    },
+    {
+      "session_id": null,
+      "session_key": "3165dcf03f794736b6393a13494001d7",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 1291,
+        "output_tokens": 209,
+        "total_tokens": 55004,
+        "cache_read_input_tokens": 53504,
+        "context_tokens": 18406
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791104499.28627
+    },
+    {
+      "session_id": null,
+      "session_key": "d32ee1fc21604a5494cfcdb0b66a294c",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 17895,
+        "output_tokens": 461,
+        "total_tokens": 51124,
+        "cache_read_input_tokens": 32768,
+        "context_tokens": 17928
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791104519.400697
+    },
+    {
+      "session_id": null,
+      "session_key": "3165dcf03f794736b6393a13494001d7",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 1386,
+        "output_tokens": 169,
+        "total_tokens": 38803,
+        "cache_read_input_tokens": 37248,
+        "context_tokens": 19443
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791104535.049104
+    },
+    {
+      "session_id": null,
+      "session_key": "faeafb1b109a4168a1536b7319530b5d",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 14729,
+        "output_tokens": 191,
+        "total_tokens": 14920,
+        "context_tokens": 14920
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791104540.6531641
+    },
+    {
+      "session_id": null,
+      "session_key": "d32ee1fc21604a5494cfcdb0b66a294c",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 2570,
+        "output_tokens": 767,
+        "total_tokens": 94473,
+        "cache_read_input_tokens": 91136,
+        "context_tokens": 19873
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791104591.413631
+    },
+    {
+      "session_id": null,
+      "session_key": "d4c2c51201c74eafb11b17ad24282d58",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 14950,
+        "output_tokens": 277,
+        "total_tokens": 29307,
+        "cache_read_input_tokens": 14080,
+        "context_tokens": 14890
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791104620.376052
+    },
+    {
+      "session_id": null,
+      "session_key": "d32ee1fc21604a5494cfcdb0b66a294c",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 2255,
+        "output_tokens": 267,
+        "total_tokens": 82522,
+        "cache_read_input_tokens": 80000,
+        "context_tokens": 20923
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791104648.1688828
+    }
+  ],
+  "cost_usd": null,
+  "billing": "existing_subscription_no_credit_purchase_no_api_fallback",
+  "workflow_measurement": "actual_manual_automatic_observations_with_confounds",
+  "unattributed_usage_scope": "Global historical records, not attributable to this study; do not sum as study cost",
+  "limitations": [
+    "Small acceptance example cannot establish mechanism efficacy",
+    "No measured research speed improvement yet",
+    "No human timing inferred from Codex operation",
+    "Codex CLI does not expose matched temperature/seed control; same configured base model and reasoning route",
+    "Early runtime usage keys were not native conversation IDs; those role costs remain unknown"
+  ],
+  "workflow_observations": {
+    "manual_seconds": 813.9863920211792,
+    "manual_ui_actions": 6,
+    "manual_preparation_seconds": 38.94773316383362,
+    "automatic_seconds": 2293.815771818161,
+    "automatic_recorded_native_control_inputs": 10,
+    "automatic_total_operator_actions": null,
+    "speed_improvement_established": false,
+    "evidence": "evidence/measurements/workflow-comparison.json"
+  }
+}

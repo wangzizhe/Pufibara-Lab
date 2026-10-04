@@ -1,0 +1,10 @@
+{
+  "cause": "creator_stream_not_append_mode_overwrote_child_appends",
+  "original_sha256": "adaec3bef77550249cc4d68eae491fecc10fd573c623f5e88470ace7f2485437",
+  "forwarded_request_count": 11,
+  "deadline_unix_preserved": 1791105497.777293,
+  "max_requests_preserved": 40,
+  "proxy_log": ".runtime/omnigent-ui/logs/runner/runner-7d4bf36e8a5a44e9880ba6c3d756b0bd-20261004-104817-606163.log",
+  "original_retained": "research-budget-corrupted.jsonl.txt",
+  "no_reset": true
+}

@@ -1,0 +1,38 @@
+{
+  "phase": "hackathon_evidence_completion",
+  "product_name": "Pufibara Lab",
+  "updated_at_unix": 1791113389.2618618,
+  "goal_complete": true,
+  "implemented": [
+    "Project-scoped Omnigent 0.16.0 native runner completion patch",
+    "Scoped Analyst evidence and actual attempt counts",
+    "Diagnostic-sensitive initialization case and correct simulation-failure classification",
+    "English Pufibara Lab role package; shared immutable model request/time budget"
+  ],
+  "verified": [
+    "35 tests passed",
+    "Actual Docker initialization baseline failure and corrected fixture pass",
+    "Real initial comparison, Agent analysis, changed follow-up and validation; four finished trials",
+    "Primary native actors all idle after completed loop",
+    "Fresh native root/executor/two-modeler inbox completion, zero stage recovery",
+    "Actual saved primary scientific source/evaluator hashes and analysis checked"
+  ],
+  "not_yet_verified": [],
+  "model_requests_this_phase": 115,
+  "historical_research_requests": 199,
+  "model_time_authorization": "120 additional requests; original deadline 2026-10-04 13:36:35 Europe/Berlin unchanged",
+  "historical_evidence_preserved": true,
+  "authorization": "enhancement-authorization.json",
+  "broker_session_id": "session-d32b3336026842fcba860f2d22b06ec6",
+  "parent_session_id": "04eae0d423494253a685e1455986499a",
+  "preflight_tests_passed": 35,
+  "initialization_fixture_verified": true,
+  "live_closed_loop_verified": true,
+  "primary_operator_native_control_inputs": 6,
+  "unintervened_full_scientific_loop": false,
+  "model_host_stopped": true,
+  "environment_delivery_verified": true,
+  "offline_package_verified": true,
+  "waiting_for": null,
+  "demo_recording_responsibility": "User explicitly handles recording; outside assistant completion scope"
+}

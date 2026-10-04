@@ -1,0 +1,31 @@
+{
+  "kind": "actual_omnigent_codex_live_tool_transport",
+  "model_turn_started": true,
+  "network_allowed": false,
+  "trusted_control": false,
+  "initialized": true,
+  "sandboxed": true,
+  "account_type": "chatgpt",
+  "passed": true,
+  "subscription_limits": {
+    "primary_used_percent": 0,
+    "secondary_used_percent": 23,
+    "has_credits": false,
+    "credits_unlimited": false
+  },
+  "model": "gpt-6.1-sol",
+  "response": "The nonce is `thermal-probe-20261004`.",
+  "usage": {
+    "input_tokens": 10687,
+    "output_tokens": 32,
+    "total_tokens": 10719,
+    "model": "gpt-6.1-sol",
+    "context_tokens": 10719
+  },
+  "tool_calls": [
+    "public_probe"
+  ],
+  "reserved_model_requests": 2,
+  "filtered_network": true,
+  "scope": "Real subscribed Codex model called one fixed local tool through the Omnigent executor, under Seatbelt and request-filtered egress. Not multi-agent research or Modelica experiment."
+}

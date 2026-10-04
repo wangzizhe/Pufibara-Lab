@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-04",
+  "scope": "connection_only_not_live_research",
+  "omnigent_version": "0.16.0",
+  "codex_cli_version": "0.160.0",
+  "server_url": "http://127.0.0.1:6768/",
+  "dedicated_project_login": true,
+  "login_status_stdout": "Logged in using ChatGPT",
+  "ui_host": "Host: This Mac, Online",
+  "ui_executor": "Codex, Model GPT-6.1-Sol",
+  "model_task_started": false,
+  "full_execution_isolation_verified": false,
+  "credential_contents_recorded": false
+}

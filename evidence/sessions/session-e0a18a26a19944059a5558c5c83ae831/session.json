@@ -1,0 +1,23 @@
+{
+  "session_id": "session-e0a18a26a19944059a5558c5c83ae831",
+  "stage": "planning",
+  "plans": [],
+  "trials": [],
+  "analysis": null,
+  "kind": "live_pending",
+  "runtime": {
+    "schema_version": 1,
+    "model_service": null,
+    "model": null,
+    "max_model_calls": 0,
+    "max_total_usd": 0,
+    "max_model_tokens": 0,
+    "max_tool_runs": 12,
+    "max_tool_seconds": 60,
+    "max_repair_attempts": 3,
+    "omc_image": "openmodelica/openmodelica:v1.26.1-minimal",
+    "omc_image_digest": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+    "install_authorized": true,
+    "model_calls_authorized": false
+  }
+}

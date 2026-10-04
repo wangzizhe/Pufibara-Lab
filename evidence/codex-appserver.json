@@ -1,0 +1,19 @@
+{
+  "kind": "contained_omnigent_codex_initialize_no_model",
+  "model_turn_started": false,
+  "network_allowed": false,
+  "trusted_control": false,
+  "initialized": true,
+  "sandboxed": true,
+  "account_type": "chatgpt",
+  "passed": true,
+  "subscription_limits": {
+    "primary_used_percent": 1,
+    "secondary_used_percent": 24,
+    "has_credits": false,
+    "credits_unlimited": false
+  },
+  "reserved_model_requests": 0,
+  "filtered_network": true,
+  "scope": "Actual app-server initialized and account type checked; no inference or live tool delegation tested. Trusted account discovery may need network."
+}

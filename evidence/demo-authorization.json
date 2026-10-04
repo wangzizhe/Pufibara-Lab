@@ -1,0 +1,28 @@
+{
+  "prepared_at_unix": 1791114019.205944,
+  "authorization": {
+    "schema_version": 1,
+    "authorization_date": "2026-10-04",
+    "model_service": "codex_chatgpt_subscription",
+    "phase": "demo",
+    "max_wall_seconds": 1800,
+    "max_model_requests": 100,
+    "allow_credit_purchase": false,
+    "allow_api_fallback": false,
+    "stop_on_subscription_limit": true,
+    "authorization_confirmed": true,
+    "start_on_first_request": true,
+    "prior_phase_requests": 321,
+    "historical_pilot_requests": 7,
+    "historical_research_requests": 199,
+    "historical_enhancement_requests": 115,
+    "cumulative_request_ceiling": 500,
+    "execution_gate": "installed_code_tests_and_synthetic_worker_isolation_before_user_prompt",
+    "authorization_source": "explicit_user: 同意启动：最多100次请求、30分钟，仅现有Codex订阅。"
+  },
+  "config_sha256": "191c2a85a5d4a14631ef1b98cde0c3ca3caad9d351bcb960f8e71266b494e1e2",
+  "model_requests": 0,
+  "clock_started": false,
+  "user_starts_by_sending_goal": true,
+  "historical_journals_preserved": true
+}

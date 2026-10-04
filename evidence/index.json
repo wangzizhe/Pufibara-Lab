@@ -1,0 +1,440 @@
+{
+  "status": "closed_loop_and_workflow_observations_saved",
+  "live_omnigent_agents_run": true,
+  "model_calls": 206,
+  "phase_usage": {
+    "pilot": {
+      "requests": 7,
+      "limit": 12,
+      "deadline_unix": 1791103493.327515
+    },
+    "research": {
+      "requests": 199,
+      "limit": 500,
+      "deadline_unix": 1791108497.777293
+    }
+  },
+  "incremental_model_service_cost_usd": null,
+  "billing": "existing_subscription_no_credit_purchase_no_api_fallback",
+  "scientific_bottleneck_measurement": "actual_pair_with_confounds_no_speed_claim",
+  "verified_closed_loop_reports": [
+    "evidence/sessions/session-378f6c2e28144a238a1e63638457cb02/report.json",
+    "evidence/sessions/session-adba2f1eb4944d29a2b5a996284c772d/report.json"
+  ],
+  "live_origin_rule": "Broker trial plus actual native-session/modeler-thread audit; plan alone is insufficient",
+  "runs": [
+    {
+      "run_id": "run-05cf3e79d9f3426b9f45535ddd2f5bfc",
+      "status": "completed",
+      "source_sha256": "965c33e70e4b18ed398113d64b2ce3e31f633e4c0aa28b48b06523ed27fed31d",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 5.764703332999488,
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": {
+          "status": "passed",
+          "max_abs_error_k": 5.966772920373842e-05,
+          "samples": 302
+        },
+        "all_passed": true
+      },
+      "origin": "live_agent"
+    },
+    {
+      "run_id": "run-08c3de744b8545dab7ff5bd96c400ac0",
+      "status": "completed",
+      "source_sha256": "965c33e70e4b18ed398113d64b2ce3e31f633e4c0aa28b48b06523ed27fed31d",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 2.8010846249817405,
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": {
+          "status": "passed",
+          "max_abs_error_k": 5.966772920373842e-05,
+          "samples": 302
+        },
+        "all_passed": true
+      },
+      "origin": "live_agent"
+    },
+    {
+      "run_id": "run-2a177c8720d64385aa4fe78b8fa8e236",
+      "status": "completed",
+      "source_sha256": "9df318be9ff9fc19a831f1181b952bef73c72c5332edd27600138c1917b89d21",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 6.716202416995657,
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": {
+          "status": "passed",
+          "max_abs_error_k": 5.966772920373842e-05,
+          "samples": 302
+        },
+        "all_passed": true
+      },
+      "origin": "engineering"
+    },
+    {
+      "run_id": "run-2ee73bcb64764d738e07364e6edb213a",
+      "status": "completed",
+      "source_sha256": "965c33e70e4b18ed398113d64b2ce3e31f633e4c0aa28b48b06523ed27fed31d",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 5.187557583994931,
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": {
+          "status": "passed",
+          "max_abs_error_k": 5.966772920373842e-05,
+          "samples": 302
+        },
+        "all_passed": true
+      },
+      "origin": "live_agent"
+    },
+    {
+      "run_id": "run-321fe9c36fee4b20808c6e2fac5d2d44",
+      "status": "completed",
+      "source_sha256": "027d308466437adb861b4e229d75f146e06c7dd256a02b1649e14682d7e77b1e",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 4.727803458008566,
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": {
+          "status": "failed",
+          "max_abs_error_k": 801.4335102427244,
+          "samples": 302
+        },
+        "all_passed": false
+      },
+      "origin": "engineering"
+    },
+    {
+      "run_id": "run-333565a46cd245a8939dfe98b765a0d9",
+      "status": "completed",
+      "source_sha256": "965c33e70e4b18ed398113d64b2ce3e31f633e4c0aa28b48b06523ed27fed31d",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 2.6773544999887235,
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": {
+          "status": "passed",
+          "max_abs_error_k": 5.966772920373842e-05,
+          "samples": 302
+        },
+        "all_passed": true
+      },
+      "origin": "live_agent"
+    },
+    {
+      "run_id": "run-34781cb833e64ceca39201ef9c5f5d77",
+      "status": "completed",
+      "source_sha256": "965c33e70e4b18ed398113d64b2ce3e31f633e4c0aa28b48b06523ed27fed31d",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 3.6753447919909377,
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": {
+          "status": "passed",
+          "max_abs_error_k": 5.966772920373842e-05,
+          "samples": 302
+        },
+        "all_passed": true
+      },
+      "origin": "live_agent"
+    },
+    {
+      "run_id": "run-415aca30d3504ebb9ae8ab7c7b35e29d",
+      "status": "completed",
+      "source_sha256": "9df318be9ff9fc19a831f1181b952bef73c72c5332edd27600138c1917b89d21",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 4.66134658298688,
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": {
+          "status": "passed",
+          "max_abs_error_k": 5.966772920373842e-05,
+          "samples": 302
+        },
+        "all_passed": true
+      },
+      "origin": "live_agent"
+    },
+    {
+      "run_id": "run-42d3ebbc005f4e70b26bcb51de073cb0",
+      "status": "completed",
+      "source_sha256": "9df318be9ff9fc19a831f1181b952bef73c72c5332edd27600138c1917b89d21",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 5.31389591700281,
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": {
+          "status": "passed",
+          "max_abs_error_k": 5.966772920373842e-05,
+          "samples": 302
+        },
+        "all_passed": true
+      },
+      "origin": "live_agent"
+    },
+    {
+      "run_id": "run-4bb6d695fddc4ad2aa1a59f8c682ba6d",
+      "status": "completed",
+      "source_sha256": "9df318be9ff9fc19a831f1181b952bef73c72c5332edd27600138c1917b89d21",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 3.0956527499947697,
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": {
+          "status": "passed",
+          "max_abs_error_k": 5.966772920373842e-05,
+          "samples": 302
+        },
+        "all_passed": true
+      },
+      "origin": "live_agent"
+    },
+    {
+      "run_id": "run-4cac03e51b674c73bd5f2b7d45693aeb",
+      "status": "completed",
+      "source_sha256": "db1c7dfb1414fe20561990f0410e86981939fac7c921f56e940beba870133bcd",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 0.2578930000017863,
+      "evaluation": {
+        "model_checking": "failed",
+        "simulation": "not_run",
+        "behavior": {
+          "status": "not_run"
+        },
+        "all_passed": false
+      },
+      "origin": "engineering"
+    },
+    {
+      "run_id": "run-531d0e53cc804e278f95733118c72950",
+      "status": "completed",
+      "source_sha256": "9df318be9ff9fc19a831f1181b952bef73c72c5332edd27600138c1917b89d21",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 4.729570958006661,
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": {
+          "status": "passed",
+          "max_abs_error_k": 5.966772920373842e-05,
+          "samples": 302
+        },
+        "all_passed": true
+      },
+      "origin": "live_agent"
+    },
+    {
+      "run_id": "run-601bfbe255a44421a446d7f5644a26fb",
+      "status": "completed",
+      "source_sha256": "965c33e70e4b18ed398113d64b2ce3e31f633e4c0aa28b48b06523ed27fed31d",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 5.0744592910050415,
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": {
+          "status": "passed",
+          "max_abs_error_k": 5.966772920373842e-05,
+          "samples": 302
+        },
+        "all_passed": true
+      },
+      "origin": "live_agent"
+    },
+    {
+      "run_id": "run-71558ae35ec046a2b20f66d4e463cd19",
+      "status": "completed",
+      "source_sha256": "965c33e70e4b18ed398113d64b2ce3e31f633e4c0aa28b48b06523ed27fed31d",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 4.861297875002492,
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": {
+          "status": "passed",
+          "max_abs_error_k": 5.966772920373842e-05,
+          "samples": 302
+        },
+        "all_passed": true
+      },
+      "origin": "live_agent"
+    },
+    {
+      "run_id": "run-a63ba848e0514af58b6e16f532074797",
+      "status": "completed",
+      "source_sha256": "9df318be9ff9fc19a831f1181b952bef73c72c5332edd27600138c1917b89d21",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 4.847706375003327,
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": {
+          "status": "passed",
+          "max_abs_error_k": 5.966772920373842e-05,
+          "samples": 302
+        },
+        "all_passed": true
+      },
+      "origin": "engineering"
+    },
+    {
+      "run_id": "run-ada46c10bd8c4ed083a9ab4fa2c2c4d3",
+      "status": "completed",
+      "source_sha256": "9df318be9ff9fc19a831f1181b952bef73c72c5332edd27600138c1917b89d21",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 5.065741667000111,
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": {
+          "status": "passed",
+          "max_abs_error_k": 5.966772920373842e-05,
+          "samples": 302
+        },
+        "all_passed": true
+      },
+      "origin": "live_agent"
+    },
+    {
+      "run_id": "run-ae0e62135a054eadb3371ea4f102a8c7",
+      "status": "completed",
+      "source_sha256": "027d308466437adb861b4e229d75f146e06c7dd256a02b1649e14682d7e77b1e",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 5.596531499992125,
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "failed",
+        "behavior": {
+          "status": "not_run"
+        },
+        "all_passed": false
+      },
+      "origin": "engineering"
+    },
+    {
+      "run_id": "run-ba0c4282ae8544d9b388a9a243179275",
+      "status": "completed",
+      "source_sha256": "9df318be9ff9fc19a831f1181b952bef73c72c5332edd27600138c1917b89d21",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 4.360346207977273,
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": {
+          "status": "passed",
+          "max_abs_error_k": 5.966772920373842e-05,
+          "samples": 302
+        },
+        "all_passed": true
+      },
+      "origin": "live_agent"
+    },
+    {
+      "run_id": "run-d5e33d4ed40248199b67931e1035fbb9",
+      "status": "completed",
+      "source_sha256": "965c33e70e4b18ed398113d64b2ce3e31f633e4c0aa28b48b06523ed27fed31d",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 4.374354707979364,
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": {
+          "status": "passed",
+          "max_abs_error_k": 5.966772920373842e-05,
+          "samples": 302
+        },
+        "all_passed": true
+      },
+      "origin": "live_agent"
+    },
+    {
+      "run_id": "run-d808782963964417a95fab56db187ccb",
+      "status": "completed",
+      "source_sha256": "965c33e70e4b18ed398113d64b2ce3e31f633e4c0aa28b48b06523ed27fed31d",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 5.277701625018381,
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": {
+          "status": "passed",
+          "max_abs_error_k": 5.966772920373842e-05,
+          "samples": 302
+        },
+        "all_passed": true
+      },
+      "origin": "live_agent"
+    },
+    {
+      "run_id": "run-e3fdef192fb0486b93a054ba325e0b7a",
+      "status": "completed",
+      "source_sha256": "027d308466437adb861b4e229d75f146e06c7dd256a02b1649e14682d7e77b1e",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 4.612565832998371,
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": {
+          "status": "failed",
+          "max_abs_error_k": 801.4335102427244,
+          "samples": 302
+        },
+        "all_passed": false
+      },
+      "origin": "live_agent"
+    },
+    {
+      "run_id": "run-f2021aaae52a41879f0a9c3aa878f7b3",
+      "status": "completed",
+      "source_sha256": "965c33e70e4b18ed398113d64b2ce3e31f633e4c0aa28b48b06523ed27fed31d",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 4.51795341601246,
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": {
+          "status": "passed",
+          "max_abs_error_k": 5.966772920373842e-05,
+          "samples": 302
+        },
+        "all_passed": true
+      },
+      "origin": "live_agent"
+    },
+    {
+      "run_id": "run-fc08fd7309fd4664b67fdcc393574a1f",
+      "status": "completed",
+      "source_sha256": "db1c7dfb1414fe20561990f0410e86981939fac7c921f56e940beba870133bcd",
+      "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+      "seconds": 0.17285945800540503,
+      "evaluation": {
+        "model_checking": "failed",
+        "simulation": "not_run",
+        "behavior": {
+          "status": "not_run"
+        },
+        "all_passed": false
+      },
+      "origin": "engineering"
+    }
+  ],
+  "limitations": [
+    "Engineering fixtures are not agent experiments",
+    "No mechanism-effect or research-speed claim",
+    "Full closed-loop status must be checked in the selected broker report"
+  ]
+}

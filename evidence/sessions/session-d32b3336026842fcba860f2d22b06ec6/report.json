@@ -1,0 +1,925 @@
+{
+  "kind": "actual_omnigent_broker_report",
+  "session_id": "session-d32b3336026842fcba860f2d22b06ec6",
+  "parent_session_id": "04eae0d423494253a685e1455986499a",
+  "stage": "validated",
+  "closed_loop_verified": true,
+  "modeler_conversation_separation": true,
+  "plans": [
+    {
+      "id": "initial-logs",
+      "hypothesis": "Tentatively, structured diagnostics will produce a higher fixed-evaluation repair outcome than raw diagnostics on cooling-init-v1 with one unmodified baseline attempt and one correction attempt per arm.",
+      "falsification": "An equal or lower fixed-evaluation outcome for structured diagnostics would count against the predicted advantage in this matched pair; one pair cannot establish general superiority or diagnostic necessity.",
+      "candidates": [
+        {
+          "id": "logs",
+          "learning_value": "Test whether diagnostic structure improves repair under a tight correction budget, using the broker's unchanged fixed evaluation.",
+          "feasibility": "Two matched arms on public task cooling-init-v1. Each has max_attempts=2, including the unmodified baseline and one correction, plus final validation: 3 deterministic tool runs per arm, 6 total. Reserve 6 of the 12 runs for followup. Keep task, model, temperature, tools, repair budget and evaluation identical; vary only raw versus structured diagnostics. Evidence: status reports baseline_first=true, no plans or trials, max_tool_runs=12, used_requests=5/max_requests=120, and unchanged deadline_unix=1791113795.365171. Public description: Lumped thermal cooling; initialization diagnostic case. No hidden answers inspected.",
+          "estimated_tool_runs": 6
+        },
+        {
+          "id": "information-loss",
+          "learning_value": "Test whether a structured-diagnostic disadvantage persists with a second correction opportunity, consistent with potentially omitted useful information; outcomes alone cannot identify information loss as the cause.",
+          "feasibility": "Alternative matched raw/structured pair on cooling-init-v1 with max_attempts=3 per arm: baseline plus two corrections and final validation, 4 runs per arm, 8 total. Fits the 12-run ceiling but leaves only 4 runs, insufficient for a baseline-first matched followup pair. Same fixed evaluation and matched settings. No evidence currently establishes information loss.",
+          "estimated_tool_runs": 8
+        }
+      ],
+      "selected_candidate": "logs",
+      "selection_reason": "The six-run pair directly tests the tentative structure advantage, satisfies baseline_first with one correction per arm, and reserves six runs for a complete matched followup. The eight-run alternative provides more correction opportunity but weakens followup feasibility. Planning only: do not repair or execute trials. Preserve prior failed turns and reported errors; do not reset clock or request counts. Stop immediately on budget, quota or isolation error.",
+      "runs": [
+        {
+          "task_id": "cooling-init-v1",
+          "diagnostics": "raw",
+          "replicate": 0,
+          "max_attempts": 2
+        },
+        {
+          "task_id": "cooling-init-v1",
+          "diagnostics": "structured",
+          "replicate": 0,
+          "max_attempts": 2
+        }
+      ]
+    },
+    {
+      "id": "cooling-diagnostic-fidelity-v2",
+      "hypothesis": "On a fresh matched baseline-only pair for cooling-init-v1, keyword-v1 structured feedback will preserve the initialization failure and over-specification warning but omit explicit successful model-check evidence and the additional initialization logging hint seen in the original raw development feedback.",
+      "falsification": "The predicted information-loss pattern is falsified if the fresh structured baseline retains explicit successful model-check evidence and the additional logging hint, or fails to preserve the initialization failure and over-specification warning. A different baseline failure or missing raw evidence makes this audit inconclusive. Final evaluation success is not required or predicted; record model checking, simulation and behavior independently and treat not_run as not passed.",
+      "candidates": [
+        {
+          "id": "baseline-fidelity-audit",
+          "learning_value": "Audit diagnostic preservation and omission with a matched unmodified baseline pair, without repeating the initial two-attempt repair experiment. Compare bounded development raw logs to parser omission fields; do not inspect source or hidden evaluation.",
+          "feasibility": "Same public task and broker defaults, vary only raw versus structured diagnostics, replicate=1 and max_attempts=1 each. Baseline plus final validation costs two deterministic tool runs per arm, four total; initial actual six plus followup four equals ten, leaving two reserved. No correction and no causal repair-benefit test.",
+          "estimated_tool_runs": 4
+        },
+        {
+          "id": "extended-correction-pair",
+          "learning_value": "Test repair outcomes with a second correction opportunity under matched raw and structured settings.",
+          "feasibility": "max_attempts=3 per arm requires baseline plus two corrections plus final evaluation: eight deterministic runs total. Six remaining makes this infeasible; do not select or execute.",
+          "estimated_tool_runs": 8
+        }
+      ],
+      "selected_candidate": "baseline-fidelity-audit",
+      "selection_reason": "The observed omission fields motivate a diagnostic-fidelity question that fits the verified six remaining runs, uses a different attempt budget from the original trials, and leaves two runs reserved. The eight-run alternative exceeds the remaining ceiling. Planning only: do not execute trials or dispatch a Modeler. Preserve failed turns and operator recovery. Keep the original deadline and request accounting; stop on any quota, budget or isolation error.",
+      "runs": [
+        {
+          "task_id": "cooling-init-v1",
+          "diagnostics": "raw",
+          "replicate": 1,
+          "max_attempts": 1
+        },
+        {
+          "task_id": "cooling-init-v1",
+          "diagnostics": "structured",
+          "replicate": 1,
+          "max_attempts": 1
+        }
+      ]
+    }
+  ],
+  "analysis": {
+    "support": "not_supported",
+    "evidence_run_ids": [
+      "run-402cd43df7014d05a4efe6d37b41bd3c",
+      "run-45c2192cbdef477d89b13a05c38b6df9"
+    ],
+    "limitations": "One matched pair only. The predicted higher structured fixed-evaluation outcome was not observed: both final runs passed model checking, simulation and behavior. Each actual attempt_count=2 comprises one baseline and one correction, followed by one final evaluation: six deterministic runs used, six remain under max_tool_runs=12. Baseline development model checking passed in both arms; simulation failed during inconsistent initialization; baseline behavior was not_run/unknown, never passed. Correction development logs show model checking and simulation success, but development behavior is not reported; final behavior passed. Raw logs were available and untruncated for both attempts in both arms. Structured keyword-v1 retained 5 of 29 baseline lines (omitted_lines=24), including the initialization error and over-specification warnings, but omitted successful model-check evidence and the -lv=LOG_INIT -w hint. Its correction output retained zero of 25 lines (omitted_lines=25, empty_diagnostic=true), losing explicit model-check and simulation success evidence. Raw feedback lengths were 1512 and 911 characters. Final tool_seconds were raw 11.566149249993032 and structured 8.703892126010032; this unreplicated tool-duration difference is not model latency, end-to-end workflow speed, token usage or cost evidence. Token counts and monetary cost are unknown. A single correction following feedback does not isolate diagnostic necessity or mechanism benefit without a no-feedback control. Prior failed turns and operator recovery remain part of the study history: runtime diagnostics, preloading, deadline adapter and completion condition were reported by the operator, but their detailed errors, counts and durations are not present in these evidence records; no invented attribution or resetting. Status reports used_requests=38/120, superseding operator snapshot 34/120, and unchanged deadline_unix=1791113795.365171. No source or hidden evaluator details accessed. No quota, budget or isolation error returned by the evidence tools.",
+    "adjustment_reason": "Final runs run-402cd43df7014d05a4efe6d37b41bd3c and run-45c2192cbdef477d89b13a05c38b6df9 tied on every public evaluation component with equal baseline/correction counts. Actual structured omission fields reveal information loss despite successful correction. Therefore shift from a superiority claim to a bounded diagnostic-fidelity audit; do not repeat initial repair trials or infer universal benefit or 10x research speed.",
+    "followup": {
+      "id": "cooling-diagnostic-fidelity-v2",
+      "hypothesis": "On a fresh matched baseline-only pair for cooling-init-v1, keyword-v1 structured feedback will preserve the initialization failure and over-specification warning but omit explicit successful model-check evidence and the additional initialization logging hint seen in the original raw development feedback.",
+      "falsification": "The predicted information-loss pattern is falsified if the fresh structured baseline retains explicit successful model-check evidence and the additional logging hint, or fails to preserve the initialization failure and over-specification warning. A different baseline failure or missing raw evidence makes this audit inconclusive. Final evaluation success is not required or predicted; record model checking, simulation and behavior independently and treat not_run as not passed.",
+      "candidates": [
+        {
+          "id": "baseline-fidelity-audit",
+          "learning_value": "Audit diagnostic preservation and omission with a matched unmodified baseline pair, without repeating the initial two-attempt repair experiment. Compare bounded development raw logs to parser omission fields; do not inspect source or hidden evaluation.",
+          "feasibility": "Same public task and broker defaults, vary only raw versus structured diagnostics, replicate=1 and max_attempts=1 each. Baseline plus final validation costs two deterministic tool runs per arm, four total; initial actual six plus followup four equals ten, leaving two reserved. No correction and no causal repair-benefit test.",
+          "estimated_tool_runs": 4
+        },
+        {
+          "id": "extended-correction-pair",
+          "learning_value": "Test repair outcomes with a second correction opportunity under matched raw and structured settings.",
+          "feasibility": "max_attempts=3 per arm requires baseline plus two corrections plus final evaluation: eight deterministic runs total. Six remaining makes this infeasible; do not select or execute.",
+          "estimated_tool_runs": 8
+        }
+      ],
+      "selected_candidate": "baseline-fidelity-audit",
+      "selection_reason": "The observed omission fields motivate a diagnostic-fidelity question that fits the verified six remaining runs, uses a different attempt budget from the original trials, and leaves two runs reserved. The eight-run alternative exceeds the remaining ceiling. Planning only: do not execute trials or dispatch a Modeler. Preserve failed turns and operator recovery. Keep the original deadline and request accounting; stop on any quota, budget or isolation error.",
+      "runs": [
+        {
+          "task_id": "cooling-init-v1",
+          "diagnostics": "raw",
+          "replicate": 1,
+          "max_attempts": 1
+        },
+        {
+          "task_id": "cooling-init-v1",
+          "diagnostics": "structured",
+          "replicate": 1,
+          "max_attempts": 1
+        }
+      ]
+    }
+  },
+  "trials": [
+    {
+      "trial_id": "trial-b70e4553cd9e462492d9b110ce16bbe7",
+      "plan_id": "initial-logs",
+      "config": {
+        "task_id": "cooling-init-v1",
+        "diagnostics": "raw",
+        "replicate": 0,
+        "max_attempts": 2
+      },
+      "attempts": [
+        "run-07316fbceb3b40cea8d26095f8c86239",
+        "run-a405d22796c2467887137da98b1b4db8"
+      ],
+      "source": "model Cooling\n  parameter Real C = 1000 \"Thermal capacity J/K\";\n  parameter Real G = 10 \"Thermal conductance W/K\";\n  parameter Real T_ambient = 293.15 \"Ambient K\";\n  Real T(start=333.15, fixed=true) \"Body K\";\nequation\n  C * der(T) = G * (T_ambient - T);\nend Cooling;\n",
+      "finished": true,
+      "final_run_id": "run-402cd43df7014d05a4efe6d37b41bd3c",
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": "passed",
+        "all_passed": true
+      },
+      "tool_seconds": 11.566149249993032
+    },
+    {
+      "trial_id": "trial-9c8589a4d93442808431ba65e8403b6d",
+      "plan_id": "initial-logs",
+      "config": {
+        "task_id": "cooling-init-v1",
+        "diagnostics": "structured",
+        "replicate": 0,
+        "max_attempts": 2
+      },
+      "attempts": [
+        "run-fbdd65c2ded44962a12b8cc067800161",
+        "run-4ee4060af690405496e6c61ab6131184"
+      ],
+      "source": "model Cooling\n  parameter Real C = 1000 \"Thermal capacity J/K\";\n  parameter Real G = 10 \"Thermal conductance W/K\";\n  parameter Real T_ambient = 293.15 \"Ambient K\";\n  Real T(start=333.15, fixed=true) \"Body K\";\nequation\n  C * der(T) = G * (T_ambient - T);\nend Cooling;\n",
+      "finished": true,
+      "final_run_id": "run-45c2192cbdef477d89b13a05c38b6df9",
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": "passed",
+        "all_passed": true
+      },
+      "tool_seconds": 8.703892126010032
+    },
+    {
+      "trial_id": "trial-103ea821cec64ea4b2d0efae58aaa202",
+      "plan_id": "cooling-diagnostic-fidelity-v2",
+      "config": {
+        "task_id": "cooling-init-v1",
+        "diagnostics": "raw",
+        "replicate": 1,
+        "max_attempts": 1
+      },
+      "attempts": [
+        "run-375eff6b4c744613864ff07cc8b198f8"
+      ],
+      "source": "model Cooling\n  parameter Real C = 1000 \"Thermal capacity J/K\";\n  parameter Real G = 10 \"Thermal conductance W/K\";\n  parameter Real T_ambient = 293.15 \"Ambient K\";\n  Real T(start=333.15, fixed=true) \"Body K\";\ninitial equation\n  T = T_ambient;\nequation\n  C * der(T) = G * (T_ambient - T);\nend Cooling;\n",
+      "finished": true,
+      "final_run_id": "run-6608b681883d4299b6e1a6aed2f54851",
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "failed",
+        "behavior": "not_run",
+        "all_passed": false
+      },
+      "tool_seconds": 9.697282000997802
+    },
+    {
+      "trial_id": "trial-2bf4635ec9af40c6951cd203c4366ec7",
+      "plan_id": "cooling-diagnostic-fidelity-v2",
+      "config": {
+        "task_id": "cooling-init-v1",
+        "diagnostics": "structured",
+        "replicate": 1,
+        "max_attempts": 1
+      },
+      "attempts": [
+        "run-25b0d69b958e4a1dba05db00222a119a"
+      ],
+      "source": "model Cooling\n  parameter Real C = 1000 \"Thermal capacity J/K\";\n  parameter Real G = 10 \"Thermal conductance W/K\";\n  parameter Real T_ambient = 293.15 \"Ambient K\";\n  Real T(start=333.15, fixed=true) \"Body K\";\ninitial equation\n  T = T_ambient;\nequation\n  C * der(T) = G * (T_ambient - T);\nend Cooling;\n",
+      "finished": true,
+      "final_run_id": "run-8fcfc673a4024ad8933d020113c82bb1",
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "failed",
+        "behavior": "not_run",
+        "all_passed": false
+      },
+      "tool_seconds": 6.675456041994039
+    }
+  ],
+  "role_usage_records": {
+    "coordinator": [
+      {
+        "session_id": "04eae0d423494253a685e1455986499a",
+        "session_key": "f051e3ff0ba944f18db476155c3426c7",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 16048,
+          "output_tokens": 241,
+          "total_tokens": 31905,
+          "cache_read_input_tokens": 15616,
+          "context_tokens": 16122
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791110786.4442859
+      },
+      {
+        "session_id": "04eae0d423494253a685e1455986499a",
+        "session_key": "f051e3ff0ba944f18db476155c3426c7",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 1443,
+          "output_tokens": 287,
+          "total_tokens": 49858,
+          "cache_read_input_tokens": 48128,
+          "context_tokens": 17020
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791110875.847133
+      },
+      {
+        "session_id": "04eae0d423494253a685e1455986499a",
+        "session_key": "f051e3ff0ba944f18db476155c3426c7",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 868,
+          "output_tokens": 54,
+          "total_tokens": 34586,
+          "cache_read_input_tokens": 33664,
+          "context_tokens": 17319
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791110934.161928
+      },
+      {
+        "session_id": "04eae0d423494253a685e1455986499a",
+        "session_key": "4577682d370d4db590338ad1ea41458d",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 33689,
+          "output_tokens": 396,
+          "total_tokens": 51109,
+          "cache_read_input_tokens": 17024,
+          "context_tokens": 17615
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791111318.39908
+      },
+      {
+        "session_id": "04eae0d423494253a685e1455986499a",
+        "session_key": "4577682d370d4db590338ad1ea41458d",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 3443,
+          "output_tokens": 434,
+          "total_tokens": 54693,
+          "cache_read_input_tokens": 50816,
+          "context_tokens": 18780
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791111414.244941
+      },
+      {
+        "session_id": "04eae0d423494253a685e1455986499a",
+        "session_key": "4577682d370d4db590338ad1ea41458d",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 2009,
+          "output_tokens": 116,
+          "total_tokens": 38221,
+          "cache_read_input_tokens": 36096,
+          "context_tokens": 19152
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791111495.762954
+      },
+      {
+        "session_id": "04eae0d423494253a685e1455986499a",
+        "session_key": "8fd6b48ed25440b3ba05a707506454ba",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 13094,
+          "output_tokens": 282,
+          "total_tokens": 13376,
+          "context_tokens": 13376
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791111809.5272582
+      },
+      {
+        "session_id": "04eae0d423494253a685e1455986499a",
+        "session_key": "8fd6b48ed25440b3ba05a707506454ba",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 4318,
+          "output_tokens": 563,
+          "total_tokens": 58385,
+          "cache_read_input_tokens": 53504,
+          "context_tokens": 17182
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791112028.282541
+      },
+      {
+        "session_id": "04eae0d423494253a685e1455986499a",
+        "session_key": "8fd6b48ed25440b3ba05a707506454ba",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 1881,
+          "output_tokens": 247,
+          "total_tokens": 53328,
+          "cache_read_input_tokens": 51200,
+          "context_tokens": 18348
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791112079.1558452
+      },
+      {
+        "session_id": "04eae0d423494253a685e1455986499a",
+        "session_key": "8fd6b48ed25440b3ba05a707506454ba",
+        "kind": "actual_codex_turn_usage",
+        "usage": null,
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791112100.912864
+      }
+    ],
+    "planner": [
+      {
+        "session_id": "369a3f3f1d7e4b06bf2fdd782e72387c",
+        "session_key": "531938a120cd44aea248a2389d5e6a46",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 14730,
+          "output_tokens": 1012,
+          "total_tokens": 29822,
+          "cache_read_input_tokens": 14080,
+          "context_tokens": 15464
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791110848.858172
+      }
+    ],
+    "executor": [
+      {
+        "session_id": "0f9c088c4ab049a8bf856980508a690c",
+        "session_key": "beac5d9feca442d88056649ce07e8f23",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 17002,
+          "output_tokens": 698,
+          "total_tokens": 49444,
+          "cache_read_input_tokens": 31744,
+          "context_tokens": 17405
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791110918.50161
+      },
+      {
+        "session_id": "0f9c088c4ab049a8bf856980508a690c",
+        "session_key": "beac5d9feca442d88056649ce07e8f23",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 2970,
+          "output_tokens": 863,
+          "total_tokens": 92153,
+          "cache_read_input_tokens": 88320,
+          "context_tokens": 19654
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791111031.0941792
+      },
+      {
+        "session_id": "0f9c088c4ab049a8bf856980508a690c",
+        "session_key": "beac5d9feca442d88056649ce07e8f23",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 2388,
+          "output_tokens": 185,
+          "total_tokens": 81421,
+          "cache_read_input_tokens": 78848,
+          "context_tokens": 20756
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791111115.9134269
+      },
+      {
+        "session_id": "1f360a430b0a41379f68e279c7f2088e",
+        "session_key": "7024ca7425b7444297412d70d568946d",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 5922,
+          "output_tokens": 633,
+          "total_tokens": 53659,
+          "cache_read_input_tokens": 47104,
+          "context_tokens": 19412
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791111453.928421
+      },
+      {
+        "session_id": "1f360a430b0a41379f68e279c7f2088e",
+        "session_key": "7024ca7425b7444297412d70d568946d",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 1233,
+          "output_tokens": 117,
+          "total_tokens": 39494,
+          "cache_read_input_tokens": 38144,
+          "context_tokens": 19789
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791111479.419245
+      },
+      {
+        "session_id": "e29be21fbeb646f5b9e163dbb19fee16",
+        "session_key": "789380857be8449eb0dac98252cf73c5",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 14871,
+          "output_tokens": 284,
+          "total_tokens": 26931,
+          "cache_read_input_tokens": 11776,
+          "context_tokens": 14947
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791111834.503485
+      },
+      {
+        "session_id": "e29be21fbeb646f5b9e163dbb19fee16",
+        "session_key": "789380857be8449eb0dac98252cf73c5",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 5296,
+          "output_tokens": 857,
+          "total_tokens": 117897,
+          "cache_read_input_tokens": 111744,
+          "context_tokens": 19348
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791111930.077937
+      },
+      {
+        "session_id": "e29be21fbeb646f5b9e163dbb19fee16",
+        "session_key": "789380857be8449eb0dac98252cf73c5",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 4624,
+          "output_tokens": 254,
+          "total_tokens": 85134,
+          "cache_read_input_tokens": 80256,
+          "context_tokens": 22876
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791111992.204138
+      }
+    ],
+    "modeler": [
+      {
+        "session_id": "f3907c735ca94ef7b432c36388c786aa",
+        "session_key": "64eec71ba46647b5922e16d9d0e030c4",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 16279,
+          "output_tokens": 512,
+          "total_tokens": 46231,
+          "cache_read_input_tokens": 29440,
+          "context_tokens": 16220
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791110981.788812
+      },
+      {
+        "session_id": "7145b1b07fda4a6a897daab9ab162402",
+        "session_key": "fffa212ce2274e5b86dbdfb7e75ef224",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 16188,
+          "output_tokens": 515,
+          "total_tokens": 46271,
+          "cache_read_input_tokens": 29568,
+          "context_tokens": 16070
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791111077.4921658
+      },
+      {
+        "session_id": "5e8093bd4aa34fc086a2eadb606866f9",
+        "session_key": "583da4385b604b52b94748327d8d9887",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 2637,
+          "output_tokens": 55,
+          "total_tokens": 14596,
+          "cache_read_input_tokens": 11904,
+          "context_tokens": 14596
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791111468.146776
+      },
+      {
+        "session_id": "bb3fee04e53d4ff69068cdda90329b98",
+        "session_key": "1d4b6ffc89ae4548969275f20acbfb58",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 11486,
+          "output_tokens": 259,
+          "total_tokens": 22369,
+          "cache_read_input_tokens": 10624,
+          "context_tokens": 11541
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791111868.959699
+      },
+      {
+        "session_id": "f2483d98f76c4936b3cd05a6a5e3655a",
+        "session_key": "70e01c82f75c47cd851b86f62568afd2",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 11715,
+          "output_tokens": 255,
+          "total_tokens": 22722,
+          "cache_read_input_tokens": 10752,
+          "context_tokens": 11718
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791111962.275434
+      }
+    ],
+    "analyst": [
+      {
+        "session_id": "434e3c063d3040ceb75995976fc824f2",
+        "session_key": "17e75db105024051a7a49e8e69f3eee5",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 18517,
+          "output_tokens": 1430,
+          "total_tokens": 65899,
+          "cache_read_input_tokens": 45952,
+          "context_tokens": 19232
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791111390.034246
+      },
+      {
+        "session_id": "f83d0d9902fa433492a70c4d96f227fa",
+        "session_key": "a802f80800be4e79b2810801e9832d88",
+        "kind": "actual_codex_turn_usage",
+        "usage": {
+          "input_tokens": 12940,
+          "output_tokens": 138,
+          "total_tokens": 35350,
+          "cache_read_input_tokens": 22272,
+          "context_tokens": 12628
+        },
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791112059.127382
+      },
+      {
+        "session_id": "f83d0d9902fa433492a70c4d96f227fa",
+        "session_key": "a802f80800be4e79b2810801e9832d88",
+        "kind": "actual_codex_turn_usage",
+        "usage": null,
+        "usd": null,
+        "billing": "subscription",
+        "at_unix": 1791112086.359626
+      }
+    ]
+  },
+  "unattributed_early_usage_records": [
+    {
+      "session_id": "8bef5f781e644bd792fe6c7f250765a9",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 15654,
+        "output_tokens": 162,
+        "total_tokens": 58312,
+        "cache_read_input_tokens": 42496,
+        "context_tokens": 15139
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791103760.365172
+    },
+    {
+      "session_id": "36561413acb04eb0a884a8dbeb7a51fe",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 15402,
+        "output_tokens": 202,
+        "total_tokens": 15604,
+        "context_tokens": 15604
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791103868.308855
+    },
+    {
+      "session_id": "36561413acb04eb0a884a8dbeb7a51fe",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 857,
+        "output_tokens": 211,
+        "total_tokens": 31916,
+        "cache_read_input_tokens": 30848,
+        "context_tokens": 16072
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791103879.7062762
+    },
+    {
+      "session_id": "b21358e662794e389309a47be2c138cb",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 14359,
+        "output_tokens": 69,
+        "total_tokens": 28380,
+        "cache_read_input_tokens": 13952,
+        "context_tokens": 14256
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791103891.4214232
+    },
+    {
+      "session_id": "36561413acb04eb0a884a8dbeb7a51fe",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 788,
+        "output_tokens": 39,
+        "total_tokens": 32571,
+        "cache_read_input_tokens": 31744,
+        "context_tokens": 16311
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791103903.578305
+    },
+    {
+      "session_id": null,
+      "session_key": "4bffdaf0120a4c5fbc0c3b3d206c77ea",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 16192,
+        "output_tokens": 329,
+        "total_tokens": 32137,
+        "cache_read_input_tokens": 15616,
+        "context_tokens": 16228
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791104079.077922
+    },
+    {
+      "session_id": null,
+      "session_key": "cb4d4ee8391e4ed8a9064b3580651649",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 14872,
+        "output_tokens": 892,
+        "total_tokens": 30228,
+        "cache_read_input_tokens": 14464,
+        "context_tokens": 15555
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791104229.007079
+    },
+    {
+      "session_id": null,
+      "session_key": "4bffdaf0120a4c5fbc0c3b3d206c77ea",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 2319,
+        "output_tokens": 528,
+        "total_tokens": 51231,
+        "cache_read_input_tokens": 48384,
+        "context_tokens": 18170
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791104254.353455
+    },
+    {
+      "session_id": null,
+      "session_key": "3165dcf03f794736b6393a13494001d7",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 18022,
+        "output_tokens": 464,
+        "total_tokens": 51894,
+        "cache_read_input_tokens": 33408,
+        "context_tokens": 17930
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791104482.034575
+    },
+    {
+      "session_id": null,
+      "session_key": "3165dcf03f794736b6393a13494001d7",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 1291,
+        "output_tokens": 209,
+        "total_tokens": 55004,
+        "cache_read_input_tokens": 53504,
+        "context_tokens": 18406
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791104499.28627
+    },
+    {
+      "session_id": null,
+      "session_key": "d32ee1fc21604a5494cfcdb0b66a294c",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 17895,
+        "output_tokens": 461,
+        "total_tokens": 51124,
+        "cache_read_input_tokens": 32768,
+        "context_tokens": 17928
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791104519.400697
+    },
+    {
+      "session_id": null,
+      "session_key": "3165dcf03f794736b6393a13494001d7",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 1386,
+        "output_tokens": 169,
+        "total_tokens": 38803,
+        "cache_read_input_tokens": 37248,
+        "context_tokens": 19443
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791104535.049104
+    },
+    {
+      "session_id": null,
+      "session_key": "faeafb1b109a4168a1536b7319530b5d",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 14729,
+        "output_tokens": 191,
+        "total_tokens": 14920,
+        "context_tokens": 14920
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791104540.6531641
+    },
+    {
+      "session_id": null,
+      "session_key": "d32ee1fc21604a5494cfcdb0b66a294c",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 2570,
+        "output_tokens": 767,
+        "total_tokens": 94473,
+        "cache_read_input_tokens": 91136,
+        "context_tokens": 19873
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791104591.413631
+    },
+    {
+      "session_id": null,
+      "session_key": "d4c2c51201c74eafb11b17ad24282d58",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 14950,
+        "output_tokens": 277,
+        "total_tokens": 29307,
+        "cache_read_input_tokens": 14080,
+        "context_tokens": 14890
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791104620.376052
+    },
+    {
+      "session_id": null,
+      "session_key": "d32ee1fc21604a5494cfcdb0b66a294c",
+      "kind": "actual_codex_turn_usage",
+      "usage": {
+        "input_tokens": 2255,
+        "output_tokens": 267,
+        "total_tokens": 82522,
+        "cache_read_input_tokens": 80000,
+        "context_tokens": 20923
+      },
+      "usd": null,
+      "billing": "subscription",
+      "at_unix": 1791104648.1688828
+    }
+  ],
+  "cost_usd": null,
+  "billing": "existing_subscription_no_credit_purchase_no_api_fallback",
+  "workflow_measurement": "historical_actual_pair_no_speed_improvement_established",
+  "unattributed_usage_scope": "Global historical records, not attributable to this study; do not sum as study cost",
+  "limitations": [
+    "Small acceptance example cannot establish mechanism efficacy",
+    "No measured research speed improvement yet",
+    "No human timing inferred from Codex operation",
+    "Codex CLI does not expose matched temperature/seed control; same configured base model and reasoning route",
+    "Early runtime usage keys were not native conversation IDs; those role costs remain unknown"
+  ],
+  "followup_interpretation": {
+    "agent_session_id": "f83d0d9902fa433492a70c4d96f227fa",
+    "source": "evidence/omnigent/04eae0d423494253a685e1455986499a/f83d0d9902fa433492a70c4d96f227fa-items.json",
+    "actual_messages": [
+      {
+        "id": "c086192366014fdd9fce485571332a72",
+        "response_id": "resp_9731dfa0348b47f7a9bedaf2",
+        "type": "message",
+        "status": "completed",
+        "created_at": 1791112035,
+        "role": "assistant",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "Analysis: I’ll read the two followup evidence records and compare their diagnostics and omission counts with the accepted plan. No further experiments will be run."
+          }
+        ],
+        "model": "pufibara-lab"
+      },
+      {
+        "id": "cff6db7f8cee4b44b8f1f5ffaf49bf22",
+        "response_id": "resp_9731dfa0348b47f7a9bedaf2",
+        "type": "message",
+        "status": "completed",
+        "created_at": 1791112059,
+        "role": "assistant",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "The followup supports the narrow diagnostic-fidelity prediction in `cooling-diagnostic-fidelity-v2`; it does not support a structured repair advantage.\n\n- Raw `run-6608b681883d4299b6e1a6aed2f54851`: exactly one baseline attempt; 1,535 raw characters, untruncated.\n- Structured `run-8fcfc673a4024ad8933d020113c82bb1`: exactly one baseline attempt; retained 5 of 29 lines, omitted 24. It preserved the inconsistent-initialization error (`0 != -40 = T_ambient - T`) and over-specification warnings, but omitted explicit successful model-check evidence and the `-lv=LOG_INIT -w` logging hint. Underlying raw logs remained available and untruncated.\n- Both final runs: model checking **passed**, simulation **failed**, behavior **not_run**—not passed. Compiler success is visible in the raw logs; it does not imply simulation or behavior success.\n\nThe initial runs `run-402cd43df7014d05a4efe6d37b41bd3c` and `run-45c2192cbdef477d89b13a05c38b6df9` both passed after one baseline plus one correction. That tie leaves the predicted structured advantage unsupported; correction after feedback does not establish diagnostic benefit.\n\nEvidence remains limited to one task and small matched samples. Followup tool durations were 9.697 seconds raw and 6.675 seconds structured; these do not establish workflow speed. Token usage and monetary cost are unknown. The earlier denied verification call, runtime failures and operator recovery remain part of the history, with missing details left unknown.\n\nValidation is complete. No further experiments or analysis records were created. Latest status reports 84/120 requests; the original deadline remains `1791113795.365171`. A future study could compare replicated repair outcomes with a no-feedback control and separately measured workflow time and cost."
+          }
+        ],
+        "model": "pufibara-lab"
+      },
+      {
+        "id": "8fabf189d34a483fa6bded99e78f4751",
+        "response_id": "resp_d39df7de4d2b4c26aa1fefa1",
+        "type": "message",
+        "status": "completed",
+        "created_at": 1791112086,
+        "role": "assistant",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "The completed interpretation supports the narrow diagnostic-fidelity prediction, but not a structured repair advantage.\n\n- Raw final run `run-6608b681883d4299b6e1a6aed2f54851`: one baseline attempt; 1,535 raw characters, untruncated.\n- Structured final run `run-8fcfc673a4024ad8933d020113c82bb1`: one baseline attempt; retained 5 of 29 lines and omitted 24. It preserved the initialization inconsistency (`0 != -40 = T_ambient - T`) and over-specification warnings, while omitting explicit successful model-check evidence and the `-lv=LOG_INIT -w` hint. Underlying raw logs were available and untruncated.\n- Both runs passed model checking, failed simulation, and had behavior **not_run**, which is not a pass.\n\nInitial final runs `run-402cd43df7014d05a4efe6d37b41bd3c` and `run-45c2192cbdef477d89b13a05c38b6df9` both passed after baseline plus one correction. Their tie leaves the predicted structured advantage unsupported.\n\nLimitations: one task and small samples; no causal diagnostic-benefit test. Tool durations—9.697 seconds raw and 6.675 seconds structured—do not measure workflow speed. Token usage and monetary cost are unknown. Earlier denied verification, runtime failures and operator recovery remain acknowledged; missing details are not reconstructed.\n\nNo additional tools, records, plans or experiments were invoked for this handoff. If delivery only queues an inbox message, collection remains unverified because `sys_read_inbox` is unavailable here."
+          }
+        ],
+        "model": "pufibara-lab"
+      }
+    ],
+    "root_collection_failed_in_primary_run": true
+  },
+  "workflow_measurement_source": "evidence/measurements/workflow-comparison.json",
+  "primary_native_operator_control_inputs": 6,
+  "unintervened_full_scientific_loop": false
+}

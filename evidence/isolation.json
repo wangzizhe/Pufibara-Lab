@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "exit_code": 0,
+  "seconds": 0.1836756659904495,
+  "raw": "OpenModelica 1.26.1\nISOLATION_PROBE_OK\n",
+  "log_truncated": false,
+  "passed": true,
+  "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+  "scope": "Synthetic unmounted host canary, no docker socket, read-only root, unprivileged process, no network per run flags. Not an exploit-proof claim."
+}

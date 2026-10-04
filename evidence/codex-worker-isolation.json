@@ -1,0 +1,23 @@
+{
+  "kind": "actual_omnigent_worker_launcher_probe_no_model",
+  "checks": [
+    {
+      "name": "synthetic_policy_probe",
+      "sandboxed": true,
+      "exit_code": 0,
+      "stdout": "{\"allowed_read\": true, \"private_denied\": true, \"network_denied\": true, \"trusted_package_denied\": true}\n",
+      "stderr": "[omnigent-sandbox] spawn-time wrap re-exec backend=darwin_seatbelt wrap_head=['/usr/bin/sandbox-exec', '-f', '/tmp/omnigent-seatbelt-profiles-bnebplic/profile-vmvf9_ai.sb']\n",
+      "passed": true
+    },
+    {
+      "name": "actual_codex_binary",
+      "sandboxed": true,
+      "exit_code": 0,
+      "stdout": "codex-cli 0.160.0\n",
+      "stderr": "[omnigent-sandbox] spawn-time wrap re-exec backend=darwin_seatbelt wrap_head=['/usr/bin/sandbox-exec', '-f', '/tmp/omnigent-seatbelt-profiles-ki70snof/profile-_qzsqyix.sb']\n",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "scope": "Actual Omnigent Seatbelt launcher and Codex executable; synthetic file/network denial. Authenticated app-server and live model/tools still unverified."
+}

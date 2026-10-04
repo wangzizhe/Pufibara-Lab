@@ -1,0 +1,182 @@
+{
+  "reviewed_at_unix": 1791108707.545535,
+  "source_pdf": "Challenge.pdf",
+  "source_pdf_sha256": "ce9276222cae08bd4e088b90c11876e53caaf60ecf5fe87fc35b801a27b96b7d",
+  "review_scope": "Challenge-specific substantive compliance and submission readiness; not a prediction of organizer acceptance or score",
+  "overall": "core_workflow_proved_but_hackathon_submission_readiness_unproven",
+  "earlier_completion_scope": "Historical completion-audit.json concerned user-authorized local prototype and review package; it is not proof that all competition submission expectations or later English recordings were met.",
+  "requirements": [
+    {
+      "requirement": "Open-source or managed Omnigent orchestrates live specialist agents exchanging outputs and using tools",
+      "pdf_pages": [
+        2,
+        3,
+        4
+      ],
+      "weight_percent": 30,
+      "status": "substantially_met_with_operator_recovery",
+      "evidence": [
+        "evidence/omnigent-research.json",
+        "evidence/omnigent-manual.json",
+        "evidence/final-scientific-artifact-verification.json"
+      ],
+      "limitation": "Historical automatic workflow required engineering changes and explicit recovery messages; new English live workflow has not run."
+    },
+    {
+      "requirement": "Ambitious scientific question and meaningful reproducible result; hypotheses, two costed candidates, evidence changes next decision",
+      "pdf_pages": [
+        2,
+        3,
+        4
+      ],
+      "weight_percent": 25,
+      "status": "loop_met_scientific_insight_and_ambition_weak",
+      "evidence": [
+        "evidence/sessions/session-adba2f1eb4944d29a2b5a996284c772d/report.json",
+        "evidence/sessions/session-378f6c2e28144a238a1e63638457cb02/report.json"
+      ],
+      "limitation": "Eight matched trials of one simple cooling-sign task. Seven submit one candidate only, so their successful correction precedes feedback from the tested log mechanism. Negative/inconclusive findings are legitimate, but this is weak evidence about diagnostic usefulness and not a physical discovery."
+    },
+    {
+      "requirement": "Meaningful bottleneck, measurable progress, reported improvement and justified next experiment; no 10x proof required",
+      "pdf_pages": [
+        4
+      ],
+      "weight_percent": 20,
+      "status": "bottleneck_and_measurement_present_improvement_unproven",
+      "evidence": [
+        "evidence/measurements/workflow-comparison.json"
+      ],
+      "limitation": "Manual human 813.986s/6 UI actions and Codex automatic 2293.816s/10 native inputs use different operators and infrastructure maturity. Automatic total actions/setup unknown. Cannot infer speedup or reduced total human effort."
+    },
+    {
+      "requirement": "Citations, hypotheses labeled, uncertainty, controls, source evidence and reproducibility",
+      "pdf_pages": [
+        3,
+        4
+      ],
+      "weight_percent": 15,
+      "status": "substantially_present_with_limits",
+      "evidence": [
+        "docs/SOURCES.md",
+        "docs/SECURITY.md",
+        "requirements.lock",
+        "evidence/final-review-package-verification.json",
+        "evidence/modeler-conversations.jsonl"
+      ],
+      "limitation": "Analysis status omits attempts; incomplete early token attribution and one pilot request. Temperature/seed controls unavailable. Fresh extraction reuses dependencies, not a clean external end-to-end installation. Fresh-host scripts embed a local host ID."
+    },
+    {
+      "requirement": "Human approval boundaries and responsible claims",
+      "pdf_pages": [
+        3,
+        4
+      ],
+      "weight_percent": 10,
+      "status": "bounded_evidence_present",
+      "evidence": [
+        "evidence/codex-worker-isolation.json",
+        "evidence/isolation.json",
+        "configs/codex-research.json",
+        "docs/SECURITY.md"
+      ],
+      "limitation": "Isolation was tested on synthetic paths, not universally proved. Dedicated safety agent is suggested, not explicitly mandatory; current tool policies enforce boundaries."
+    },
+    {
+      "requirement": "Repository, specs/policies, two-minute demo, evidence, code/results, measured improvement and next experiment",
+      "pdf_pages": [
+        4
+      ],
+      "status": "partial_materials_not_submission_ready",
+      "evidence": [
+        "artifacts/submission/latest.json",
+        "docs/PRODUCT_DEMO_60S_EN.md",
+        "docs/TECHNICAL_WALKTHROUGH_60S_EN.md",
+        "artifacts/live-demo/preparation.json"
+      ],
+      "limitation": "Existing video is a silent Chinese saved-evidence walkthrough. Requested English live Product Demo and Technical Walkthrough have scripts only. Current ZIP predates these additions. PDF specifies a two-minute demo, not two separate mandatory one-minute videos. Official submission form requirements and deadline are not supplied or verified; no publication/submission authorized."
+    }
+  ],
+  "observed_trials": [
+    {
+      "session_id": "session-adba2f1eb4944d29a2b5a996284c772d",
+      "trial_id": "trial-b7292edfeb0f4651a92434442dc306f6",
+      "mechanism": "raw",
+      "replicate": 0,
+      "actual_submitted_attempts": 2,
+      "final_run_id": "run-05cf3e79d9f3426b9f45535ddd2f5bfc",
+      "all_passed": true
+    },
+    {
+      "session_id": "session-adba2f1eb4944d29a2b5a996284c772d",
+      "trial_id": "trial-a8c1f1553c8a42e396651bfe7756e489",
+      "mechanism": "structured",
+      "replicate": 0,
+      "actual_submitted_attempts": 1,
+      "final_run_id": "run-ba0c4282ae8544d9b388a9a243179275",
+      "all_passed": true
+    },
+    {
+      "session_id": "session-adba2f1eb4944d29a2b5a996284c772d",
+      "trial_id": "trial-81b5fb222a4d440783f3acb5cf9fe2c1",
+      "mechanism": "raw",
+      "replicate": 1,
+      "actual_submitted_attempts": 1,
+      "final_run_id": "run-ada46c10bd8c4ed083a9ab4fa2c2c4d3",
+      "all_passed": true
+    },
+    {
+      "session_id": "session-adba2f1eb4944d29a2b5a996284c772d",
+      "trial_id": "trial-65db2919cceb44398b6c345cd0f7d018",
+      "mechanism": "structured",
+      "replicate": 1,
+      "actual_submitted_attempts": 1,
+      "final_run_id": "run-42d3ebbc005f4e70b26bcb51de073cb0",
+      "all_passed": true
+    },
+    {
+      "session_id": "session-378f6c2e28144a238a1e63638457cb02",
+      "trial_id": "trial-a9f1adcd26ec4643b47777b6bd282a7e",
+      "mechanism": "raw",
+      "replicate": 0,
+      "actual_submitted_attempts": 1,
+      "final_run_id": "run-601bfbe255a44421a446d7f5644a26fb",
+      "all_passed": true
+    },
+    {
+      "session_id": "session-378f6c2e28144a238a1e63638457cb02",
+      "trial_id": "trial-96bd803ae5a54ff2aace1bad99f81f08",
+      "mechanism": "structured",
+      "replicate": 0,
+      "actual_submitted_attempts": 1,
+      "final_run_id": "run-f2021aaae52a41879f0a9c3aa878f7b3",
+      "all_passed": true
+    },
+    {
+      "session_id": "session-378f6c2e28144a238a1e63638457cb02",
+      "trial_id": "trial-19f5c3a8308146a983fd9a392b9be36b",
+      "mechanism": "raw",
+      "replicate": 1,
+      "actual_submitted_attempts": 1,
+      "final_run_id": "run-2ee73bcb64764d738e07364e6edb213a",
+      "all_passed": true
+    },
+    {
+      "session_id": "session-378f6c2e28144a238a1e63638457cb02",
+      "trial_id": "trial-79f5a806a7004c7faeb18e2311786481",
+      "mechanism": "structured",
+      "replicate": 1,
+      "actual_submitted_attempts": 1,
+      "final_run_id": "run-d5e33d4ed40248199b67931e1035fbb9",
+      "all_passed": true
+    }
+  ],
+  "priorities_before_claiming_submission_readiness": [
+    "Stabilize nested agent completion and show the actual English Omnigent workflow with interventions disclosed.",
+    "Strengthen the minimal diagnostic-sensitive physical modeling case and expose trial-level attempt/log evidence to Analyst; no large ablation required.",
+    "Measure the selected bottleneck with a defined operator/action boundary; report any real automation progress without unsupported causal speed claim.",
+    "Record both English one-minute segments, preserve full live footage, refresh the review package and verify official submission logistics."
+  ],
+  "model_requests_in_review": 0,
+  "published_or_submitted": false
+}

@@ -1,0 +1,53 @@
+{
+  "parent_session_id": "96e2edbb3fe747099b45924aa5f6fabd",
+  "kind": "real_omnigent_handoff_pending",
+  "bundle": "agents/pilot",
+  "session_created": true,
+  "message_submitted": true,
+  "sessions": [
+    {
+      "id": "96e2edbb3fe747099b45924aa5f6fabd",
+      "status": "idle",
+      "agent_name": "pilot-coordinator",
+      "sub_agent_name": null,
+      "kind": "default",
+      "parent_session_id": null,
+      "harness": "physics-codex",
+      "usage_by_model": null,
+      "last_task_error": null,
+      "item_count": 9,
+      "assistant_messages": 3,
+      "dispatches": [
+        {
+          "id": "92fed44075ca4427903f472f69b4ee51",
+          "response_id": "resp_e4253185e3294d799763f2c1",
+          "type": "function_call",
+          "status": "completed",
+          "created_at": 1791102989,
+          "model": "pilot-coordinator",
+          "name": "sys_session_send",
+          "arguments": "{\"agent\": \"planner\", \"title\": \"pilot-plan\", \"args\": \"\\u8bf7\\u5b8c\\u6210\\u4e00\\u6b21\\u79d1\\u7814\\u89c4\\u5212\\u4ea4\\u63a5\\uff1a\\u63d0\\u51fa\\u53ef\\u8bc1\\u4f2a\\u7684\\u65e5\\u5fd7\\u8bca\\u65ad\\u673a\\u5236\\u5047\\u8bbe\\u3001\\u4e24\\u4e2a\\u5c0f\\u578b\\u5019\\u9009\\u5b9e\\u9a8c\\u3001\\u9009\\u62e9\\u7406\\u7531\\u548c\\u56fa\\u5b9a\\u63a7\\u5236\\u6761\\u4ef6\\u3002\\u5f53\\u524d\\u672a\\u63d0\\u4f9b\\u5177\\u4f53\\u7cfb\\u7edf\\u6216\\u65e5\\u5fd7\\uff0c\\u8bf7\\u660e\\u786e\\u5fc5\\u8981\\u5047\\u8bbe\\u53ca\\u9002\\u7528\\u8fb9\\u754c\\uff0c\\u4e0d\\u7f16\\u9020\\u89c2\\u6d4b\\u7ed3\\u679c\\u3002\\u4ec5\\u8f93\\u51fa\\u7814\\u7a76\\u8ba1\\u5212\\uff0c\\u4e0d\\u6267\\u884c\\u5b9e\\u9a8c\\uff0c\\u4e0d\\u8c03\\u7528\\u5176\\u4ed6\\u89d2\\u8272\\u3001\\u7f51\\u7edc\\u3001\\u6587\\u4ef6\\u6216\\u5b9e\\u9a8c\\u5de5\\u5177\\uff0c\\u4e0d\\u67e5\\u8be2\\u6216\\u66f4\\u6539\\u6a21\\u578b\\uff0c\\u4e0d\\u53d1\\u5e03\\u3001\\u5171\\u4eab\\u6216\\u63d0\\u4ea4\\u3002\\u660e\\u786e\\u533a\\u5206\\u5047\\u8bbe\\u3001\\u9884\\u6d4b\\u4e0e\\u8bc1\\u4f2a\\u5224\\u636e\\uff0c\\u4e0d\\u5ba3\\u79f0\\u53d1\\u73b0\\u6216\\u673a\\u5236\\u6709\\u6548\\u3002\"}",
+          "call_id": "call_OdhYurvNgFs9DymqsziUkRyF"
+        }
+      ]
+    },
+    {
+      "id": "e1e0fd6746c944d29516ca159cf4bfdc",
+      "status": "idle",
+      "agent_name": "planner",
+      "sub_agent_name": "planner",
+      "kind": "sub_agent",
+      "parent_session_id": "96e2edbb3fe747099b45924aa5f6fabd",
+      "harness": "physics-codex",
+      "usage_by_model": null,
+      "last_task_error": null,
+      "item_count": 2,
+      "assistant_messages": 1,
+      "dispatches": []
+    }
+  ],
+  "native_dispatch_observed": true,
+  "child_plan_completed": true,
+  "collected_at_unix": 1791103339.402933,
+  "scope": "Actual Omnigent parent/child orchestration; scientific experiments require broker run evidence separately."
+}

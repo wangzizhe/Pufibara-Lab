@@ -1,0 +1,11 @@
+spec_version: 1
+name: executor
+instructions: AGENTS.md
+skills: none
+tools:
+  agents: [modeler]
+  builtins: []
+executor:
+  type: omnigent
+  config:
+    harness: physics-codex

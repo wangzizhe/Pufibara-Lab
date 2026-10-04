@@ -1,0 +1,61 @@
+{
+  "kind": "trusted_engineering_not_agent_research",
+  "cases": [
+    {
+      "label": "unmodified-initialization-failure",
+      "run_id": "run-f90a7a11a6a04b4cb772700010264bda",
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "failed",
+        "behavior": {
+          "status": "not_run"
+        },
+        "all_passed": false
+      },
+      "feedback": {
+        "mechanism": "structured",
+        "diagnostic_lines": [
+          "    messages = \"Simulation execution failed for model: Cooling",
+          "LOG_INIT          | error   | The initialization problem is inconsistent due to the following equation: 0 != -40 = T_ambient - T",
+          "LOG_STDOUT        | warning | Error in initialization. Storing results and exiting.",
+          "\"Warning: It was not possible to determine if the initialization problem is consistent, because of not evaluable parameters/start values during compile time: T = T_ambient ($START.T = T_ambient)",
+          "Warning: The initial conditions are over specified. For more information set -d=initialization. In OMEdit Tools->Options->Simulation->Show additional information from the initialization process, in OMNotebook call setCommandLineOptions(\\\"-d=initialization\\\")."
+        ],
+        "parser": "keyword-v1",
+        "total_lines": 29,
+        "omitted_lines": 24,
+        "raw_available": true,
+        "interpretation": "Compiler messages only; no inferred repair or validation answer.",
+        "empty_diagnostic": false
+      },
+      "seconds": 2.386667375016259
+    },
+    {
+      "label": "trusted-initialization-correction",
+      "run_id": "run-c2ecb23727b04131a72d4d2644ed6456",
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": {
+          "status": "passed",
+          "max_abs_error_k": 5.966772920373842e-05,
+          "samples": 302
+        },
+        "all_passed": true
+      },
+      "feedback": {
+        "mechanism": "structured",
+        "diagnostic_lines": [],
+        "parser": "keyword-v1",
+        "total_lines": 40,
+        "omitted_lines": 40,
+        "raw_available": true,
+        "interpretation": "Compiler messages only; no inferred repair or validation answer.",
+        "empty_diagnostic": true
+      },
+      "seconds": 4.518970082979649
+    }
+  ],
+  "model_requests": 0,
+  "interpretation": "Real initialization feedback exists; baseline-first exposure is a protocol, not proof that source-only repair is impossible."
+}

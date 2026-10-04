@@ -1,0 +1,59 @@
+{
+  "kind": "recorded_scientific_artifact_verification",
+  "verified_at_unix": 1791113145.395442,
+  "broker_session_id": "session-d32b3336026842fcba860f2d22b06ec6",
+  "closed_loop_verified": true,
+  "actual_agent_followup_changed": true,
+  "trials": [
+    {
+      "trial_id": "trial-b70e4553cd9e462492d9b110ce16bbe7",
+      "final_run_id": "run-402cd43df7014d05a4efe6d37b41bd3c",
+      "attempts": 2,
+      "evaluation": [
+        "passed",
+        "passed",
+        "passed"
+      ],
+      "source_hash_verified": true
+    },
+    {
+      "trial_id": "trial-9c8589a4d93442808431ba65e8403b6d",
+      "final_run_id": "run-45c2192cbdef477d89b13a05c38b6df9",
+      "attempts": 2,
+      "evaluation": [
+        "passed",
+        "passed",
+        "passed"
+      ],
+      "source_hash_verified": true
+    },
+    {
+      "trial_id": "trial-103ea821cec64ea4b2d0efae58aaa202",
+      "final_run_id": "run-6608b681883d4299b6e1a6aed2f54851",
+      "attempts": 1,
+      "evaluation": [
+        "passed",
+        "failed",
+        "not_run"
+      ],
+      "source_hash_verified": true
+    },
+    {
+      "trial_id": "trial-2bf4635ec9af40c6951cd203c4366ec7",
+      "final_run_id": "run-8fcfc673a4024ad8933d020113c82bb1",
+      "attempts": 1,
+      "evaluation": [
+        "passed",
+        "failed",
+        "not_run"
+      ],
+      "source_hash_verified": true
+    }
+  ],
+  "baseline_first_verified": true,
+  "final_source_and_evaluator_hashes_verified": true,
+  "actual_analyst_evidence_calls_verified": true,
+  "full_unintervened_run": false,
+  "scope": "Saved primary science, not notification stability or universal efficacy",
+  "historical_workflow_speed_improvement_established": false
+}

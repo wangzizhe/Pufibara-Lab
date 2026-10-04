@@ -1,0 +1,14 @@
+{
+  "kind": "explicit_user_authorization",
+  "phase": "enhancement",
+  "additional_requests": 120,
+  "seconds_from_first_new_request": 3600,
+  "historical_research_requests": 199,
+  "historical_pilot_requests": 7,
+  "cumulative_ceiling": 500,
+  "maximum_with_this_phase_including_pilot": 326,
+  "extra_credits": false,
+  "api_fallback": false,
+  "clock_started": false,
+  "new_requests_so_far": 0
+}

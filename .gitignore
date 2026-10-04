@@ -1,0 +1,20 @@
+# Local state and credentials; public reproducibility artifacts are retained explicitly.
+.DS_Store
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+secrets/
+private_runs/
+.runtime/
+tmp/
+node_modules/
+
+build/
+*.egg-info/

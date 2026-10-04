@@ -1,0 +1,9 @@
+{
+  "kind": "actual_runner_callback_with_synthetic_work_no_models",
+  "pending_completion_deferred": true,
+  "final_completion_delivered": true,
+  "duplicate_delivery_absent": true,
+  "model_requests": 0,
+  "runner_sha256": "973772e8cdf353b05df4f4179c14bfac72cde5382e1950ab72ba4759febed9d2",
+  "scope": "Native runner end callback and inbox delivery; external parent wake and real scientific closure require live evidence"
+}

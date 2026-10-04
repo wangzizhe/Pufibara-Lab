@@ -1,0 +1,75 @@
+{
+  "kind": "goal_completion_audit",
+  "at_unix": 1791113389.2615738,
+  "complete": true,
+  "requirements": [
+    {
+      "requirement": "Rename current product to Pufibara Lab",
+      "state": "verified",
+      "evidence": [
+        "README.md",
+        "agents/lab/config.yaml",
+        "artifacts/english-demo/actual-handoff-completed.png"
+      ]
+    },
+    {
+      "requirement": "Repair native handoff and completion delivery",
+      "state": "verified_with_scope_limit",
+      "evidence": [
+        "evidence/omnigent-completion-patch.json",
+        "evidence/completion-regression.json"
+      ],
+      "limit": "One real nested engineering regression; full primary science retains operator recoveries, no universal stability claim."
+    },
+    {
+      "requirement": "Real diagnostic-sensitive physics case and Analyst access to attempts/logs",
+      "state": "verified",
+      "evidence": [
+        "tasks/cooling-init/task.json",
+        "evidence/initialization-case-verification.json",
+        "evidence/enhancement-scientific-verification.json"
+      ]
+    },
+    {
+      "requirement": "Hypothesis, candidates, experiments, analysis, changed plan and actual followup",
+      "state": "verified",
+      "evidence": [
+        "evidence/sessions/session-d32b3336026842fcba860f2d22b06ec6/report.json",
+        "evidence/enhancement-scientific-verification.json"
+      ]
+    },
+    {
+      "requirement": "Actual scientific bottleneck measurement",
+      "state": "verified_no_overall_improvement_established",
+      "evidence": [
+        "evidence/measurements/workflow-comparison.json",
+        "evidence/measurements/completion-bottleneck.json"
+      ]
+    },
+    {
+      "requirement": "Reproducible code, instructions, evidence and checklist",
+      "state": "verified_local_fixed_dependency_runtime",
+      "evidence": [
+        "docs/LOCAL_SETUP.md",
+        "docs/RESEARCH_RUN.md",
+        "HANDOFF_CHECK.md",
+        "evidence/enhancement-package-verification.json"
+      ],
+      "limit": "No fresh-machine network installation, live authority disabled in ZIP."
+    },
+    {
+      "requirement": "Two 60-second English demonstration scripts and actual minimal UI route",
+      "state": "verified_materials_user_handles_recording",
+      "evidence": [
+        "docs/PRODUCT_DEMO_60S_EN.md",
+        "docs/TECHNICAL_WALKTHROUGH_60S_EN.md",
+        "docs/DEMO_LIVE_ENGLISH.md"
+      ],
+      "limit": "User explicitly instructed: 你不用管我怎么录demo. Recording and video review removed from assistant scope, not claimed completed."
+    }
+  ],
+  "model_host_stopped": true,
+  "new_model_calls_required": false,
+  "formal_publication_or_submission_authorized": false,
+  "completion_scope": "Local environment and Hackathon materials complete; user explicitly retains demo recording responsibility; no publication/formal submission."
+}

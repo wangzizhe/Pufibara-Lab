@@ -1,0 +1,26 @@
+{
+  "status": "completed",
+  "exit_code": 0,
+  "seconds": 5.596531499992125,
+  "raw": "true\n\"\"\nCHECK_BEGIN\n\n\"Check of Cooling completed successfully.\nClass Cooling has 1 equation(s) and 1 variable(s).\n1 of these are trivial equation(s).\"\n\"\"\nCHECK_END\n\nrecord SimulationResult\n    resultFile = \"\",\n    simulationOptions = \"startTime = 0.0, stopTime = 300.0, numberOfIntervals = 300, tolerance = 1e-7, method = 'dassl', fileNamePrefix = 'cooling', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = ''\",\n    messages = \"Simulation execution failed for model: Cooling\n/bin/sh: 1: /work/cooling: Permission denied\n\",\n    timeFrontend = 6.189170000000001e-4,\n    timeBackend = 0.001282458,\n    timeSimCode = 2.8945800000000003e-4,\n    timeTemplates = 0.001074791,\n    timeCompile = 3.025724543,\n    timeSimulation = 3.1466700000000003e-4,\n    timeTotal = 3.029382543\nend SimulationResult;\n\"\"\nrecord SimulationResult\n    resultFile = \"\",\n    simulationOptions = \"startTime = 0.0, stopTime = 300.0, numberOfIntervals = 300, tolerance = 1e-7, method = 'dassl', fileNamePrefix = 'validation', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = '-override=C=2000,G=5'\",\n    messages = \"Simulation execution failed for model: Cooling\n/bin/sh: 1: /work/validation: Permission denied\n\",\n    timeFrontend = 8.876670000000001e-4,\n    timeBackend = 0.001175459,\n    timeSimCode = 1.90167e-4,\n    timeTemplates = 8.362090000000001e-4,\n    timeCompile = 2.243925417,\n    timeSimulation = 3.21917e-4,\n    timeTotal = 2.247393376\nend SimulationResult;\n\"\"\n",
+  "log_truncated": false,
+  "run_id": "run-ae0e62135a054eadb3371ea4f102a8c7",
+  "source_sha256": "027d308466437adb861b4e229d75f146e06c7dd256a02b1649e14682d7e77b1e",
+  "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+  "mechanism": "raw",
+  "final": true,
+  "evaluation": {
+    "model_checking": "passed",
+    "simulation": "failed",
+    "behavior": {
+      "status": "not_run"
+    },
+    "all_passed": false
+  },
+  "feedback": {
+    "mechanism": "raw",
+    "raw": "true\n\"\"\nCHECK_BEGIN\n\n\"Check of Cooling completed successfully.\nClass Cooling has 1 equation(s) and 1 variable(s).\n1 of these are trivial equation(s).\"\n\"\"\nCHECK_END\n\nrecord SimulationResult\n    resultFile = \"\",\n    simulationOptions = \"startTime = 0.0, stopTime = 300.0, numberOfIntervals = 300, tolerance = 1e-7, method = 'dassl', fileNamePrefix = 'cooling', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = ''\",\n    messages = \"Simulation execution failed for model: Cooling\n/bin/sh: 1: /work/cooling: Permission denied\n\",\n    timeFrontend = 6.189170000000001e-4,\n    timeBackend = 0.001282458,\n    timeSimCode = 2.8945800000000003e-4,\n    timeTemplates = 0.001074791,\n    timeCompile = 3.025724543,\n    timeSimulation = 3.1466700000000003e-4,\n    timeTotal = 3.029382543\nend SimulationResult;\n\"\"\nrecord SimulationResult\n    resultFile = \"\",\n    simulationOptions = \"startTime = 0.0, stopTime = 300.0, numberOfIntervals = 300, tolerance = 1e-7, method = 'dassl', fileNamePrefix = 'validation', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = '-override=C=2000,G=5'\",\n    messages = \"Simulation execution failed for model: Cooling\n/bin/sh: 1: /work/validation: Permission denied\n\",\n    timeFrontend = 8.876670000000001e-4,\n    timeBackend = 0.001175459,\n    timeSimCode = 1.90167e-4,\n    timeTemplates = 8.362090000000001e-4,\n    timeCompile = 2.243925417,\n    timeSimulation = 3.21917e-4,\n    timeTotal = 2.247393376\nend SimulationResult;\n\"\"\n"
+  },
+  "tokens": null,
+  "cost_usd": null
+}

@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "exit_code": 0,
+  "seconds": 2.53659925001557,
+  "raw": "true\n\"\"\nCHECK_BEGIN\n\n\"Check of Cooling completed successfully.\nClass Cooling has 1 equation(s) and 1 variable(s).\n1 of these are trivial equation(s).\"\n\"\"\nCHECK_END\n\nrecord SimulationResult\n    resultFile = \"\",\n    simulationOptions = \"startTime = 0.0, stopTime = 300.0, numberOfIntervals = 300, tolerance = 1e-7, method = 'dassl', fileNamePrefix = 'cooling', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = ''\",\n    messages = \"Simulation execution failed for model: Cooling\nLOG_INIT          | error   | The initialization problem is inconsistent due to the following equation: 0 != -40 = T_ambient - T\nLOG_STDOUT        | warning | Error in initialization. Storing results and exiting.\n|                 | |       | Use -lv=LOG_INIT -w for more information.\n\",\n    timeFrontend = 5.782080000000001e-4,\n    timeBackend = 0.0012780410000000002,\n    timeSimCode = 2.94542e-4,\n    timeTemplates = 0.0013309160000000001,\n    timeCompile = 2.310329043,\n    timeSimulation = 0.005229709,\n    timeTotal = 2.319094459\nend SimulationResult;\n\"Warning: It was not possible to determine if the initialization problem is consistent, because of not evaluable parameters/start values during compile time: T = T_ambient ($START.T = T_ambient)\nWarning: The initial conditions are over specified. For more information set -d=initialization. In OMEdit Tools->Options->Simulation->Show additional information from the initialization process, in OMNotebook call setCommandLineOptions(\\\"-d=initialization\\\").\n\"\n",
+  "log_truncated": false,
+  "run_id": "run-7f5bfe08aecb45f89dd39d745d58ed06",
+  "source_sha256": "8ccd5538624ba2cc834a3b57b8b3fd5f669eb2acf61b51c776536ec7c4bf7331",
+  "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+  "implementation_sha256": {
+    "runner.py": "8974c70368832e31b9bc300bae354df48fb82b776c9bcdd52dcd2a946c187e62",
+    "evaluator.py": "f1ea4df0220da5d08de6b17998a1b5369d7a3cbf8aae2a088ef14ce61464aa01",
+    "diagnostics.py": "fc61ff3e5c79637b79a5645a5ebc431829ba3a6e5699f572c0f06dbf1467ec24"
+  },
+  "mechanism": "structured",
+  "final": false,
+  "evaluation": {
+    "model_checking": "passed",
+    "simulation": "failed",
+    "behavior": {
+      "status": "not_run"
+    },
+    "all_passed": false
+  },
+  "feedback": {
+    "mechanism": "structured",
+    "diagnostic_lines": [
+      "    messages = \"Simulation execution failed for model: Cooling",
+      "LOG_INIT          | error   | The initialization problem is inconsistent due to the following equation: 0 != -40 = T_ambient - T",
+      "LOG_STDOUT        | warning | Error in initialization. Storing results and exiting.",
+      "\"Warning: It was not possible to determine if the initialization problem is consistent, because of not evaluable parameters/start values during compile time: T = T_ambient ($START.T = T_ambient)",
+      "Warning: The initial conditions are over specified. For more information set -d=initialization. In OMEdit Tools->Options->Simulation->Show additional information from the initialization process, in OMNotebook call setCommandLineOptions(\\\"-d=initialization\\\")."
+    ],
+    "parser": "keyword-v1",
+    "total_lines": 29,
+    "omitted_lines": 24,
+    "raw_available": true,
+    "interpretation": "Compiler messages only; no inferred repair or validation answer.",
+    "empty_diagnostic": false
+  },
+  "tokens": null,
+  "cost_usd": null
+}

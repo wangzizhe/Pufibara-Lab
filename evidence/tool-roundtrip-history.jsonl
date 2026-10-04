@@ -1,0 +1,1 @@
+{"exit_code": 0, "stdout": "{\"status_tool\": \"passed\", \"session_id\": \"session-977ff81b4d544099864c7392cf1162c5\", \"other_network_denied\": true, \"kind\": \"tool_transport_check_not_multi_agent_research\"}\n", "stderr": "", "passed": true, "kind": "tool_transport_check_not_live_agent_handoff"}

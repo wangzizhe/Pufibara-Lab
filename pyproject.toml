@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "physics-harness-lab"
+version = "0.1.0"
+description = "Evidence-driven Modelica harness research tools"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+physicslab = "physicslab.cli:main"
+
+[project.entry-points."omnigent.community.harness"]
+physicslab = "omnigent.community.harness.physicslab:contribution"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,239 @@
+{
+  "session_id": "session-789344082fe64fabadcdb06e415d8d0d",
+  "stage": "validated",
+  "plans": [
+    {
+      "id": "initial-logs",
+      "hypothesis": "On cooling-init-v1, structured diagnostics will enable a successful correction after the unmodified baseline where raw feedback does not, under the same two-attempt allowance. This is a tentative task-specific hypothesis; tool execution seconds and token usage, if exposed, are secondary descriptive outcomes.",
+      "falsification": "The structured trial fails final fixed validation, or raw feedback also passes with the same or fewer repair attempts, counts against the proposed pass-rate advantage in this pair. Equal or higher structured tool seconds counts against a tool-execution-time advantage; missing token usage cannot support a token-use claim.",
+      "candidates": [
+        {
+          "id": "logs",
+          "learning_value": "Compare successful repair and fixed final acceptance under raw versus structured diagnostics, retaining the baseline and one correction in each trial. Inspect exposed tool seconds separately from total model/workflow time and report missing token usage as missing.",
+          "feasibility": "Available cooling-init-v1 is baseline_first. Two matched trials with max_attempts=2 each cost 3 deterministic tool runs including final validation, totaling 6 of 12 and reserving 6 for followup. Hold task, exposed model configuration, tools, repair allowance and fixed evaluation matched; temperature and seed are not exposed controls.",
+          "estimated_tool_runs": 6
+        },
+        {
+          "id": "information-loss",
+          "learning_value": "Compare raw and structured baseline diagnostic content for omitted initialization evidence and relate omissions to eventual acceptance; this tests whether summarization loses actionable information rather than assuming a general benefit.",
+          "feasibility": "Use the same available task and two matched max_attempts=2 trials, costing 6 deterministic tool runs including final validation. Baseline evidence can be inspected without hidden evaluator answers, but causal attribution to a particular omission would require additional authorized intervention; less direct evidence of repair benefit than logs.",
+          "estimated_tool_runs": 6
+        }
+      ],
+      "selected_candidate": "logs",
+      "selection_reason": "The logs comparison directly tests whether the implemented feedback mechanism changes correction success on the available initialization task. It is feasible with the required unmodified baseline plus one correction per arm, costs 6 of the 12 deterministic runs, and leaves 6 for followup. A single pair cannot establish general pass-rate improvement, necessity of logs, causal workflow-time savings or token reduction. Preserve role isolation and fixed evaluation, use only public evidence, stop on budget/quota/isolation errors, and do not invent temperature/seed controls or missing measurements.",
+      "runs": [
+        {
+          "task_id": "cooling-init-v1",
+          "diagnostics": "raw",
+          "replicate": 0,
+          "max_attempts": 2
+        },
+        {
+          "task_id": "cooling-init-v1",
+          "diagnostics": "structured",
+          "replicate": 0,
+          "max_attempts": 2
+        }
+      ]
+    },
+    {
+      "id": "repeat-logs-01",
+      "hypothesis": "On one fresh cooling-init-v1 repeat per diagnostic arm, both raw and structured feedback will again permit fixed final acceptance after the required failed unmodified baseline within two development attempts. Structured keyword-v1 may preserve initialization failure evidence while losing explicit success signals; this is a task-specific reproducibility check, not a universal mechanism-benefit claim.",
+      "falsification": "Either arm failing any fixed final model-checking, simulation or behavior criterion, or differing in actual attempts to acceptance, counts against equal reproducibility. Structured omission of actionable failure evidence or misleading empty feedback counts against diagnostic completeness. Missing usage or workflow timing cannot support token or workflow-speed claims.",
+      "repeat_reason": "The sole pair, final runs run-fef27c31a32143f6923faa8836a69dca and run-180f007d16724c469a19e5514f6c9662, has equal acceptance with two attempts and no estimate of between-trial variability. Its tool-second difference and structured success-signal loss remain uncertain; a fresh identical-configuration pair addresses reproducibility within the six remaining runs.",
+      "candidates": [
+        {
+          "id": "fresh-repeat-pair",
+          "learning_value": "Assess whether equal task-specific acceptance and attempt counts reproduce in fresh isolated trials, and audit diagnostic omissions against bounded raw development evidence.",
+          "feasibility": "Two baseline-first trials, max_attempts=2, each requiring two development runs plus one fixed final validation: 6 tool runs total, exactly the remaining budget. Only cooling-init-v1 is available. Match exposed task/model/tools/repair allowance/fixed evaluation; seed and temperature cannot be controlled.",
+          "estimated_tool_runs": 6
+        },
+        {
+          "id": "single-arm-omission-audit",
+          "learning_value": "Repeat structured feedback once and inspect whether failure and success information loss recurs; retain existing raw comparator but cannot distinguish new run variability from arm differences.",
+          "feasibility": "One baseline-first structured trial with max_attempts=2 costs 3 deterministic runs including fixed final validation; bounded raw development evidence inspection requires no additional experimental runs. Leaves 3 unused runs but provides a weaker contemporaneous comparison. No parser intervention or new task is exposed.",
+          "estimated_tool_runs": 3
+        }
+      ],
+      "selected_candidate": "fresh-repeat-pair",
+      "selection_reason": "A contemporaneous fresh pair provides a stronger feasible check of the observed equal success than a single-arm audit, while still examining omissions using public development evidence. It costs exactly six remaining tool runs. Do not pursue unavailable parser interventions, additional tasks, invented controls or hidden evaluator information.",
+      "runs": [
+        {
+          "task_id": "cooling-init-v1",
+          "diagnostics": "raw",
+          "replicate": 1,
+          "max_attempts": 2
+        },
+        {
+          "task_id": "cooling-init-v1",
+          "diagnostics": "structured",
+          "replicate": 1,
+          "max_attempts": 2
+        }
+      ],
+      "executor_instructions": "Execute only the two recorded configurations in fresh isolated Modeler contexts, preserving original roles and fixed evaluation. Supply the authorized task and arm configuration only; never provide prior trial source, prior repair instructions, hidden evaluation details or answers to a Modeler. Require the unmodified baseline first, then allow at most one correction informed by that arm's development feedback, and run the fixed final validator once per trial. Reserve three deterministic runs per trial; total additional runs must not exceed six or combined twelve. Match exposed model configuration, tools and evaluation; do not invent seed/temperature controls. Retain actual attempt counts, individual development outcomes, tool seconds and public final_run_id/verdict; keep unavailable token, cost and total model/workflow measures unknown. For analyst review retain omission/empty-diagnostic fields and bounded raw development logs without leaking raw feedback into the structured Modeler arm. Stop immediately on budget, quota or isolation error and report incomplete/not_run outcomes as such. At validated status inspect native status and both trial_evidence records, interpret against this hypothesis and propose a future study in text; do not record_analysis again."
+    }
+  ],
+  "trials": [
+    {
+      "trial_id": "trial-299a760dd2454dacbb93ebb43152f65e",
+      "plan_id": "initial-logs",
+      "config": {
+        "task_id": "cooling-init-v1",
+        "diagnostics": "raw",
+        "replicate": 0,
+        "max_attempts": 2
+      },
+      "attempts": [
+        "run-ec189622d1cf4035a3db7ed0252c5de3",
+        "run-8c2d3e59bc484554af8216062fa1038f"
+      ],
+      "source": "model Cooling\n  parameter Real C = 1000 \"Thermal capacity J/K\";\n  parameter Real G = 10 \"Thermal conductance W/K\";\n  parameter Real T_ambient = 293.15 \"Ambient K\";\n  Real T(start=333.15, fixed=true) \"Body K\";\nequation\n  C * der(T) = G * (T_ambient - T);\nend Cooling;\n",
+      "finished": true,
+      "final_run_id": "run-fef27c31a32143f6923faa8836a69dca",
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": "passed",
+        "all_passed": true
+      },
+      "tool_seconds": 12.208444290998159
+    },
+    {
+      "trial_id": "trial-995e94c07b5a45b89e6d1c59a4328b86",
+      "plan_id": "initial-logs",
+      "config": {
+        "task_id": "cooling-init-v1",
+        "diagnostics": "structured",
+        "replicate": 0,
+        "max_attempts": 2
+      },
+      "attempts": [
+        "run-f9b554c3aea047f1bee22dff4d548be6",
+        "run-13cdd498beaf43b5ab31d0d5e122b4b1"
+      ],
+      "source": "model Cooling\n  parameter Real C = 1000 \"Thermal capacity J/K\";\n  parameter Real G = 10 \"Thermal conductance W/K\";\n  parameter Real T_ambient = 293.15 \"Ambient K\";\n  Real T(start=333.15, fixed=true) \"Body K\";\nequation\n  C * der(T) = G * (T_ambient - T);\nend Cooling;\n",
+      "finished": true,
+      "final_run_id": "run-180f007d16724c469a19e5514f6c9662",
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": "passed",
+        "all_passed": true
+      },
+      "tool_seconds": 10.258247791993199
+    },
+    {
+      "trial_id": "trial-7fd42a4c9f5b4cfabbab25a580ccf37e",
+      "plan_id": "repeat-logs-01",
+      "config": {
+        "task_id": "cooling-init-v1",
+        "diagnostics": "raw",
+        "replicate": 1,
+        "max_attempts": 2
+      },
+      "attempts": [
+        "run-b93d758bfd5f4eafbd44fff8d1970908",
+        "run-36cc722f06ac493c9f81f0a19dc75a4a"
+      ],
+      "source": "model Cooling\n  parameter Real C = 1000 \"Thermal capacity J/K\";\n  parameter Real G = 10 \"Thermal conductance W/K\";\n  parameter Real T_ambient = 293.15 \"Ambient K\";\n  Real T(start=333.15, fixed=true) \"Body K\";\nequation\n  C * der(T) = G * (T_ambient - T);\nend Cooling;\n",
+      "finished": true,
+      "final_run_id": "run-948d4dce9e87423ca6a5d7a4d96b5d9a",
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": "passed",
+        "all_passed": true
+      },
+      "tool_seconds": 9.750073081988376
+    },
+    {
+      "trial_id": "trial-1e1735d592824362a65c6525944a6a1c",
+      "plan_id": "repeat-logs-01",
+      "config": {
+        "task_id": "cooling-init-v1",
+        "diagnostics": "structured",
+        "replicate": 1,
+        "max_attempts": 2
+      },
+      "attempts": [
+        "run-79ad8b73e2c54566bd945f34db54e5e5",
+        "run-cbcbed9f139640fe8d94f10715029670"
+      ],
+      "source": "model Cooling\n  parameter Real C = 1000 \"Thermal capacity J/K\";\n  parameter Real G = 10 \"Thermal conductance W/K\";\n  parameter Real T_ambient = 293.15 \"Ambient K\";\n  Real T(start=333.15, fixed=true) \"Body K\";\nequation\n  C * der(T) = G * (T_ambient - T);\nend Cooling;\n",
+      "finished": true,
+      "final_run_id": "run-b1f3eddf85364fcd8e67902f9d133d74",
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": "passed",
+        "all_passed": true
+      },
+      "tool_seconds": 11.672195291990647
+    }
+  ],
+  "analysis": {
+    "support": "not_supported",
+    "evidence_run_ids": [
+      "run-fef27c31a32143f6923faa8836a69dca",
+      "run-180f007d16724c469a19e5514f6c9662"
+    ],
+    "limitations": "The initial-logs hypothesis of structured-only successful correction is not supported: raw final run run-fef27c31a32143f6923faa8836a69dca and structured final run run-180f007d16724c469a19e5514f6c9662 both passed model checking, simulation and behavior with actual attempt_count=2. Each unmodified baseline passed model checking but failed simulation during initialization; baseline behavior was not evaluated and must not be counted as passed. Development baseline IDs are run-ec189622d1cf4035a3db7ed0252c5de3 (raw) and run-f9b554c3aea047f1bee22dff4d548be6 (structured). Both subsequent development runs showed successful checking and simulation; behavior acceptance is established only by the public final verdicts. Structured baseline keyword-v1 retained 5 of 29 lines, omitted 24, and preserved the inconsistency equation and overspecified-initial-condition warnings; it omitted explicit checking success, simulation options, timings and the additional logging hint. Structured repair feedback omitted all 25 lines and was empty, losing explicit checking and simulation success signals; empty diagnostics do not establish success. Raw inspection was complete and not truncated for both arms. Tool seconds were raw 12.208444290998159 and structured 10.258247791993199, a descriptive difference of 1.95019649900496 seconds only. One pair cannot establish general mechanism benefit, causal tool/workflow time savings or token reduction. Token usage, cost measures, total model/workflow time and controllable model seed/temperature are unavailable. Both corrections followed diagnostic feedback, but equal acceptance does not establish that either diagnostic mechanism was necessary. Current native status reports 34/100 model requests, superseding the supplied 29/100; six of twelve deterministic runs remain.",
+    "adjustment_reason": "Final runs run-fef27c31a32143f6923faa8836a69dca and run-180f007d16724c469a19e5514f6c9662 show equal acceptance and attempt counts, contradicting the initial directional success prediction. Complete development evidence additionally exposes structured information loss. Select a fresh repeat pair to test reproducibility of task-specific equal repair success and observe further omission effects, rather than infer superiority from tool seconds.",
+    "followup": {
+      "id": "repeat-logs-01",
+      "hypothesis": "On one fresh cooling-init-v1 repeat per diagnostic arm, both raw and structured feedback will again permit fixed final acceptance after the required failed unmodified baseline within two development attempts. Structured keyword-v1 may preserve initialization failure evidence while losing explicit success signals; this is a task-specific reproducibility check, not a universal mechanism-benefit claim.",
+      "falsification": "Either arm failing any fixed final model-checking, simulation or behavior criterion, or differing in actual attempts to acceptance, counts against equal reproducibility. Structured omission of actionable failure evidence or misleading empty feedback counts against diagnostic completeness. Missing usage or workflow timing cannot support token or workflow-speed claims.",
+      "repeat_reason": "The sole pair, final runs run-fef27c31a32143f6923faa8836a69dca and run-180f007d16724c469a19e5514f6c9662, has equal acceptance with two attempts and no estimate of between-trial variability. Its tool-second difference and structured success-signal loss remain uncertain; a fresh identical-configuration pair addresses reproducibility within the six remaining runs.",
+      "candidates": [
+        {
+          "id": "fresh-repeat-pair",
+          "learning_value": "Assess whether equal task-specific acceptance and attempt counts reproduce in fresh isolated trials, and audit diagnostic omissions against bounded raw development evidence.",
+          "feasibility": "Two baseline-first trials, max_attempts=2, each requiring two development runs plus one fixed final validation: 6 tool runs total, exactly the remaining budget. Only cooling-init-v1 is available. Match exposed task/model/tools/repair allowance/fixed evaluation; seed and temperature cannot be controlled.",
+          "estimated_tool_runs": 6
+        },
+        {
+          "id": "single-arm-omission-audit",
+          "learning_value": "Repeat structured feedback once and inspect whether failure and success information loss recurs; retain existing raw comparator but cannot distinguish new run variability from arm differences.",
+          "feasibility": "One baseline-first structured trial with max_attempts=2 costs 3 deterministic runs including fixed final validation; bounded raw development evidence inspection requires no additional experimental runs. Leaves 3 unused runs but provides a weaker contemporaneous comparison. No parser intervention or new task is exposed.",
+          "estimated_tool_runs": 3
+        }
+      ],
+      "selected_candidate": "fresh-repeat-pair",
+      "selection_reason": "A contemporaneous fresh pair provides a stronger feasible check of the observed equal success than a single-arm audit, while still examining omissions using public development evidence. It costs exactly six remaining tool runs. Do not pursue unavailable parser interventions, additional tasks, invented controls or hidden evaluator information.",
+      "runs": [
+        {
+          "task_id": "cooling-init-v1",
+          "diagnostics": "raw",
+          "replicate": 1,
+          "max_attempts": 2
+        },
+        {
+          "task_id": "cooling-init-v1",
+          "diagnostics": "structured",
+          "replicate": 1,
+          "max_attempts": 2
+        }
+      ],
+      "executor_instructions": "Execute only the two recorded configurations in fresh isolated Modeler contexts, preserving original roles and fixed evaluation. Supply the authorized task and arm configuration only; never provide prior trial source, prior repair instructions, hidden evaluation details or answers to a Modeler. Require the unmodified baseline first, then allow at most one correction informed by that arm's development feedback, and run the fixed final validator once per trial. Reserve three deterministic runs per trial; total additional runs must not exceed six or combined twelve. Match exposed model configuration, tools and evaluation; do not invent seed/temperature controls. Retain actual attempt counts, individual development outcomes, tool seconds and public final_run_id/verdict; keep unavailable token, cost and total model/workflow measures unknown. For analyst review retain omission/empty-diagnostic fields and bounded raw development logs without leaking raw feedback into the structured Modeler arm. Stop immediately on budget, quota or isolation error and report incomplete/not_run outcomes as such. At validated status inspect native status and both trial_evidence records, interpret against this hypothesis and propose a future study in text; do not record_analysis again."
+    }
+  },
+  "kind": "live_pending",
+  "runtime": {
+    "schema_version": 1,
+    "model_service": null,
+    "model": null,
+    "max_model_calls": 0,
+    "max_total_usd": 0,
+    "max_model_tokens": 0,
+    "max_tool_runs": 12,
+    "max_tool_seconds": 60,
+    "max_repair_attempts": 3,
+    "omc_image": "openmodelica/openmodelica:v1.26.1-minimal",
+    "omc_image_digest": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+    "install_authorized": true,
+    "model_calls_authorized": false,
+    "task_catalog": "initialization-v1"
+  }
+}

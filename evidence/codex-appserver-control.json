@@ -1,0 +1,11 @@
+{
+  "kind": "contained_omnigent_codex_initialize_no_model",
+  "model_turn_started": false,
+  "network_allowed": true,
+  "trusted_control": true,
+  "initialized": true,
+  "sandboxed": false,
+  "account_type": "chatgpt",
+  "passed": true,
+  "scope": "Actual contained app-server initialized and offline account type checked; no inference or live tool delegation tested."
+}

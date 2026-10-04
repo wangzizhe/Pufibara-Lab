@@ -1,0 +1,26 @@
+{
+  "status": "completed",
+  "exit_code": 0,
+  "seconds": 0.17285945800540503,
+  "raw": "false\n\"[/input/Cooling.mo:7:3-7:35:writable] Error: Parse error: A singleton expression in an equation section is required to be a function call\n\"\nCHECK_BEGIN\n\n\"\"\n\"Error: Curl error for URL https://libraries.openmodelica.org/index/v1/index.json: Couldn't resolve host name\nError: Failed to download package index https://libraries.openmodelica.org/index/v1/index.json to file /tmp/.openmodelica/libraries/index.json.\nError: Curl error for URL https://libraries.openmodelica.org/index/v1/index.json: Couldn't resolve host name\nError: Failed to download package index https://libraries.openmodelica.org/index/v1/index.json to file /tmp/.openmodelica/libraries/index.json.\nError: Failed to load package Cooling (default) using MODELICAPATH /tmp/.openmodelica/libraries/.\nError: Class Cooling not found in scope <top>.\nError: Class Cooling not found in scope <TOP>.\n\"\nCHECK_END\n\nrecord SimulationResult\n    resultFile = \"\",\n    simulationOptions = \"startTime = 0.0, stopTime = 300.0, numberOfIntervals = 300, tolerance = 1e-7, method = 'dassl', fileNamePrefix = 'cooling', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = ''\",\n    messages = \"Simulation Failed. Model: Cooling does not exist! Please load it first before simulation.\",\n    timeFrontend = 0.0,\n    timeBackend = 0.0,\n    timeSimCode = 0.0,\n    timeTemplates = 0.0,\n    timeCompile = 0.0,\n    timeSimulation = 0.0,\n    timeTotal = 0.0\nend SimulationResult;\n\"\"\nrecord SimulationResult\n    resultFile = \"\",\n    simulationOptions = \"startTime = 0.0, stopTime = 300.0, numberOfIntervals = 300, tolerance = 1e-7, method = 'dassl', fileNamePrefix = 'validation', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = '-override=C=2000,G=5'\",\n    messages = \"Simulation Failed. Model: Cooling does not exist! Please load it first before simulation.\",\n    timeFrontend = 0.0,\n    timeBackend = 0.0,\n    timeSimCode = 0.0,\n    timeTemplates = 0.0,\n    timeCompile = 0.0,\n    timeSimulation = 0.0,\n    timeTotal = 0.0\nend SimulationResult;\n\"\"\n",
+  "log_truncated": false,
+  "run_id": "run-fc08fd7309fd4664b67fdcc393574a1f",
+  "source_sha256": "db1c7dfb1414fe20561990f0410e86981939fac7c921f56e940beba870133bcd",
+  "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+  "mechanism": "raw",
+  "final": true,
+  "evaluation": {
+    "model_checking": "failed",
+    "simulation": "not_run",
+    "behavior": {
+      "status": "not_run"
+    },
+    "all_passed": false
+  },
+  "feedback": {
+    "mechanism": "raw",
+    "raw": "false\n\"[/input/Cooling.mo:7:3-7:35:writable] Error: Parse error: A singleton expression in an equation section is required to be a function call\n\"\nCHECK_BEGIN\n\n\"\"\n\"Error: Curl error for URL https://libraries.openmodelica.org/index/v1/index.json: Couldn't resolve host name\nError: Failed to download package index https://libraries.openmodelica.org/index/v1/index.json to file /tmp/.openmodelica/libraries/index.json.\nError: Curl error for URL https://libraries.openmodelica.org/index/v1/index.json: Couldn't resolve host name\nError: Failed to download package index https://libraries.openmodelica.org/index/v1/index.json to file /tmp/.openmodelica/libraries/index.json.\nError: Failed to load package Cooling (default) using MODELICAPATH /tmp/.openmodelica/libraries/.\nError: Class Cooling not found in scope <top>.\nError: Class Cooling not found in scope <TOP>.\n\"\nCHECK_END\n\nrecord SimulationResult\n    resultFile = \"\",\n    simulationOptions = \"startTime = 0.0, stopTime = 300.0, numberOfIntervals = 300, tolerance = 1e-7, method = 'dassl', fileNamePrefix = 'cooling', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = ''\",\n    messages = \"Simulation Failed. Model: Cooling does not exist! Please load it first before simulation.\",\n    timeFrontend = 0.0,\n    timeBackend = 0.0,\n    timeSimCode = 0.0,\n    timeTemplates = 0.0,\n    timeCompile = 0.0,\n    timeSimulation = 0.0,\n    timeTotal = 0.0\nend SimulationResult;\n\"\"\nrecord SimulationResult\n    resultFile = \"\",\n    simulationOptions = \"startTime = 0.0, stopTime = 300.0, numberOfIntervals = 300, tolerance = 1e-7, method = 'dassl', fileNamePrefix = 'validation', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = '-override=C=2000,G=5'\",\n    messages = \"Simulation Failed. Model: Cooling does not exist! Please load it first before simulation.\",\n    timeFrontend = 0.0,\n    timeBackend = 0.0,\n    timeSimCode = 0.0,\n    timeTemplates = 0.0,\n    timeCompile = 0.0,\n    timeSimulation = 0.0,\n    timeTotal = 0.0\nend SimulationResult;\n\"\"\n"
+  },
+  "tokens": null,
+  "cost_usd": null
+}

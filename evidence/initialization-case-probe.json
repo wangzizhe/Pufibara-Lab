@@ -1,0 +1,14 @@
+{
+  "kind": "trusted_engineering_not_agent_research",
+  "run_id": "run-4228717c2b2f404596d4874d0485aa60",
+  "evaluation": {
+    "model_checking": "passed",
+    "simulation": "passed",
+    "behavior": {
+      "status": "failed",
+      "reason": "Unexpected sample count"
+    },
+    "all_passed": false
+  },
+  "seconds": 4.327105875010602
+}

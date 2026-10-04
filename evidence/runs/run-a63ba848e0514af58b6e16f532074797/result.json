@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "exit_code": 0,
+  "seconds": 4.847706375003327,
+  "raw": "true\n\"\"\nCHECK_BEGIN\n\n\"Check of Cooling completed successfully.\nClass Cooling has 1 equation(s) and 1 variable(s).\n1 of these are trivial equation(s).\"\n\"\"\nCHECK_END\n\nrecord SimulationResult\n    resultFile = \"/work/cooling_res.csv\",\n    simulationOptions = \"startTime = 0.0, stopTime = 300.0, numberOfIntervals = 300, tolerance = 1e-7, method = 'dassl', fileNamePrefix = 'cooling', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = ''\",\n    messages = \"LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.\nLOG_SUCCESS       | info    | The simulation finished successfully.\n\",\n    timeFrontend = 0.039862875000000006,\n    timeBackend = 0.001150584,\n    timeSimCode = 3.1112500000000004e-4,\n    timeTemplates = 0.0010985,\n    timeCompile = 2.400180584,\n    timeSimulation = 0.0053356670000000005,\n    timeTotal = 2.447991252\nend SimulationResult;\n\"\"\nrecord SimulationResult\n    resultFile = \"/work/validation_res.csv\",\n    simulationOptions = \"startTime = 0.0, stopTime = 300.0, numberOfIntervals = 300, tolerance = 1e-7, method = 'dassl', fileNamePrefix = 'validation', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = '-override=C=2000,G=5'\",\n    messages = \"LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.\nLOG_SUCCESS       | info    | The simulation finished successfully.\n\",\n    timeFrontend = 7.60875e-4,\n    timeBackend = 0.0010819170000000002,\n    timeSimCode = 1.6900000000000002e-4,\n    timeTemplates = 7.51958e-4,\n    timeCompile = 2.166385626,\n    timeSimulation = 0.005005208000000001,\n    timeTotal = 2.174191751\nend SimulationResult;\n\"\"\n",
+  "log_truncated": false,
+  "run_id": "run-a63ba848e0514af58b6e16f532074797",
+  "source_sha256": "9df318be9ff9fc19a831f1181b952bef73c72c5332edd27600138c1917b89d21",
+  "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+  "mechanism": "raw",
+  "final": true,
+  "evaluation": {
+    "model_checking": "passed",
+    "simulation": "passed",
+    "behavior": {
+      "status": "passed",
+      "max_abs_error_k": 5.966772920373842e-05,
+      "samples": 302
+    },
+    "all_passed": true
+  },
+  "feedback": {
+    "mechanism": "raw",
+    "raw": "true\n\"\"\nCHECK_BEGIN\n\n\"Check of Cooling completed successfully.\nClass Cooling has 1 equation(s) and 1 variable(s).\n1 of these are trivial equation(s).\"\n\"\"\nCHECK_END\n\nrecord SimulationResult\n    resultFile = \"/work/cooling_res.csv\",\n    simulationOptions = \"startTime = 0.0, stopTime = 300.0, numberOfIntervals = 300, tolerance = 1e-7, method = 'dassl', fileNamePrefix = 'cooling', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = ''\",\n    messages = \"LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.\nLOG_SUCCESS       | info    | The simulation finished successfully.\n\",\n    timeFrontend = 0.039862875000000006,\n    timeBackend = 0.001150584,\n    timeSimCode = 3.1112500000000004e-4,\n    timeTemplates = 0.0010985,\n    timeCompile = 2.400180584,\n    timeSimulation = 0.0053356670000000005,\n    timeTotal = 2.447991252\nend SimulationResult;\n\"\"\nrecord SimulationResult\n    resultFile = \"/work/validation_res.csv\",\n    simulationOptions = \"startTime = 0.0, stopTime = 300.0, numberOfIntervals = 300, tolerance = 1e-7, method = 'dassl', fileNamePrefix = 'validation', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = '-override=C=2000,G=5'\",\n    messages = \"LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.\nLOG_SUCCESS       | info    | The simulation finished successfully.\n\",\n    timeFrontend = 7.60875e-4,\n    timeBackend = 0.0010819170000000002,\n    timeSimCode = 1.6900000000000002e-4,\n    timeTemplates = 7.51958e-4,\n    timeCompile = 2.166385626,\n    timeSimulation = 0.005005208000000001,\n    timeTotal = 2.174191751\nend SimulationResult;\n\"\"\n"
+  },
+  "tokens": null,
+  "cost_usd": null
+}

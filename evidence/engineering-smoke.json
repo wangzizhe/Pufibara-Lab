@@ -1,0 +1,33 @@
+{
+  "kind": "engineering_smoke_not_agent_research",
+  "cases": [
+    {
+      "label": "trusted-corrected-fixture",
+      "run_id": "run-2a177c8720d64385aa4fe78b8fa8e236",
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "passed",
+        "behavior": {
+          "status": "passed",
+          "max_abs_error_k": 5.966772920373842e-05,
+          "samples": 302
+        },
+        "all_passed": true
+      },
+      "seconds": 6.716202416995657
+    },
+    {
+      "label": "syntax-error-fixture",
+      "run_id": "run-4cac03e51b674c73bd5f2b7d45693aeb",
+      "evaluation": {
+        "model_checking": "failed",
+        "simulation": "not_run",
+        "behavior": {
+          "status": "not_run"
+        },
+        "all_passed": false
+      },
+      "seconds": 0.2578930000017863
+    }
+  ]
+}

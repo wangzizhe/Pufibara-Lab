@@ -1,0 +1,39 @@
+{
+  "status": "completed",
+  "exit_code": 0,
+  "seconds": 4.242140083981212,
+  "raw": "true\n\"\"\nCHECK_BEGIN\n\n\"Check of Cooling completed successfully.\nClass Cooling has 1 equation(s) and 1 variable(s).\n1 of these are trivial equation(s).\"\n\"\"\nCHECK_END\n\nrecord SimulationResult\n    resultFile = \"/work/cooling_res.csv\",\n    simulationOptions = \"startTime = 0.0, stopTime = 300.0, numberOfIntervals = 300, tolerance = 1e-7, method = 'dassl', fileNamePrefix = 'cooling', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = ''\",\n    messages = \"LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.\nLOG_SUCCESS       | info    | The simulation finished successfully.\n\",\n    timeFrontend = 5.118750000000001e-4,\n    timeBackend = 8.28708e-4,\n    timeSimCode = 2.50583e-4,\n    timeTemplates = 9.09458e-4,\n    timeCompile = 2.061949251,\n    timeSimulation = 0.005436792,\n    timeTotal = 2.06993296\nend SimulationResult;\n\"\"\nrecord SimulationResult\n    resultFile = \"/work/validation_res.csv\",\n    simulationOptions = \"startTime = 0.0, stopTime = 300.0, numberOfIntervals = 300, tolerance = 1e-7, method = 'dassl', fileNamePrefix = 'validation', options = '', outputFormat = 'csv', variableFilter = '.*', cflags = '', simflags = '-override=C=2000,G=5'\",\n    messages = \"LOG_SUCCESS       | info    | The initialization finished successfully without homotopy method.\nLOG_SUCCESS       | info    | The simulation finished successfully.\n\",\n    timeFrontend = 7.2725e-4,\n    timeBackend = 9.7075e-4,\n    timeSimCode = 1.62542e-4,\n    timeTemplates = 8.40709e-4,\n    timeCompile = 1.922210459,\n    timeSimulation = 0.005493958,\n    timeTotal = 1.930439751\nend SimulationResult;\n\"\"\n",
+  "log_truncated": false,
+  "run_id": "run-45c2192cbdef477d89b13a05c38b6df9",
+  "source_sha256": "9df318be9ff9fc19a831f1181b952bef73c72c5332edd27600138c1917b89d21",
+  "image": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+  "implementation_sha256": {
+    "runner.py": "8974c70368832e31b9bc300bae354df48fb82b776c9bcdd52dcd2a946c187e62",
+    "evaluator.py": "f1ea4df0220da5d08de6b17998a1b5369d7a3cbf8aae2a088ef14ce61464aa01",
+    "diagnostics.py": "fc61ff3e5c79637b79a5645a5ebc431829ba3a6e5699f572c0f06dbf1467ec24"
+  },
+  "mechanism": "structured",
+  "final": true,
+  "evaluation": {
+    "model_checking": "passed",
+    "simulation": "passed",
+    "behavior": {
+      "status": "passed",
+      "max_abs_error_k": 5.966772920373842e-05,
+      "samples": 302
+    },
+    "all_passed": true
+  },
+  "feedback": {
+    "mechanism": "structured",
+    "diagnostic_lines": [],
+    "parser": "keyword-v1",
+    "total_lines": 40,
+    "omitted_lines": 40,
+    "raw_available": true,
+    "interpretation": "Compiler messages only; no inferred repair or validation answer.",
+    "empty_diagnostic": true
+  },
+  "tokens": null,
+  "cost_usd": null
+}

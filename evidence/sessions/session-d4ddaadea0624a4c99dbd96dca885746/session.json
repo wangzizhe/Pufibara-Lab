@@ -1,0 +1,107 @@
+{
+  "session_id": "session-d4ddaadea0624a4c99dbd96dca885746",
+  "stage": "analysis",
+  "plans": [
+    {
+      "id": "cooling-diagnostic-fidelity-v2",
+      "hypothesis": "On a fresh matched baseline-only pair for cooling-init-v1, keyword-v1 structured feedback will preserve the initialization failure and over-specification warning but omit explicit successful model-check evidence and the additional initialization logging hint seen in the original raw development feedback.",
+      "falsification": "The predicted information-loss pattern is falsified if the fresh structured baseline retains explicit successful model-check evidence and the additional logging hint, or fails to preserve the initialization failure and over-specification warning. A different baseline failure or missing raw evidence makes this audit inconclusive. Final evaluation success is not required or predicted; record model checking, simulation and behavior independently and treat not_run as not passed.",
+      "candidates": [
+        {
+          "id": "baseline-fidelity-audit",
+          "learning_value": "Audit diagnostic preservation and omission with a matched unmodified baseline pair, without repeating the initial two-attempt repair experiment. Compare bounded development raw logs to parser omission fields; do not inspect source or hidden evaluation.",
+          "feasibility": "Same public task and broker defaults, vary only raw versus structured diagnostics, replicate=1 and max_attempts=1 each. Baseline plus final validation costs two deterministic tool runs per arm, four total; initial actual six plus followup four equals ten, leaving two reserved. No correction and no causal repair-benefit test.",
+          "estimated_tool_runs": 4
+        },
+        {
+          "id": "extended-correction-pair",
+          "learning_value": "Test repair outcomes with a second correction opportunity under matched raw and structured settings.",
+          "feasibility": "max_attempts=3 per arm requires baseline plus two corrections plus final evaluation: eight deterministic runs total. Six remaining makes this infeasible; do not select or execute.",
+          "estimated_tool_runs": 8
+        }
+      ],
+      "selected_candidate": "baseline-fidelity-audit",
+      "selection_reason": "The observed omission fields motivate a diagnostic-fidelity question that fits the verified six remaining runs, uses a different attempt budget from the original trials, and leaves two runs reserved. The eight-run alternative exceeds the remaining ceiling. Planning only: do not execute trials or dispatch a Modeler. Preserve failed turns and operator recovery. Keep the original deadline and request accounting; stop on any quota, budget or isolation error.",
+      "runs": [
+        {
+          "task_id": "cooling-init-v1",
+          "diagnostics": "raw",
+          "replicate": 1,
+          "max_attempts": 1
+        },
+        {
+          "task_id": "cooling-init-v1",
+          "diagnostics": "structured",
+          "replicate": 1,
+          "max_attempts": 1
+        }
+      ]
+    }
+  ],
+  "trials": [
+    {
+      "trial_id": "trial-c76a0cc555134480ab7e54ea5edacf95",
+      "plan_id": "cooling-diagnostic-fidelity-v2",
+      "config": {
+        "task_id": "cooling-init-v1",
+        "diagnostics": "raw",
+        "replicate": 1,
+        "max_attempts": 1
+      },
+      "attempts": [
+        "run-602c306b035e47dbb856db92fe4a02ec"
+      ],
+      "source": "model Cooling\n  parameter Real C = 1000 \"Thermal capacity J/K\";\n  parameter Real G = 10 \"Thermal conductance W/K\";\n  parameter Real T_ambient = 293.15 \"Ambient K\";\n  Real T(start=333.15, fixed=true) \"Body K\";\ninitial equation\n  T = T_ambient;\nequation\n  C * der(T) = G * (T_ambient - T);\nend Cooling;\n",
+      "finished": true,
+      "final_run_id": "run-8beb95ffaefe4e73a30386bd225515f1",
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "failed",
+        "behavior": "not_run",
+        "all_passed": false
+      },
+      "tool_seconds": 9.817030124977464
+    },
+    {
+      "trial_id": "trial-f07824acec8d4b539d9ca6c05dee9ade",
+      "plan_id": "cooling-diagnostic-fidelity-v2",
+      "config": {
+        "task_id": "cooling-init-v1",
+        "diagnostics": "structured",
+        "replicate": 1,
+        "max_attempts": 1
+      },
+      "attempts": [
+        "run-7f5bfe08aecb45f89dd39d745d58ed06"
+      ],
+      "source": "model Cooling\n  parameter Real C = 1000 \"Thermal capacity J/K\";\n  parameter Real G = 10 \"Thermal conductance W/K\";\n  parameter Real T_ambient = 293.15 \"Ambient K\";\n  Real T(start=333.15, fixed=true) \"Body K\";\ninitial equation\n  T = T_ambient;\nequation\n  C * der(T) = G * (T_ambient - T);\nend Cooling;\n",
+      "finished": true,
+      "final_run_id": "run-ce999704405d4c2aa55fd2f72acd4f36",
+      "evaluation": {
+        "model_checking": "passed",
+        "simulation": "failed",
+        "behavior": "not_run",
+        "all_passed": false
+      },
+      "tool_seconds": 6.859343749994878
+    }
+  ],
+  "analysis": null,
+  "kind": "native_completion_regression_not_new_scientific_discovery",
+  "runtime": {
+    "schema_version": 1,
+    "model_service": null,
+    "model": null,
+    "max_model_calls": 0,
+    "max_total_usd": 0,
+    "max_model_tokens": 0,
+    "max_tool_runs": 12,
+    "max_tool_seconds": 60,
+    "max_repair_attempts": 3,
+    "omc_image": "openmodelica/openmodelica:v1.26.1-minimal",
+    "omc_image_digest": "sha256:d29dc27e3a9f7f2bf05bbfdc3eb5c8926e512a7004cf4a4a274c3e445165b717",
+    "install_authorized": true,
+    "model_calls_authorized": false,
+    "task_catalog": "initialization-v1"
+  }
+}
